@@ -109,6 +109,15 @@ def main() -> int:
             a.segmented_control(key="mode").set_value(mode).run()
             no_exception(a, f"{pick}/{mode}")
 
+    # 11. the other deliverables' pages (page menu) embed their generated HTML pages
+    for page, title in [("views/ingredient_map.py", "<title>Ingredient Similarity Map</title>"),
+                        ("views/recipe_impact.py", "<title>Healthier Swaps Impact</title>")]:
+        a = fresh()
+        a.switch_page(page).run()
+        no_exception(a, page)
+        frames = a.get("iframe")
+        check(len(frames) == 1 and title in frames[0].proto.srcdoc, f"{page}: embedded page missing")
+
     n = len(FAILURES)
     print("all app checks passed" if n == 0 else f"{n} failures")
     return 1 if n else 0

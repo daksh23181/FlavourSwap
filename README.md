@@ -157,6 +157,10 @@ explanation fields, for all 3,584 ingredients (used by the app).
 streamlit run app/streamlit_app.py
 ```
 
+- **Three pages** (menu at the top): **Find swaps** (this deliverable, the start page), **Ingredient
+  map** (Deliverable 2, `outputs/ingredient_map.html`) and **Recipe impact** (Deliverable 5,
+  `outputs/impact_dashboard.html`); the two generated pages are embedded and follow the app's
+  light/dark theme, so the deployed app shows every interactive deliverable.
 - **Start page**: a banner, the search box, one-tap popular ingredients, key numbers (3,584
   ingredients, 231,089 recipes the embeddings learned from, 1,107 aroma compounds, 50% of known
   swaps in the top 10) and a
@@ -284,7 +288,7 @@ src/
   impact_dashboard.py     Deliverable 5 presentation dashboard
   flavorswap/             shared code: paths, normalisation, matching, food groups, nutrition,
                           recommender, quantities (ingredient-line parsing)
-app/streamlit_app.py      Deliverable 4 web app
+app/streamlit_app.py      web app entry point (page menu); pages in app/views/, shared look in app/ui.py
 .streamlit/config.toml    app theme (light + dark)
 tests/                    regression tests (miner, quantities, recommender invariants, app)
 data/
