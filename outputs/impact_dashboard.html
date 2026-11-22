@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Healthier Swaps Impact</title>
+<style>
+:root { color-scheme: light;
+  --page:#f9f9f7; --surface:#fcfcfb; --surface-2:#f2f1ed; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10); --wash:rgba(42,120,214,0.07);
+  --s1:#2a78d6; --s2:#eb6834; --neg:#2a78d6; --pos:#e34948; --mid:#f0efec; --before:#898781;
+  --good:#006300; --bad:#d03b3b; --warn:#fab219; --chip:#ecebe6; --chip-on:#0b0b0b; --chip-on-ink:#fcfcfb; }
+@media (prefers-color-scheme: dark) { :root:where(:not([data-theme="light"])) { color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10); --wash:rgba(57,135,229,0.12);
+  --s1:#3987e5; --s2:#d95926; --neg:#3987e5; --pos:#e66767; --mid:#383835; --before:#898781;
+  --good:#0ca30c; --bad:#e66767; --warn:#fab219; --chip:#2a2a28; --chip-on:#f0efec; --chip-on-ink:#1a1a19; } }
+:root[data-theme="dark"] { color-scheme: dark;
+  --page:#0d0d0d; --surface:#1a1a19; --surface-2:#222220; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10); --wash:rgba(57,135,229,0.12);
+  --s1:#3987e5; --s2:#d95926; --neg:#3987e5; --pos:#e66767; --mid:#383835; --before:#898781;
+  --good:#0ca30c; --bad:#e66767; --warn:#fab219; --chip:#2a2a28; --chip-on:#f0efec; --chip-on-ink:#1a1a19; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } * { transition:none !important; } }
+body { margin:0; background:var(--page); color:var(--ink); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+.wrap { max-width:1180px; margin:0 auto; padding:0 28px; }
+.num { font-variant-numeric:tabular-nums; }
+button { font:inherit; color:inherit; }
+:focus-visible { outline:2px solid var(--s1); outline-offset:2px; }
+
+/* header */
+header.top { padding:40px 0 20px; }
+.toprow { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+.eyebrow { font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); font-weight:600; }
+h1 { font-size:clamp(32px,4.6vw,52px); line-height:1.08; margin:10px 0 14px; font-weight:700; letter-spacing:-.02em; }
+.lede { font-size:clamp(17px,1.6vw,20px); color:var(--ink-2); max-width:820px; margin:0; }
+.lede b { color:var(--ink); }
+.theme { border:1px solid var(--border); background:var(--surface); border-radius:999px; padding:7px 14px; cursor:pointer;
+  font-size:14px; color:var(--ink-2); white-space:nowrap; }
+
+/* scenario bar */
+.bar { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--page) 92%, transparent);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--border); }
+.bar .wrap { display:flex; align-items:center; gap:14px; flex-wrap:wrap; padding-top:10px; padding-bottom:10px; }
+.bar .lbl { font-size:13px; font-weight:600; color:var(--ink-2); }
+.seg { display:inline-flex; background:var(--chip); border-radius:10px; padding:3px; gap:2px; }
+.seg button { border:0; background:transparent; padding:7px 14px; border-radius:8px; cursor:pointer; font-size:14px;
+  font-weight:600; color:var(--ink-2); }
+.seg button[aria-pressed="true"] { background:var(--surface); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.12); }
+.bar .note { font-size:14px; color:var(--ink-2); flex:1 1 320px; }
+
+/* sections */
+section { padding:44px 0 8px; }
+.kicker { font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--s1); }
+h2 { font-size:clamp(24px,2.6vw,32px); line-height:1.2; margin:6px 0 8px; letter-spacing:-.01em; }
+.sub { color:var(--ink-2); margin:0 0 20px; max-width:860px; }
+.card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:22px; }
+.takeaway { font-size:17px; margin:0 0 14px; }
+.takeaway b { font-weight:700; }
+
+/* headline */
+.headline { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,2fr); gap:16px; }
+.hero { display:flex; flex-direction:column; justify-content:center; }
+.hero .big { font-size:clamp(56px,7vw,88px); font-weight:700; line-height:1; letter-spacing:-.03em; }
+.hero .what { font-size:20px; font-weight:600; margin-top:10px; }
+.hero .ctx { color:var(--ink-2); margin-top:6px; font-size:15px; }
+.tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.tile { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px 18px 16px; }
+.tile .label { font-size:14px; color:var(--ink-2); font-weight:600; }
+.tile .value { font-size:36px; font-weight:700; letter-spacing:-.02em; margin-top:4px; line-height:1.1; }
+.tile .dir { font-size:13px; font-weight:600; margin-top:6px; display:flex; align-items:center; gap:6px; }
+.tile .dir .ic { font-size:11px; }
+.tile .meta { font-size:13px; color:var(--muted); margin-top:2px; }
+.good { color:var(--good); } .bad { color:var(--bad); }
+
+/* method */
+.steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; counter-reset:step; }
+.step { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:20px; position:relative; }
+.step .n { width:28px; height:28px; border-radius:50%; background:var(--s1); color:#fff; font-weight:700; font-size:14px;
+  display:flex; align-items:center; justify-content:center; }
+.step .fig { font-size:28px; font-weight:700; margin-top:12px; letter-spacing:-.01em; }
+.step .txt { color:var(--ink-2); font-size:15px; margin-top:4px; }
+
+/* example */
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.chip { border:0; background:var(--chip); color:var(--ink); border-radius:999px; padding:7px 14px; cursor:pointer; font-size:14px; }
+.chip[aria-pressed="true"] { background:var(--chip-on); color:var(--chip-on-ink); font-weight:600; }
+.ex { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:16px; }
+.ex h3 { font-size:26px; margin:0; line-height:1.2; letter-spacing:-.01em; }
+.ex .facts { color:var(--ink-2); font-size:14px; margin:8px 0 18px; display:flex; flex-wrap:wrap; gap:6px 14px; }
+.swapbox { background:var(--surface-2); border-radius:12px; padding:16px; }
+.swapbox .cap { font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); }
+.swapline { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:8px; font-size:20px; font-weight:700; }
+.swapline .from { text-decoration:line-through; text-decoration-thickness:2px; color:var(--ink-2); font-weight:600; }
+.swapline .arrow { color:var(--s1); }
+.swapbox .raw { font-size:14px; color:var(--ink-2); margin-top:8px; }
+.ings { display:flex; flex-wrap:wrap; gap:6px; margin-top:16px; }
+.ing { font-size:13px; border:1px solid var(--border); border-radius:999px; padding:3px 10px; color:var(--ink-2); background:var(--surface); }
+.ing.swapped { border-color:var(--s1); color:var(--ink); font-weight:600; background:var(--wash); }
+.nav { display:flex; gap:8px; margin-top:16px; }
+.nav button { border:1px solid var(--border); background:var(--surface); border-radius:10px; padding:6px 14px; cursor:pointer; font-size:14px; }
+.legend { display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--ink-2); margin-bottom:10px; align-items:center; }
+.key { display:inline-flex; align-items:center; gap:6px; }
+.key .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+.key .sq { width:12px; height:12px; border-radius:3px; display:inline-block; }
+.db { display:grid; grid-template-columns:118px minmax(0,1fr) 170px; align-items:center; gap:12px; padding:9px 0;
+  border-bottom:1px solid var(--grid); }
+.db:last-child { border-bottom:0; }
+.db .nm { font-weight:600; font-size:15px; }
+.db .vals { text-align:right; font-size:14px; }
+.db .vals .chg { display:block; font-size:13px; font-weight:600; }
+.track { position:relative; height:24px; }
+.track .rail { position:absolute; left:0; right:0; top:11px; height:2px; background:var(--grid); border-radius:1px; }
+.track .link { position:absolute; top:11px; height:2px; background:var(--s1); opacity:.45; }
+.track .pt { position:absolute; top:6px; width:12px; height:12px; margin-left:-6px; border-radius:50%;
+  box-shadow:0 0 0 2px var(--surface); }
+.aroma-row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding-top:12px; font-size:15px; }
+
+/* cuisine chart */
+.toolbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+svg text { font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+.hit { fill:transparent; cursor:default; }
+.hit:hover, .hit:focus { fill:var(--wash); outline:none; }
+
+/* heat table */
+.tablewrap { overflow-x:auto; }
+table { border-collapse:separate; border-spacing:2px; width:100%; font-size:14px; }
+th { font-weight:600; color:var(--ink-2); text-align:right; padding:6px 8px; font-size:13px; vertical-align:bottom; }
+th:first-child, td:first-child { text-align:left; }
+td { padding:7px 8px; text-align:right; border-radius:6px; white-space:nowrap; }
+td.cell { min-width:78px; }
+tr.all td { font-weight:700; }
+tr.all td:first-child { border-bottom:0; }
+.scale { display:flex; align-items:center; gap:10px; font-size:13px; color:var(--ink-2); margin-top:12px; flex-wrap:wrap; }
+.scale .grad { width:220px; height:10px; border-radius:5px;
+  background:linear-gradient(90deg, var(--neg), var(--mid), var(--pos)); }
+
+/* swaps */
+.swaprow { display:grid; grid-template-columns:minmax(150px,1.3fr) minmax(0,2fr) minmax(170px,1.2fr); gap:14px; align-items:center;
+  padding:8px 0; border-bottom:1px solid var(--grid); }
+.swaprow:last-child { border-bottom:0; }
+.swaprow .pair { font-weight:600; font-size:15px; }
+.swaprow .pair .ar { color:var(--s1); padding:0 4px; }
+.swaprow .flag { display:inline-flex; align-items:center; gap:5px; font-size:12px; font-weight:600; color:var(--ink-2);
+  margin-left:6px; white-space:nowrap; }
+.swaprow .flag .wd { width:8px; height:8px; border-radius:50%; background:var(--warn); }
+.hbar { display:flex; align-items:center; gap:8px; }
+.hbar .b { height:16px; background:var(--s1); border-radius:0 4px 4px 0; min-width:2px; }
+.hbar .v { font-size:14px; color:var(--ink); }
+.swaprow .eff { font-size:13px; color:var(--ink-2); text-align:right; }
+
+/* reality */
+.two { display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:16px; align-items:start; }
+.points { margin:0; padding-left:20px; color:var(--ink-2); }
+.points li { margin-bottom:10px; }
+.points b { color:var(--ink); }
+
+/* tooltip */
+#tip { position:fixed; z-index:20; pointer-events:none; background:var(--surface); color:var(--ink); border:1px solid var(--border);
+  border-radius:10px; padding:10px 12px; font-size:13px; box-shadow:0 6px 24px rgba(0,0,0,.16); opacity:0; transition:opacity .08s;
+  max-width:280px; }
+#tip .t { font-weight:700; margin-bottom:4px; }
+#tip .r { display:flex; justify-content:space-between; gap:16px; }
+#tip .r .k { color:var(--ink-2); }
+#tip .r .v { font-weight:700; font-variant-numeric:tabular-nums; }
+
+footer { padding:40px 0 56px; color:var(--ink-2); font-size:14px; }
+footer h3 { font-size:15px; color:var(--ink); margin:0 0 8px; }
+footer ul { margin:0; padding-left:18px; }
+footer li { margin-bottom:6px; }
+.fgrid { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); gap:28px; border-top:1px solid var(--border); padding-top:24px; }
+
+@media (max-width:980px) {
+  .headline, .ex, .two, .fgrid { grid-template-columns:minmax(0,1fr); }
+  .steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:640px) {
+  .wrap { padding:0 16px; }
+  .tiles { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tile .value { font-size:28px; }
+  .steps { grid-template-columns:minmax(0,1fr); }
+  .db { grid-template-columns:92px minmax(0,1fr); }
+  .db .vals { grid-column:1 / -1; text-align:left; display:flex; gap:10px; }
+  .db .vals .chg { display:inline; }
+  .swaprow { grid-template-columns:minmax(0,1fr); gap:4px; }
+  .swaprow .eff { text-align:left; }
+  .seg { display:flex; width:100%; }
+  .seg button { flex:1 1 0; padding:7px 6px; font-size:13px; }
+  .card { padding:16px; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="toprow">
+      <div class="eyebrow">FlavorSwap &middot; Deliverable 5 &middot; Recipe-level impact</div>
+      <button class="theme" id="theme" type="button" aria-label="Toggle dark mode">Dark mode</button>
+    </div>
+    <h1>Healthier swaps, same flavor</h1>
+    <p class="lede" id="lede"></p>
+  </div>
+</header>
+
+<div class="bar" role="region" aria-label="Scenario">
+  <div class="wrap">
+    <span class="lbl">Scenario</span>
+    <div class="seg" id="scen" role="group" aria-label="Scenario"></div>
+    <span class="note" id="scen-note"></span>
+  </div>
+</div>
+
+<main class="wrap">
+  <section id="headline" aria-labelledby="h-headline">
+    <div class="kicker">The result</div>
+    <h2 id="h-headline">What healthier swaps do to a recipe</h2>
+    <p class="sub">Average change per serving across all validated recipes, with 95% confidence intervals.</p>
+    <div class="headline">
+      <div class="card hero" id="hero"></div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section id="method" aria-labelledby="h-method">
+    <div class="kicker">How we measured it</div>
+    <h2 id="h-method">From recipe text to nutrients and flavor</h2>
+    <div class="steps" id="steps"></div>
+  </section>
+
+  <section id="example" aria-labelledby="h-example">
+    <div class="kicker">One recipe, one swap</div>
+    <h2 id="h-example">Real recipes, before and after</h2>
+    <p class="sub">Popular Food.com recipes with their best single swap (each checked by hand). Values are per serving.</p>
+    <div class="chips" id="ex-chips" role="group" aria-label="Example recipe"></div>
+    <div class="ex">
+      <div class="card" id="ex-left"></div>
+      <div class="card" id="ex-right"></div>
+    </div>
+  </section>
+
+  <section id="cuisines" aria-labelledby="h-cuisines">
+    <div class="kicker">Across cuisines</div>
+    <h2 id="h-cuisines">Which cuisines gain the most?</h2>
+    <p class="sub" id="cu-sub"></p>
+    <div class="card">
+      <div class="toolbar" id="metric" role="group" aria-label="Outcome"></div>
+      <p class="takeaway" id="cu-take"></p>
+      <div id="cu-chart"></div>
+    </div>
+  </section>
+
+  <section id="overview" aria-labelledby="h-overview">
+    <div class="kicker">At a glance</div>
+    <h2 id="h-overview">Every cuisine, every outcome</h2>
+    <p class="sub">Mean change per serving. Blue = lower than the original recipe, red = higher; stronger colour = bigger change.</p>
+    <div class="card">
+      <div class="tablewrap"><table id="heat"></table></div>
+      <div class="scale"><span>lower</span><span class="grad" aria-hidden="true"></span><span>higher</span>
+        <span>&middot; colour saturates at &plusmn;30%</span></div>
+    </div>
+  </section>
+
+  <section id="swaps" aria-labelledby="h-swaps">
+    <div class="kicker">What gets swapped</div>
+    <h2 id="h-swaps">The most common swaps</h2>
+    <p class="sub" id="sw-sub"></p>
+    <div class="card" id="sw-list"></div>
+  </section>
+
+  <section id="reality" aria-labelledby="h-reality">
+    <div class="kicker">Reality check</div>
+    <h2 id="h-reality">FlavorSwap vs. what home cooks actually did</h2>
+    <p class="sub">Average change per serving (%) for FlavorSwap's best single swap and for the best healthier swap that
+      Food.com reviewers reported making, over the same recipes. Aroma kept is in percentage points below 100%.</p>
+    <div class="two">
+      <div class="card">
+        <div class="legend"><span class="key"><span class="sq" style="background:var(--s1)"></span>FlavorSwap (best single swap)</span>
+          <span class="key"><span class="sq" style="background:var(--s2)"></span>Reviewers' own swaps</span></div>
+        <div id="re-chart"></div>
+      </div>
+      <div class="card"><ul class="points" id="re-points"></ul></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="fgrid">
+    <div>
+      <h3>How to read these numbers</h3>
+      <ul id="caveats"></ul>
+    </div>
+    <div>
+      <h3>Data</h3>
+      <ul>
+        <li>Recipes and reviews: Food.com (Majumder et al., 2019)</li>
+        <li>Nutrients and household measures: USDA FoodData Central, SR Legacy</li>
+        <li>Flavor compounds: Ahn et al., <i>Flavor network and the principles of food pairing</i>, Sci. Rep. 2011</li>
+        <li>Full tables and statistics: <code>reports/impact_report.md</code></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div id="tip" role="tooltip"></div>
+
+<script>
+const DATA = {"outcomes": [{"k": "energy_kcal", "label": "Calories", "unit": "kcal", "d": 0}, {"k": "fat_g", "label": "Total fat", "unit": "g", "d": 1}, {"k": "sat_fat_g", "label": "Saturated fat", "unit": "g", "d": 1}, {"k": "sugar_g", "label": "Sugars", "unit": "g", "d": 1}, {"k": "sodium_mg", "label": "Sodium", "unit": "mg", "d": 0}], "scenarios": [{"key": "best single swap", "label": "Best single swap", "note": "Each recipe gets the one FlavorSwap swap that improves it most \u2014 what a cook would most likely do."}, {"key": "reviewer-reported swap", "label": "Reviewers' own swaps", "note": "Only healthier swaps that at least two Food.com reviewers reported making \u2014 a real-world check."}, {"key": "all swaps", "label": "Every possible swap", "note": "Every ingredient with a healthier substitute is swapped \u2014 the upper bound."}], "scen": {"best single swap": {"rows": [{"c": "All recipes", "n": 48145, "w": 97.6, "m": {"energy_kcal": -6.1, "fat_g": -9.5, "sat_fat_g": -14.8, "sugar_g": -1.7, "sodium_mg": -10.2}, "lo": {"energy_kcal": -6.2, "fat_g": -9.7, "sat_fat_g": -15.1, "sugar_g": -1.9, "sodium_mg": -10.4}, "hi": {"energy_kcal": -6.0, "fat_g": -9.3, "sat_fat_g": -14.4, "sugar_g": -1.4, "sodium_mg": -10.0}, "abs": {"energy_kcal": -30.0, "fat_g": -2.7, "sat_fat_g": -1.6, "sugar_g": -1.6, "sodium_mg": -78.0}, "aroma": 95.3, "aroma_lo": 95.2, "aroma_hi": 95.4}, {"c": "North American", "n": 6123, "w": 98.2, "m": {"energy_kcal": -6.5, "fat_g": -10.5, "sat_fat_g": -15.1, "sugar_g": -2.5, "sodium_mg": -9.8}, "lo": {"energy_kcal": -6.9, "fat_g": -11.1, "sat_fat_g": -16.1, "sugar_g": -3.2, "sodium_mg": -10.5}, "hi": {"energy_kcal": -6.2, "fat_g": -9.9, "sat_fat_g": -14.1, "sugar_g": -1.8, "sodium_mg": -9.2}, "abs": {"energy_kcal": -34.0, "fat_g": -3.2, "sat_fat_g": -1.8, "sugar_g": -2.0, "sodium_mg": -72.0}, "aroma": 95.6, "aroma_lo": 95.3, "aroma_hi": 95.8}, {"c": "European (other)", "n": 1914, "w": 98.4, "m": {"energy_kcal": -6.3, "fat_g": -10.6, "sat_fat_g": -16.5, "sugar_g": -1.6, "sodium_mg": -10.3}, "lo": {"energy_kcal": -6.9, "fat_g": -11.9, "sat_fat_g": -18.2, "sugar_g": -2.5, "sodium_mg": -11.7}, "hi": {"energy_kcal": -5.7, "fat_g": -9.4, "sat_fat_g": -14.7, "sugar_g": -0.6, "sodium_mg": -9.0}, "abs": {"energy_kcal": -35.0, "fat_g": -2.9, "sat_fat_g": -1.6, "sugar_g": -1.3, "sodium_mg": -81.0}, "aroma": 95.5, "aroma_lo": 95.0, "aroma_hi": 96.0}, {"c": "Italian", "n": 1527, "w": 98.8, "m": {"energy_kcal": -3.9, "fat_g": -6.0, "sat_fat_g": -14.2, "sugar_g": 6.3, "sodium_mg": -8.5}, "lo": {"energy_kcal": -4.5, "fat_g": -7.0, "sat_fat_g": -15.5, "sugar_g": 4.5, "sodium_mg": -9.9}, "hi": {"energy_kcal": -3.4, "fat_g": -5.0, "sat_fat_g": -12.9, "sugar_g": 8.2, "sodium_mg": -7.2}, "abs": {"energy_kcal": -23.0, "fat_g": -2.4, "sat_fat_g": -1.4, "sugar_g": 0.5, "sodium_mg": -85.0}, "aroma": 97.1, "aroma_lo": 96.6, "aroma_hi": 97.6}, {"c": "Southern US", "n": 1075, "w": 97.7, "m": {"energy_kcal": -7.0, "fat_g": -11.5, "sat_fat_g": -14.8, "sugar_g": -1.9, "sodium_mg": -10.7}, "lo": {"energy_kcal": -7.7, "fat_g": -12.8, "sat_fat_g": -17.5, "sugar_g": -3.8, "sodium_mg": -12.2}, "hi": {"energy_kcal": -6.2, "fat_g": -10.0, "sat_fat_g": -11.9, "sugar_g": 0.1, "sodium_mg": -9.4}, "abs": {"energy_kcal": -42.0, "fat_g": -3.9, "sat_fat_g": -1.7, "sugar_g": -2.7, "sodium_mg": -94.0}, "aroma": 95.7, "aroma_lo": 95.1, "aroma_hi": 96.3}, {"c": "Mexican", "n": 978, "w": 95.3, "m": {"energy_kcal": -6.8, "fat_g": -14.0, "sat_fat_g": -17.3, "sugar_g": -2.0, "sodium_mg": -9.4}, "lo": {"energy_kcal": -7.6, "fat_g": -15.8, "sat_fat_g": -19.6, "sugar_g": -3.8, "sodium_mg": -10.8}, "hi": {"energy_kcal": -5.9, "fat_g": -12.1, "sat_fat_g": -15.1, "sugar_g": -0.3, "sodium_mg": -7.8}, "abs": {"energy_kcal": -33.0, "fat_g": -3.6, "sat_fat_g": -1.8, "sugar_g": -0.9, "sodium_mg": -89.0}, "aroma": 94.5, "aroma_lo": 93.7, "aroma_hi": 95.2}, {"c": "Asian (other)", "n": 815, "w": 98.2, "m": {"energy_kcal": -5.3, "fat_g": -9.5, "sat_fat_g": -15.6, "sugar_g": -0.3, "sodium_mg": -13.1}, "lo": {"energy_kcal": -6.1, "fat_g": -11.4, "sat_fat_g": -18.2, "sugar_g": -2.0, "sodium_mg": -14.6}, "hi": {"energy_kcal": -4.5, "fat_g": -7.5, "sat_fat_g": -12.9, "sugar_g": 1.6, "sodium_mg": -11.5}, "abs": {"energy_kcal": -30.0, "fat_g": -3.4, "sat_fat_g": -1.3, "sugar_g": -0.6, "sodium_mg": -123.0}, "aroma": 94.4, "aroma_lo": 93.3, "aroma_hi": 95.3}, {"c": "British/Irish", "n": 568, "w": 97.5, "m": {"energy_kcal": -5.2, "fat_g": -6.6, "sat_fat_g": -14.0, "sugar_g": -1.0, "sodium_mg": -17.7}, "lo": {"energy_kcal": -6.1, "fat_g": -8.8, "sat_fat_g": -17.8, "sugar_g": -2.0, "sodium_mg": -20.6}, "hi": {"energy_kcal": -4.2, "fat_g": -4.4, "sat_fat_g": -9.8, "sugar_g": 0.1, "sodium_mg": -14.9}, "abs": {"energy_kcal": -24.0, "fat_g": -1.5, "sat_fat_g": -1.3, "sugar_g": -0.5, "sodium_mg": -95.0}, "aroma": 92.4, "aroma_lo": 90.9, "aroma_hi": 93.7}, {"c": "Greek", "n": 478, "w": 97.9, "m": {"energy_kcal": -3.9, "fat_g": -6.9, "sat_fat_g": -16.7, "sugar_g": 4.0, "sodium_mg": -12.9}, "lo": {"energy_kcal": -5.0, "fat_g": -9.0, "sat_fat_g": -19.4, "sugar_g": -0.1, "sodium_mg": -15.1}, "hi": {"energy_kcal": -2.8, "fat_g": -4.9, "sat_fat_g": -14.0, "sugar_g": 9.0, "sodium_mg": -10.6}, "abs": {"energy_kcal": -19.0, "fat_g": -2.1, "sat_fat_g": -1.2, "sugar_g": -0.3, "sodium_mg": -87.0}, "aroma": 96.5, "aroma_lo": 95.7, "aroma_hi": 97.3}, {"c": "Middle Eastern", "n": 459, "w": 95.0, "m": {"energy_kcal": -5.9, "fat_g": -11.7, "sat_fat_g": -24.2, "sugar_g": 3.4, "sodium_mg": -5.5}, "lo": {"energy_kcal": -7.0, "fat_g": -14.2, "sat_fat_g": -27.6, "sugar_g": 0.6, "sodium_mg": -7.8}, "hi": {"energy_kcal": -4.9, "fat_g": -9.2, "sat_fat_g": -21.0, "sugar_g": 7.2, "sodium_mg": -3.3}, "abs": {"energy_kcal": -23.0, "fat_g": -2.2, "sat_fat_g": -1.3, "sugar_g": -0.7, "sodium_mg": -40.0}, "aroma": 92.7, "aroma_lo": 91.1, "aroma_hi": 94.2}, {"c": "French", "n": 451, "w": 98.4, "m": {"energy_kcal": -5.8, "fat_g": -8.6, "sat_fat_g": -20.6, "sugar_g": -0.7, "sodium_mg": -9.4}, "lo": {"energy_kcal": -6.8, "fat_g": -10.8, "sat_fat_g": -23.2, "sugar_g": -2.0, "sodium_mg": -11.9}, "hi": {"energy_kcal": -4.9, "fat_g": -6.2, "sat_fat_g": -18.1, "sugar_g": 0.7, "sodium_mg": -7.0}, "abs": {"energy_kcal": -23.0, "fat_g": -2.3, "sat_fat_g": -2.0, "sugar_g": -0.5, "sodium_mg": -89.0}, "aroma": 94.4, "aroma_lo": 93.2, "aroma_hi": 95.5}, {"c": "Indian", "n": 412, "w": 93.9, "m": {"energy_kcal": -5.1, "fat_g": -10.6, "sat_fat_g": -24.0, "sugar_g": 2.5, "sodium_mg": -5.1}, "lo": {"energy_kcal": -6.2, "fat_g": -14.1, "sat_fat_g": -28.0, "sugar_g": 0.5, "sodium_mg": -7.5}, "hi": {"energy_kcal": -4.0, "fat_g": -7.0, "sat_fat_g": -20.1, "sugar_g": 4.8, "sodium_mg": -2.8}, "abs": {"energy_kcal": -22.0, "fat_g": -2.2, "sat_fat_g": -2.0, "sugar_g": -0.5, "sodium_mg": -32.0}, "aroma": 89.8, "aroma_lo": 87.8, "aroma_hi": 91.8}, {"c": "African (other)", "n": 328, "w": 94.5, "m": {"energy_kcal": -3.9, "fat_g": -6.5, "sat_fat_g": -12.8, "sugar_g": -1.4, "sodium_mg": -11.2}, "lo": {"energy_kcal": -4.8, "fat_g": -9.3, "sat_fat_g": -17.4, "sugar_g": -3.4, "sodium_mg": -14.2}, "hi": {"energy_kcal": -2.9, "fat_g": -4.0, "sat_fat_g": -7.8, "sugar_g": 0.5, "sodium_mg": -8.3}, "abs": {"energy_kcal": -14.0, "fat_g": -1.2, "sat_fat_g": -2.3, "sugar_g": -1.7, "sodium_mg": -79.0}, "aroma": 93.9, "aroma_lo": 92.1, "aroma_hi": 95.4}, {"c": "Chinese", "n": 324, "w": 99.4, "m": {"energy_kcal": -7.6, "fat_g": -14.3, "sat_fat_g": -21.6, "sugar_g": 0.6, "sodium_mg": -13.9}, "lo": {"energy_kcal": -9.3, "fat_g": -17.7, "sat_fat_g": -25.3, "sugar_g": -1.9, "sodium_mg": -16.1}, "hi": {"energy_kcal": -6.2, "fat_g": -11.1, "sat_fat_g": -18.0, "sugar_g": 3.6, "sodium_mg": -11.6}, "abs": {"energy_kcal": -41.0, "fat_g": -4.7, "sat_fat_g": -1.8, "sugar_g": -0.4, "sodium_mg": -141.0}, "aroma": 94.9, "aroma_lo": 93.3, "aroma_hi": 96.3}, {"c": "German", "n": 324, "w": 99.4, "m": {"energy_kcal": -7.5, "fat_g": -15.2, "sat_fat_g": -19.6, "sugar_g": -2.2, "sodium_mg": -14.4}, "lo": {"energy_kcal": -8.9, "fat_g": -18.4, "sat_fat_g": -24.4, "sugar_g": -4.2, "sodium_mg": -17.5}, "hi": {"energy_kcal": -6.1, "fat_g": -12.0, "sat_fat_g": -14.5, "sugar_g": 0.2, "sodium_mg": -11.3}, "abs": {"energy_kcal": -36.0, "fat_g": -3.5, "sat_fat_g": -1.9, "sugar_g": -0.8, "sodium_mg": -118.0}, "aroma": 95.6, "aroma_lo": 94.5, "aroma_hi": 96.6}, {"c": "Latin American", "n": 239, "w": 97.5, "m": {"energy_kcal": -6.9, "fat_g": -7.8, "sat_fat_g": -13.1, "sugar_g": -7.3, "sodium_mg": -8.5}, "lo": {"energy_kcal": -8.4, "fat_g": -12.1, "sat_fat_g": -19.3, "sugar_g": -10.3, "sodium_mg": -11.3}, "hi": {"energy_kcal": -5.6, "fat_g": -3.8, "sat_fat_g": -6.5, "sugar_g": -4.5, "sodium_mg": -5.8}, "abs": {"energy_kcal": -30.0, "fat_g": -1.9, "sat_fat_g": -1.8, "sugar_g": -3.3, "sodium_mg": -37.0}, "aroma": 92.8, "aroma_lo": 90.9, "aroma_hi": 94.5}, {"c": "Caribbean", "n": 237, "w": 96.6, "m": {"energy_kcal": -7.7, "fat_g": -6.1, "sat_fat_g": -14.1, "sugar_g": -4.7, "sodium_mg": -9.2}, "lo": {"energy_kcal": -9.8, "fat_g": -10.7, "sat_fat_g": -20.6, "sugar_g": -7.1, "sodium_mg": -12.4}, "hi": {"energy_kcal": -5.9, "fat_g": -1.6, "sat_fat_g": -6.9, "sugar_g": -2.4, "sodium_mg": -6.1}, "abs": {"energy_kcal": -30.0, "fat_g": -2.3, "sat_fat_g": -1.5, "sugar_g": -1.8, "sodium_mg": -70.0}, "aroma": 92.6, "aroma_lo": 90.7, "aroma_hi": 94.5}, {"c": "Spanish", "n": 228, "w": 98.2, "m": {"energy_kcal": -6.5, "fat_g": -12.2, "sat_fat_g": -29.8, "sugar_g": 0.6, "sodium_mg": -6.1}, "lo": {"energy_kcal": -8.1, "fat_g": -16.4, "sat_fat_g": -34.2, "sugar_g": -2.9, "sodium_mg": -9.5}, "hi": {"energy_kcal": -5.1, "fat_g": -7.9, "sat_fat_g": -24.9, "sugar_g": 4.2, "sodium_mg": -3.0}, "abs": {"energy_kcal": -28.0, "fat_g": -2.2, "sat_fat_g": -1.3, "sugar_g": -1.5, "sodium_mg": -40.0}, "aroma": 93.9, "aroma_lo": 91.8, "aroma_hi": 95.7}, {"c": "North African", "n": 219, "w": 91.8, "m": {"energy_kcal": -4.9, "fat_g": -10.2, "sat_fat_g": -26.1, "sugar_g": 1.0, "sodium_mg": -8.6}, "lo": {"energy_kcal": -6.5, "fat_g": -13.5, "sat_fat_g": -30.2, "sugar_g": -1.0, "sodium_mg": -11.7}, "hi": {"energy_kcal": -3.4, "fat_g": -7.0, "sat_fat_g": -22.0, "sugar_g": 3.5, "sodium_mg": -5.9}, "abs": {"energy_kcal": -20.0, "fat_g": -2.4, "sat_fat_g": -1.3, "sugar_g": -0.3, "sodium_mg": -40.0}, "aroma": 94.0, "aroma_lo": 92.2, "aroma_hi": 95.8}, {"c": "Japanese", "n": 99, "w": 96.0, "m": {"energy_kcal": -4.2, "fat_g": -8.7, "sat_fat_g": -15.1, "sugar_g": 36.5, "sodium_mg": -17.0}, "lo": {"energy_kcal": -7.0, "fat_g": -15.9, "sat_fat_g": -22.7, "sugar_g": 4.8, "sodium_mg": -21.7}, "hi": {"energy_kcal": -1.4, "fat_g": -1.0, "sat_fat_g": -7.6, "sugar_g": 94.7, "sodium_mg": -12.7}, "abs": {"energy_kcal": -29.0, "fat_g": -2.1, "sat_fat_g": -1.0, "sugar_g": -2.3, "sodium_mg": -1003.0}, "aroma": 93.3, "aroma_lo": 89.4, "aroma_hi": 96.4}, {"c": "Thai", "n": 79, "w": 97.5, "m": {"energy_kcal": -4.2, "fat_g": -6.8, "sat_fat_g": -10.3, "sugar_g": -2.1, "sodium_mg": -13.5}, "lo": {"energy_kcal": -6.6, "fat_g": -11.7, "sat_fat_g": -15.6, "sugar_g": -5.1, "sodium_mg": -18.0}, "hi": {"energy_kcal": -2.0, "fat_g": -2.5, "sat_fat_g": -5.5, "sugar_g": 1.3, "sodium_mg": -9.3}, "abs": {"energy_kcal": -14.0, "fat_g": -1.3, "sat_fat_g": -1.0, "sugar_g": -1.2, "sodium_mg": -151.0}, "aroma": 97.9, "aroma_lo": 96.1, "aroma_hi": 99.3}], "swaps": [{"a": "sugar", "b": "honey", "n": 3854, "kcal": -48.0, "sat": 0.0, "sodium": 2.0, "sugar": -10.1, "flag": "yes"}, {"a": "butter", "b": "unsalted butter", "n": 3152, "kcal": 0.0, "sat": -0.2, "sodium": -152.0, "sugar": 0.0, "flag": "yes"}, {"a": "olive oil", "b": "canola oil", "n": 2610, "kcal": 0.0, "sat": -1.0, "sodium": -0.0, "sugar": 0.0, "flag": "yes"}, {"a": "all purpose flour", "b": "whole wheat flour", "n": 2234, "kcal": -20.0, "sat": 0.2, "sodium": 0.0, "sugar": 0.1, "flag": "yes"}, {"a": "unsalted butter", "b": "olive oil", "n": 1989, "kcal": 39.0, "sat": -8.6, "sodium": -2.0, "sugar": -0.0, "flag": "yes"}, {"a": "ground beef", "b": "lean ground beef", "n": 1715, "kcal": -85.0, "sat": -4.0, "sodium": 0.0, "sugar": 0.0, "flag": "yes"}, {"a": "cream cheese", "b": "light cream cheese", "n": 1561, "kcal": -76.0, "sat": -5.5, "sodium": 2.0, "sugar": -0.2, "flag": "yes"}, {"a": "brown sugar", "b": "molasses", "n": 1493, "kcal": -35.0, "sat": 0.0, "sodium": 3.0, "sugar": -8.6, "flag": "no"}, {"a": "milk", "b": "skim milk", "n": 1370, "kcal": -38.0, "sat": -2.6, "sodium": -1.0, "sugar": 0.1, "flag": "yes"}, {"a": "egg", "b": "egg white", "n": 1142, "kcal": -61.0, "sat": -2.1, "sodium": 16.0, "sugar": 0.2, "flag": "yes"}]}, "reviewer-reported swap": {"rows": [{"c": "All recipes", "n": 48145, "w": 94.8, "m": {"energy_kcal": -7.3, "fat_g": 2.6, "sat_fat_g": -34.1, "sugar_g": 0.9, "sodium_mg": -12.9}, "lo": {"energy_kcal": -7.5, "fat_g": 1.1, "sat_fat_g": -34.8, "sugar_g": 0.4, "sodium_mg": -13.2}, "hi": {"energy_kcal": -7.1, "fat_g": 4.3, "sat_fat_g": -33.4, "sugar_g": 1.6, "sodium_mg": -12.6}, "abs": {"energy_kcal": -34.0, "fat_g": -2.7, "sat_fat_g": -4.0, "sugar_g": -2.9, "sodium_mg": -77.0}, "aroma": 88.4, "aroma_lo": 88.2, "aroma_hi": 88.6}, {"c": "North American", "n": 6123, "w": 96.0, "m": {"energy_kcal": -8.2, "fat_g": -2.6, "sat_fat_g": -37.1, "sugar_g": -0.9, "sodium_mg": -11.5}, "lo": {"energy_kcal": -8.6, "fat_g": -5.8, "sat_fat_g": -38.6, "sugar_g": -2.3, "sodium_mg": -12.2}, "hi": {"energy_kcal": -7.7, "fat_g": 1.1, "sat_fat_g": -35.4, "sugar_g": 0.6, "sodium_mg": -10.7}, "abs": {"energy_kcal": -41.0, "fat_g": -3.5, "sat_fat_g": -4.4, "sugar_g": -3.4, "sodium_mg": -59.0}, "aroma": 87.6, "aroma_lo": 87.1, "aroma_hi": 88.0}, {"c": "European (other)", "n": 1914, "w": 96.9, "m": {"energy_kcal": -6.1, "fat_g": 19.9, "sat_fat_g": -35.3, "sugar_g": 6.3, "sodium_mg": -11.9}, "lo": {"energy_kcal": -6.9, "fat_g": 10.4, "sat_fat_g": -38.6, "sugar_g": 3.0, "sodium_mg": -13.9}, "hi": {"energy_kcal": -5.2, "fat_g": 30.1, "sat_fat_g": -31.2, "sugar_g": 10.0, "sodium_mg": -9.3}, "abs": {"energy_kcal": -26.0, "fat_g": -1.2, "sat_fat_g": -4.5, "sugar_g": -2.9, "sodium_mg": -72.0}, "aroma": 88.1, "aroma_lo": 87.3, "aroma_hi": 88.9}, {"c": "Italian", "n": 1527, "w": 97.3, "m": {"energy_kcal": -5.2, "fat_g": 13.7, "sat_fat_g": -24.5, "sugar_g": 14.3, "sodium_mg": -11.3}, "lo": {"energy_kcal": -6.3, "fat_g": 4.9, "sat_fat_g": -28.7, "sugar_g": 10.5, "sodium_mg": -12.7}, "hi": {"energy_kcal": -4.3, "fat_g": 23.0, "sat_fat_g": -19.8, "sugar_g": 18.4, "sodium_mg": -9.9}, "abs": {"energy_kcal": -28.0, "fat_g": -2.0, "sat_fat_g": -3.5, "sugar_g": 0.5, "sodium_mg": -82.0}, "aroma": 92.2, "aroma_lo": 91.5, "aroma_hi": 92.8}, {"c": "Southern US", "n": 1075, "w": 95.8, "m": {"energy_kcal": -8.9, "fat_g": -5.1, "sat_fat_g": -38.9, "sugar_g": -1.8, "sodium_mg": -10.1}, "lo": {"energy_kcal": -10.0, "fat_g": -10.5, "sat_fat_g": -41.3, "sugar_g": -4.6, "sodium_mg": -11.6}, "hi": {"energy_kcal": -7.9, "fat_g": 0.4, "sat_fat_g": -36.6, "sugar_g": 1.4, "sodium_mg": -8.6}, "abs": {"energy_kcal": -50.0, "fat_g": -4.3, "sat_fat_g": -5.3, "sugar_g": -4.8, "sodium_mg": -73.0}, "aroma": 87.9, "aroma_lo": 86.9, "aroma_hi": 89.0}, {"c": "Mexican", "n": 978, "w": 90.6, "m": {"energy_kcal": -11.5, "fat_g": -18.9, "sat_fat_g": -37.2, "sugar_g": 10.6, "sodium_mg": -8.9}, "lo": {"energy_kcal": -12.7, "fat_g": -23.0, "sat_fat_g": -39.6, "sugar_g": 5.6, "sodium_mg": -10.7}, "hi": {"energy_kcal": -10.3, "fat_g": -14.2, "sat_fat_g": -34.7, "sugar_g": 16.0, "sodium_mg": -7.1}, "abs": {"energy_kcal": -56.0, "fat_g": -6.0, "sat_fat_g": -3.7, "sugar_g": -0.7, "sodium_mg": -65.0}, "aroma": 89.1, "aroma_lo": 88.1, "aroma_hi": 90.2}, {"c": "Asian (other)", "n": 815, "w": 92.9, "m": {"energy_kcal": -4.7, "fat_g": -3.2, "sat_fat_g": -22.8, "sugar_g": -0.2, "sodium_mg": -19.6}, "lo": {"energy_kcal": -5.6, "fat_g": -9.4, "sat_fat_g": -26.0, "sugar_g": -3.5, "sodium_mg": -22.0}, "hi": {"energy_kcal": -3.8, "fat_g": 5.0, "sat_fat_g": -19.4, "sugar_g": 3.3, "sodium_mg": -17.1}, "abs": {"energy_kcal": -21.0, "fat_g": -2.2, "sat_fat_g": -1.6, "sugar_g": -1.4, "sodium_mg": -199.0}, "aroma": 91.1, "aroma_lo": 89.9, "aroma_hi": 92.1}, {"c": "British/Irish", "n": 568, "w": 96.5, "m": {"energy_kcal": -5.7, "fat_g": 16.4, "sat_fat_g": -48.2, "sugar_g": 0.9, "sodium_mg": -21.5}, "lo": {"energy_kcal": -7.2, "fat_g": 1.7, "sat_fat_g": -52.6, "sugar_g": -3.1, "sodium_mg": -24.5}, "hi": {"energy_kcal": -4.0, "fat_g": 34.8, "sat_fat_g": -43.5, "sugar_g": 5.5, "sodium_mg": -18.7}, "abs": {"energy_kcal": -20.0, "fat_g": -1.5, "sat_fat_g": -6.8, "sugar_g": -2.4, "sodium_mg": -90.0}, "aroma": 79.3, "aroma_lo": 77.3, "aroma_hi": 81.4}, {"c": "Greek", "n": 478, "w": 97.1, "m": {"energy_kcal": -9.0, "fat_g": 3.7, "sat_fat_g": -36.1, "sugar_g": 4.9, "sodium_mg": -21.6}, "lo": {"energy_kcal": -10.4, "fat_g": -13.3, "sat_fat_g": -42.0, "sugar_g": -0.4, "sodium_mg": -25.2}, "hi": {"energy_kcal": -7.6, "fat_g": 29.1, "sat_fat_g": -27.0, "sugar_g": 11.3, "sodium_mg": -17.4}, "abs": {"energy_kcal": -33.0, "fat_g": -3.0, "sat_fat_g": -2.9, "sugar_g": -1.3, "sodium_mg": -140.0}, "aroma": 93.5, "aroma_lo": 92.3, "aroma_hi": 94.6}, {"c": "Middle Eastern", "n": 459, "w": 88.2, "m": {"energy_kcal": -7.4, "fat_g": 1.0, "sat_fat_g": -38.7, "sugar_g": 10.0, "sodium_mg": -11.5}, "lo": {"energy_kcal": -9.0, "fat_g": -11.2, "sat_fat_g": -43.3, "sugar_g": 1.6, "sodium_mg": -15.1}, "hi": {"energy_kcal": -5.9, "fat_g": 15.9, "sat_fat_g": -33.6, "sugar_g": 20.8, "sodium_mg": -8.1}, "abs": {"energy_kcal": -32.0, "fat_g": -2.9, "sat_fat_g": -2.9, "sugar_g": -1.8, "sodium_mg": -42.0}, "aroma": 88.7, "aroma_lo": 87.0, "aroma_hi": 90.4}, {"c": "French", "n": 451, "w": 97.3, "m": {"energy_kcal": -8.7, "fat_g": 1.3, "sat_fat_g": -41.6, "sugar_g": 8.4, "sodium_mg": -13.3}, "lo": {"energy_kcal": -10.5, "fat_g": -16.7, "sat_fat_g": -48.3, "sugar_g": 1.7, "sodium_mg": -15.9}, "hi": {"energy_kcal": -7.0, "fat_g": 27.4, "sat_fat_g": -30.3, "sugar_g": 16.7, "sodium_mg": -10.6}, "abs": {"energy_kcal": -42.0, "fat_g": -4.7, "sat_fat_g": -5.9, "sugar_g": -0.9, "sodium_mg": -96.0}, "aroma": 88.1, "aroma_lo": 86.5, "aroma_hi": 89.7}, {"c": "Indian", "n": 412, "w": 85.2, "m": {"energy_kcal": -5.9, "fat_g": 2.3, "sat_fat_g": -35.4, "sugar_g": -1.9, "sodium_mg": -6.8}, "lo": {"energy_kcal": -7.7, "fat_g": -6.1, "sat_fat_g": -40.3, "sugar_g": -6.4, "sodium_mg": -9.7}, "hi": {"energy_kcal": -4.3, "fat_g": 11.9, "sat_fat_g": -30.5, "sugar_g": 3.6, "sodium_mg": -4.0}, "abs": {"energy_kcal": -27.0, "fat_g": -2.1, "sat_fat_g": -3.1, "sugar_g": -1.9, "sodium_mg": -32.0}, "aroma": 90.0, "aroma_lo": 88.3, "aroma_hi": 91.6}, {"c": "African (other)", "n": 328, "w": 90.5, "m": {"energy_kcal": -4.2, "fat_g": 11.3, "sat_fat_g": -29.6, "sugar_g": -4.6, "sodium_mg": -9.2}, "lo": {"energy_kcal": -5.7, "fat_g": -3.8, "sat_fat_g": -36.2, "sugar_g": -8.9, "sodium_mg": -13.1}, "hi": {"energy_kcal": -2.7, "fat_g": 29.9, "sat_fat_g": -22.4, "sugar_g": 0.5, "sodium_mg": -5.2}, "abs": {"energy_kcal": -6.0, "fat_g": 1.7, "sat_fat_g": -3.4, "sugar_g": -3.5, "sodium_mg": -56.0}, "aroma": 91.7, "aroma_lo": 89.9, "aroma_hi": 93.4}, {"c": "Chinese", "n": 324, "w": 94.8, "m": {"energy_kcal": -5.2, "fat_g": -4.0, "sat_fat_g": -21.5, "sugar_g": 15.7, "sodium_mg": -21.2}, "lo": {"energy_kcal": -6.6, "fat_g": -11.3, "sat_fat_g": -25.6, "sugar_g": 3.4, "sodium_mg": -24.6}, "hi": {"energy_kcal": -3.9, "fat_g": 5.4, "sat_fat_g": -17.3, "sugar_g": 29.9, "sodium_mg": -17.9}, "abs": {"energy_kcal": -21.0, "fat_g": -2.2, "sat_fat_g": -1.6, "sugar_g": -1.1, "sodium_mg": -217.0}, "aroma": 93.1, "aroma_lo": 91.7, "aroma_hi": 94.3}, {"c": "German", "n": 324, "w": 98.1, "m": {"energy_kcal": -7.1, "fat_g": 20.4, "sat_fat_g": -40.8, "sugar_g": 8.4, "sodium_mg": -16.5}, "lo": {"energy_kcal": -9.3, "fat_g": 3.1, "sat_fat_g": -46.2, "sugar_g": 1.2, "sodium_mg": -20.0}, "hi": {"energy_kcal": -4.8, "fat_g": 41.2, "sat_fat_g": -34.6, "sugar_g": 18.3, "sodium_mg": -13.2}, "abs": {"energy_kcal": -29.0, "fat_g": -1.7, "sat_fat_g": -4.9, "sugar_g": -2.0, "sodium_mg": -99.0}, "aroma": 88.1, "aroma_lo": 86.3, "aroma_hi": 89.8}, {"c": "Latin American", "n": 239, "w": 94.6, "m": {"energy_kcal": -8.1, "fat_g": -6.7, "sat_fat_g": -31.8, "sugar_g": -3.5, "sodium_mg": -9.8}, "lo": {"energy_kcal": -9.9, "fat_g": -15.2, "sat_fat_g": -36.8, "sugar_g": -10.2, "sodium_mg": -13.4}, "hi": {"energy_kcal": -6.1, "fat_g": 4.3, "sat_fat_g": -26.9, "sugar_g": 4.7, "sodium_mg": -6.3}, "abs": {"energy_kcal": -37.0, "fat_g": -3.1, "sat_fat_g": -3.6, "sugar_g": -4.5, "sodium_mg": -49.0}, "aroma": 93.6, "aroma_lo": 91.9, "aroma_hi": 95.2}, {"c": "Caribbean", "n": 237, "w": 91.6, "m": {"energy_kcal": -6.1, "fat_g": 30.5, "sat_fat_g": -18.5, "sugar_g": -7.8, "sodium_mg": -9.8}, "lo": {"energy_kcal": -8.4, "fat_g": -4.1, "sat_fat_g": -34.2, "sugar_g": -11.2, "sodium_mg": -13.1}, "hi": {"energy_kcal": -4.0, "fat_g": 79.4, "sat_fat_g": 9.1, "sugar_g": -4.6, "sodium_mg": -6.7}, "abs": {"energy_kcal": -24.0, "fat_g": -0.9, "sat_fat_g": -2.6, "sugar_g": -3.7, "sodium_mg": -55.0}, "aroma": 91.3, "aroma_lo": 89.2, "aroma_hi": 93.3}, {"c": "Spanish", "n": 228, "w": 95.2, "m": {"energy_kcal": -7.0, "fat_g": -4.9, "sat_fat_g": -33.2, "sugar_g": 30.8, "sodium_mg": -13.1}, "lo": {"energy_kcal": -8.3, "fat_g": -18.3, "sat_fat_g": -40.6, "sugar_g": 15.2, "sodium_mg": -18.0}, "hi": {"energy_kcal": -5.6, "fat_g": 17.3, "sat_fat_g": -23.3, "sugar_g": 49.5, "sodium_mg": -8.3}, "abs": {"energy_kcal": -23.0, "fat_g": -1.8, "sat_fat_g": -1.7, "sugar_g": -1.1, "sodium_mg": -44.0}, "aroma": 93.2, "aroma_lo": 91.5, "aroma_hi": 94.8}, {"c": "North African", "n": 219, "w": 90.4, "m": {"energy_kcal": -7.7, "fat_g": -1.5, "sat_fat_g": -35.3, "sugar_g": -3.4, "sodium_mg": -8.2}, "lo": {"energy_kcal": -10.3, "fat_g": -18.2, "sat_fat_g": -44.8, "sugar_g": -8.9, "sodium_mg": -13.0}, "hi": {"energy_kcal": -5.1, "fat_g": 21.3, "sat_fat_g": -23.0, "sugar_g": 2.8, "sodium_mg": -2.9}, "abs": {"energy_kcal": -31.0, "fat_g": -3.1, "sat_fat_g": -2.4, "sugar_g": -1.3, "sodium_mg": -34.0}, "aroma": 89.5, "aroma_lo": 86.7, "aroma_hi": 91.9}, {"c": "Japanese", "n": 99, "w": 89.9, "m": {"energy_kcal": -4.6, "fat_g": -1.0, "sat_fat_g": -23.9, "sugar_g": 37.4, "sodium_mg": -21.9}, "lo": {"energy_kcal": -8.2, "fat_g": -18.5, "sat_fat_g": -34.3, "sugar_g": 3.0, "sodium_mg": -28.3}, "hi": {"energy_kcal": -1.1, "fat_g": 22.2, "sat_fat_g": -13.2, "sugar_g": 89.8, "sodium_mg": -15.7}, "abs": {"energy_kcal": -34.0, "fat_g": -3.9, "sat_fat_g": -2.1, "sugar_g": -2.0, "sodium_mg": -2014.0}, "aroma": 89.6, "aroma_lo": 86.1, "aroma_hi": 92.7}, {"c": "Thai", "n": 79, "w": 94.9, "m": {"energy_kcal": -5.2, "fat_g": -7.8, "sat_fat_g": -12.0, "sugar_g": -7.7, "sodium_mg": -24.9}, "lo": {"energy_kcal": -7.6, "fat_g": -12.2, "sat_fat_g": -17.5, "sugar_g": -17.6, "sodium_mg": -31.4}, "hi": {"energy_kcal": -3.1, "fat_g": -4.1, "sat_fat_g": -6.8, "sugar_g": 2.5, "sodium_mg": -17.7}, "abs": {"energy_kcal": -21.0, "fat_g": -1.6, "sat_fat_g": -1.0, "sugar_g": -2.3, "sodium_mg": -271.0}, "aroma": 94.2, "aroma_lo": 90.7, "aroma_hi": 97.0}], "swaps": [{"a": "butter", "b": "cooking spray", "n": 8716, "kcal": 14.0, "sat": -8.9, "sodium": -112.0, "sugar": -0.0, "flag": null}, {"a": "sugar", "b": "date", "n": 6977, "kcal": -49.0, "sat": 0.0, "sodium": 0.0, "sugar": -17.1, "flag": null}, {"a": "olive oil", "b": "cooking spray", "n": 3456, "kcal": -13.0, "sat": -1.3, "sodium": 8.0, "sugar": 0.0, "flag": null}, {"a": "all purpose flour", "b": "ground flax seed", "n": 1928, "kcal": 137.0, "sat": 2.8, "sodium": 23.0, "sugar": 1.0, "flag": null}, {"a": "ground beef", "b": "black bean", "n": 1847, "kcal": -175.0, "sat": -8.0, "sodium": 77.0, "sugar": 0.2, "flag": null}, {"a": "heavy cream", "b": "skim milk", "n": 1541, "kcal": -219.0, "sat": -16.5, "sodium": 11.0, "sugar": 1.6, "flag": null}, {"a": "unsalted butter", "b": "canola oil", "n": 1415, "kcal": 42.0, "sat": -10.7, "sodium": -3.0, "sugar": -0.0, "flag": null}, {"a": "cream cheese", "b": "greek yogurt", "n": 1267, "kcal": -145.0, "sat": -10.2, "sodium": -160.0, "sugar": 0.1, "flag": null}, {"a": "cheddar cheese", "b": "cheese sauce", "n": 1233, "kcal": -97.0, "sat": -5.5, "sodium": 74.0, "sugar": -0.0, "flag": null}, {"a": "vegetable oil", "b": "cooking spray", "n": 1000, "kcal": -24.0, "sat": -2.8, "sodium": 15.0, "sugar": 0.0, "flag": null}]}, "all swaps": {"rows": [{"c": "All recipes", "n": 48145, "w": 97.6, "m": {"energy_kcal": -10.9, "fat_g": -16.1, "sat_fat_g": -25.4, "sugar_g": -4.6, "sodium_mg": -29.2}, "lo": {"energy_kcal": -11.0, "fat_g": -16.4, "sat_fat_g": -25.8, "sugar_g": -4.9, "sodium_mg": -29.5}, "hi": {"energy_kcal": -10.8, "fat_g": -15.8, "sat_fat_g": -25.0, "sugar_g": -4.2, "sodium_mg": -28.9}, "abs": {"energy_kcal": -56.0, "fat_g": -4.2, "sat_fat_g": -2.4, "sugar_g": -3.2, "sodium_mg": -192.0}, "aroma": 89.9, "aroma_lo": 89.8, "aroma_hi": 90.1}, {"c": "North American", "n": 6123, "w": 98.2, "m": {"energy_kcal": -11.8, "fat_g": -17.9, "sat_fat_g": -26.0, "sugar_g": -5.7, "sodium_mg": -30.4}, "lo": {"energy_kcal": -12.2, "fat_g": -18.6, "sat_fat_g": -27.1, "sugar_g": -6.6, "sodium_mg": -31.2}, "hi": {"energy_kcal": -11.4, "fat_g": -17.2, "sat_fat_g": -24.9, "sugar_g": -4.8, "sodium_mg": -29.7}, "abs": {"energy_kcal": -63.0, "fat_g": -4.9, "sat_fat_g": -2.7, "sugar_g": -4.0, "sodium_mg": -199.0}, "aroma": 89.9, "aroma_lo": 89.5, "aroma_hi": 90.2}, {"c": "European (other)", "n": 1914, "w": 98.4, "m": {"energy_kcal": -11.2, "fat_g": -19.3, "sat_fat_g": -28.8, "sugar_g": -4.6, "sodium_mg": -26.6}, "lo": {"energy_kcal": -11.9, "fat_g": -20.5, "sat_fat_g": -30.6, "sugar_g": -5.9, "sodium_mg": -28.1}, "hi": {"energy_kcal": -10.6, "fat_g": -18.0, "sat_fat_g": -27.0, "sugar_g": -3.2, "sodium_mg": -25.0}, "abs": {"energy_kcal": -63.0, "fat_g": -4.7, "sat_fat_g": -2.6, "sugar_g": -2.5, "sodium_mg": -191.0}, "aroma": 90.0, "aroma_lo": 89.2, "aroma_hi": 90.7}, {"c": "Italian", "n": 1527, "w": 98.8, "m": {"energy_kcal": -7.2, "fat_g": -11.4, "sat_fat_g": -28.1, "sugar_g": 11.1, "sodium_mg": -26.5}, "lo": {"energy_kcal": -7.8, "fat_g": -12.7, "sat_fat_g": -29.5, "sugar_g": 8.9, "sodium_mg": -28.2}, "hi": {"energy_kcal": -6.5, "fat_g": -10.2, "sat_fat_g": -26.8, "sugar_g": 13.4, "sodium_mg": -24.7}, "abs": {"energy_kcal": -42.0, "fat_g": -3.8, "sat_fat_g": -2.5, "sugar_g": 0.6, "sodium_mg": -202.0}, "aroma": 90.4, "aroma_lo": 89.8, "aroma_hi": 91.0}, {"c": "Southern US", "n": 1075, "w": 97.7, "m": {"energy_kcal": -12.8, "fat_g": -20.0, "sat_fat_g": -27.0, "sugar_g": -4.2, "sodium_mg": -31.7}, "lo": {"energy_kcal": -13.6, "fat_g": -21.7, "sat_fat_g": -29.8, "sugar_g": -6.6, "sodium_mg": -33.6}, "hi": {"energy_kcal": -12.0, "fat_g": -18.3, "sat_fat_g": -24.1, "sugar_g": -1.6, "sodium_mg": -29.9}, "abs": {"energy_kcal": -79.0, "fat_g": -6.0, "sat_fat_g": -2.8, "sugar_g": -5.5, "sodium_mg": -250.0}, "aroma": 89.1, "aroma_lo": 88.1, "aroma_hi": 90.0}, {"c": "Mexican", "n": 978, "w": 95.3, "m": {"energy_kcal": -10.0, "fat_g": -20.0, "sat_fat_g": -25.4, "sugar_g": -5.1, "sodium_mg": -26.3}, "lo": {"energy_kcal": -10.9, "fat_g": -21.8, "sat_fat_g": -27.8, "sugar_g": -7.6, "sodium_mg": -28.0}, "hi": {"energy_kcal": -8.9, "fat_g": -17.9, "sat_fat_g": -23.0, "sugar_g": -2.6, "sodium_mg": -24.5}, "abs": {"energy_kcal": -52.0, "fat_g": -5.3, "sat_fat_g": -2.5, "sugar_g": -1.7, "sodium_mg": -236.0}, "aroma": 90.1, "aroma_lo": 89.1, "aroma_hi": 91.0}, {"c": "Asian (other)", "n": 815, "w": 98.2, "m": {"energy_kcal": -8.1, "fat_g": -13.1, "sat_fat_g": -28.4, "sugar_g": -3.0, "sodium_mg": -28.0}, "lo": {"energy_kcal": -9.0, "fat_g": -15.3, "sat_fat_g": -31.0, "sugar_g": -6.1, "sodium_mg": -29.7}, "hi": {"energy_kcal": -7.2, "fat_g": -11.0, "sat_fat_g": -25.8, "sugar_g": 0.5, "sodium_mg": -26.3}, "abs": {"energy_kcal": -41.0, "fat_g": -4.1, "sat_fat_g": -1.8, "sugar_g": -1.6, "sodium_mg": -236.0}, "aroma": 89.5, "aroma_lo": 88.2, "aroma_hi": 90.6}, {"c": "British/Irish", "n": 568, "w": 97.5, "m": {"energy_kcal": -10.6, "fat_g": -13.8, "sat_fat_g": -23.7, "sugar_g": -5.5, "sodium_mg": -41.2}, "lo": {"energy_kcal": -11.7, "fat_g": -16.4, "sat_fat_g": -27.6, "sugar_g": -7.1, "sodium_mg": -44.4}, "hi": {"energy_kcal": -9.5, "fat_g": -11.3, "sat_fat_g": -19.4, "sugar_g": -3.8, "sodium_mg": -38.0}, "abs": {"energy_kcal": -54.0, "fat_g": -2.8, "sat_fat_g": -2.1, "sugar_g": -2.9, "sodium_mg": -247.0}, "aroma": 86.2, "aroma_lo": 84.6, "aroma_hi": 87.8}, {"c": "Greek", "n": 478, "w": 97.9, "m": {"energy_kcal": -6.3, "fat_g": -11.0, "sat_fat_g": -25.7, "sugar_g": 4.2, "sodium_mg": -28.4}, "lo": {"energy_kcal": -7.5, "fat_g": -13.3, "sat_fat_g": -28.4, "sugar_g": -0.2, "sodium_mg": -31.2}, "hi": {"energy_kcal": -5.1, "fat_g": -8.8, "sat_fat_g": -22.9, "sugar_g": 9.9, "sodium_mg": -25.6}, "abs": {"energy_kcal": -29.0, "fat_g": -2.7, "sat_fat_g": -1.7, "sugar_g": -0.5, "sodium_mg": -166.0}, "aroma": 93.2, "aroma_lo": 92.0, "aroma_hi": 94.2}, {"c": "Middle Eastern", "n": 459, "w": 95.0, "m": {"energy_kcal": -7.7, "fat_g": -14.5, "sat_fat_g": -33.6, "sugar_g": 1.8, "sodium_mg": -14.7}, "lo": {"energy_kcal": -8.8, "fat_g": -17.0, "sat_fat_g": -36.6, "sugar_g": -1.4, "sodium_mg": -17.9}, "hi": {"energy_kcal": -6.6, "fat_g": -12.1, "sat_fat_g": -30.4, "sugar_g": 5.8, "sodium_mg": -11.6}, "abs": {"energy_kcal": -33.0, "fat_g": -2.9, "sat_fat_g": -1.7, "sugar_g": -1.4, "sodium_mg": -77.0}, "aroma": 88.2, "aroma_lo": 86.2, "aroma_hi": 90.1}, {"c": "French", "n": 451, "w": 98.4, "m": {"energy_kcal": -10.8, "fat_g": -16.4, "sat_fat_g": -31.0, "sugar_g": -4.6, "sodium_mg": -23.6}, "lo": {"energy_kcal": -11.9, "fat_g": -19.1, "sat_fat_g": -33.8, "sugar_g": -6.5, "sodium_mg": -26.9}, "hi": {"energy_kcal": -9.7, "fat_g": -13.7, "sat_fat_g": -28.1, "sugar_g": -2.6, "sodium_mg": -20.4}, "abs": {"energy_kcal": -44.0, "fat_g": -3.7, "sat_fat_g": -2.8, "sugar_g": -1.5, "sodium_mg": -169.0}, "aroma": 88.2, "aroma_lo": 86.6, "aroma_hi": 89.7}, {"c": "Indian", "n": 412, "w": 93.9, "m": {"energy_kcal": -7.0, "fat_g": -14.4, "sat_fat_g": -34.5, "sugar_g": 2.3, "sodium_mg": -11.2}, "lo": {"energy_kcal": -8.2, "fat_g": -18.2, "sat_fat_g": -38.3, "sugar_g": -0.3, "sodium_mg": -14.1}, "hi": {"energy_kcal": -5.9, "fat_g": -10.7, "sat_fat_g": -30.8, "sugar_g": 5.0, "sodium_mg": -8.6}, "abs": {"energy_kcal": -32.0, "fat_g": -2.9, "sat_fat_g": -2.5, "sugar_g": -1.1, "sodium_mg": -64.0}, "aroma": 84.6, "aroma_lo": 82.2, "aroma_hi": 86.9}, {"c": "African (other)", "n": 328, "w": 94.5, "m": {"energy_kcal": -6.5, "fat_g": -11.6, "sat_fat_g": -22.6, "sugar_g": -4.1, "sodium_mg": -23.2}, "lo": {"energy_kcal": -7.6, "fat_g": -14.6, "sat_fat_g": -27.4, "sugar_g": -6.4, "sodium_mg": -26.9}, "hi": {"energy_kcal": -5.4, "fat_g": -8.5, "sat_fat_g": -17.6, "sugar_g": -1.8, "sodium_mg": -19.7}, "abs": {"energy_kcal": -31.0, "fat_g": -2.1, "sat_fat_g": -2.9, "sugar_g": -2.9, "sodium_mg": -154.0}, "aroma": 89.7, "aroma_lo": 87.9, "aroma_hi": 91.5}, {"c": "Chinese", "n": 324, "w": 99.4, "m": {"energy_kcal": -11.8, "fat_g": -19.5, "sat_fat_g": -35.3, "sugar_g": -6.6, "sodium_mg": -27.9}, "lo": {"energy_kcal": -13.4, "fat_g": -23.1, "sat_fat_g": -39.3, "sugar_g": -9.9, "sodium_mg": -30.2}, "hi": {"energy_kcal": -10.1, "fat_g": -15.9, "sat_fat_g": -31.2, "sugar_g": -3.2, "sodium_mg": -25.6}, "abs": {"energy_kcal": -56.0, "fat_g": -5.3, "sat_fat_g": -2.2, "sugar_g": -1.8, "sodium_mg": -273.0}, "aroma": 86.4, "aroma_lo": 84.2, "aroma_hi": 88.4}, {"c": "German", "n": 324, "w": 99.4, "m": {"energy_kcal": -13.4, "fat_g": -25.8, "sat_fat_g": -32.6, "sugar_g": -6.8, "sodium_mg": -30.0}, "lo": {"energy_kcal": -14.8, "fat_g": -29.0, "sat_fat_g": -37.6, "sugar_g": -9.1, "sodium_mg": -33.7}, "hi": {"energy_kcal": -11.8, "fat_g": -22.6, "sat_fat_g": -27.6, "sugar_g": -4.5, "sodium_mg": -26.4}, "abs": {"energy_kcal": -67.0, "fat_g": -5.5, "sat_fat_g": -2.9, "sugar_g": -2.4, "sodium_mg": -214.0}, "aroma": 89.4, "aroma_lo": 87.8, "aroma_hi": 90.9}, {"c": "Latin American", "n": 239, "w": 97.5, "m": {"energy_kcal": -11.1, "fat_g": -13.8, "sat_fat_g": -25.4, "sugar_g": -8.7, "sodium_mg": -25.5}, "lo": {"energy_kcal": -12.9, "fat_g": -18.2, "sat_fat_g": -31.9, "sugar_g": -12.9, "sodium_mg": -29.5}, "hi": {"energy_kcal": -9.4, "fat_g": -9.2, "sat_fat_g": -18.6, "sugar_g": -3.9, "sodium_mg": -21.7}, "abs": {"energy_kcal": -55.0, "fat_g": -3.1, "sat_fat_g": -2.5, "sugar_g": -4.9, "sodium_mg": -128.0}, "aroma": 87.6, "aroma_lo": 85.4, "aroma_hi": 89.8}, {"c": "Caribbean", "n": 237, "w": 96.6, "m": {"energy_kcal": -12.4, "fat_g": -10.8, "sat_fat_g": -24.2, "sugar_g": -5.2, "sodium_mg": -22.2}, "lo": {"energy_kcal": -14.7, "fat_g": -15.8, "sat_fat_g": -30.7, "sugar_g": -10.4, "sodium_mg": -26.2}, "hi": {"energy_kcal": -10.4, "fat_g": -5.9, "sat_fat_g": -17.3, "sugar_g": 1.1, "sodium_mg": -17.8}, "abs": {"energy_kcal": -48.0, "fat_g": -2.8, "sat_fat_g": -2.0, "sugar_g": -2.9, "sodium_mg": -140.0}, "aroma": 84.6, "aroma_lo": 82.1, "aroma_hi": 87.1}, {"c": "Spanish", "n": 228, "w": 98.2, "m": {"energy_kcal": -9.4, "fat_g": -17.2, "sat_fat_g": -42.1, "sugar_g": 0.9, "sodium_mg": -14.1}, "lo": {"energy_kcal": -11.0, "fat_g": -21.9, "sat_fat_g": -46.5, "sugar_g": -3.4, "sodium_mg": -18.1}, "hi": {"energy_kcal": -7.7, "fat_g": -12.6, "sat_fat_g": -37.4, "sugar_g": 5.5, "sodium_mg": -10.1}, "abs": {"energy_kcal": -42.0, "fat_g": -3.3, "sat_fat_g": -2.0, "sugar_g": -1.9, "sodium_mg": -80.0}, "aroma": 89.9, "aroma_lo": 87.6, "aroma_hi": 92.1}, {"c": "North African", "n": 219, "w": 91.8, "m": {"energy_kcal": -6.2, "fat_g": -11.7, "sat_fat_g": -33.5, "sugar_g": 2.1, "sodium_mg": -14.5}, "lo": {"energy_kcal": -7.8, "fat_g": -15.3, "sat_fat_g": -37.6, "sugar_g": -1.7, "sodium_mg": -18.1}, "hi": {"energy_kcal": -4.6, "fat_g": -8.0, "sat_fat_g": -29.3, "sugar_g": 7.1, "sodium_mg": -11.1}, "abs": {"energy_kcal": -28.0, "fat_g": -2.7, "sat_fat_g": -1.6, "sugar_g": -0.7, "sodium_mg": -76.0}, "aroma": 90.8, "aroma_lo": 88.4, "aroma_hi": 92.9}, {"c": "Japanese", "n": 99, "w": 96.0, "m": {"energy_kcal": -7.2, "fat_g": -15.4, "sat_fat_g": -32.0, "sugar_g": 39.1, "sodium_mg": -28.3}, "lo": {"energy_kcal": -10.2, "fat_g": -23.4, "sat_fat_g": -39.6, "sugar_g": 4.9, "sodium_mg": -32.5}, "hi": {"energy_kcal": -4.0, "fat_g": -6.9, "sat_fat_g": -24.4, "sugar_g": 91.7, "sodium_mg": -23.9}, "abs": {"energy_kcal": -38.0, "fat_g": -2.6, "sat_fat_g": -1.4, "sugar_g": -2.7, "sodium_mg": -1110.0}, "aroma": 88.6, "aroma_lo": 84.3, "aroma_hi": 92.3}, {"c": "Thai", "n": 79, "w": 97.5, "m": {"energy_kcal": -6.3, "fat_g": -10.6, "sat_fat_g": -21.5, "sugar_g": -10.3, "sodium_mg": -20.5}, "lo": {"energy_kcal": -8.8, "fat_g": -15.7, "sat_fat_g": -27.4, "sugar_g": -14.6, "sodium_mg": -25.6}, "hi": {"energy_kcal": -3.9, "fat_g": -5.8, "sat_fat_g": -16.0, "sugar_g": -6.1, "sodium_mg": -15.3}, "abs": {"energy_kcal": -21.0, "fat_g": -2.0, "sat_fat_g": -1.4, "sugar_g": -1.9, "sodium_mg": -220.0}, "aroma": 95.5, "aroma_lo": 93.4, "aroma_hi": 97.2}], "swaps": [{"a": "sugar", "b": "honey", "n": 14774, "kcal": -26.0, "sat": 0.0, "sodium": 1.0, "sugar": -5.5, "flag": "yes"}, {"a": "butter", "b": "unsalted butter", "n": 14614, "kcal": 0.0, "sat": -0.1, "sodium": -104.0, "sugar": 0.0, "flag": "yes"}, {"a": "all purpose flour", "b": "whole wheat flour", "n": 13947, "kcal": -9.0, "sat": 0.1, "sodium": 0.0, "sugar": 0.1, "flag": "yes"}, {"a": "egg", "b": "egg white", "n": 13371, "kcal": -24.0, "sat": -0.8, "sodium": 6.0, "sugar": 0.1, "flag": "yes"}, {"a": "olive oil", "b": "canola oil", "n": 8372, "kcal": 0.0, "sat": -0.7, "sodium": -0.0, "sugar": 0.0, "flag": "yes"}, {"a": "milk", "b": "skim milk", "n": 7389, "kcal": -17.0, "sat": -1.1, "sodium": -1.0, "sugar": 0.0, "flag": "yes"}, {"a": "baking powder", "b": "cream of tartar", "n": 6038, "kcal": 3.0, "sat": 0.0, "sodium": -175.0, "sugar": 0.0, "flag": "no"}, {"a": "brown sugar", "b": "molasses", "n": 5774, "kcal": -21.0, "sat": 0.0, "sodium": 2.0, "sugar": -5.3, "flag": "no"}, {"a": "vegetable oil", "b": "olive oil", "n": 4898, "kcal": 0.0, "sat": -0.3, "sodium": 0.0, "sugar": 0.0, "flag": "yes"}, {"a": "baking soda", "b": "baking powder", "n": 4419, "kcal": 0.0, "sat": 0.0, "sodium": -139.0, "sugar": 0.0, "flag": null}]}}, "examples": [{"id": 50144, "title": "Crock Pot Potato Chowder", "cuisine": "North American", "servings": 12, "reviews": 271, "rating": 4.6, "a": "cream cheese", "b": "light cream cheese", "g": 19.0, "raw": ["1 (8 ounce) package cream cheese, cubed, softened"], "ings": ["potato", "onion", "chicken broth", "cream of chicken soup", "cream cheese", "bacon", "chive"], "before": {"energy_kcal": 248.0, "fat_g": 15.3, "sat_fat_g": 6.7, "sugar_g": 2.4, "sodium_mg": 767.0}, "after": {"energy_kcal": 221.0, "fat_g": 11.9, "sat_fat_g": 4.7, "sugar_g": 2.3, "sodium_mg": 768.0}, "aroma": 100.0, "compounds": 255}, {"id": 48760, "title": "Szechuan Noodles with Spicy Beef Sauce", "cuisine": "Chinese", "servings": 4, "reviews": 315, "rating": 4.5, "a": "ground beef", "b": "lean ground beef", "g": 113.0, "raw": ["1 lb ground beef"], "ings": ["ground beef", "onion", "garlic", "ginger", "dry crushed red pepper", "sesame oil", "cornstarch", "beef broth", "hoisin sauce", "soy sauce", "vermicelli", "green onion"], "before": {"energy_kcal": 659.0, "fat_g": 31.3, "sat_fat_g": 9.9, "sugar_g": 10.2, "sodium_mg": 1033.0}, "after": {"energy_kcal": 570.0, "fat_g": 20.0, "sat_fat_g": 5.8, "sugar_g": 10.2, "sodium_mg": 1033.0}, "aroma": 100.0, "compounds": 295}, {"id": 34688, "title": "Potato Kielbasa Skillet", "cuisine": "Southern US", "servings": 4, "reviews": 210, "rating": 4.5, "a": "kielbasa", "b": "chicken breast", "g": 113.0, "raw": ["1 lb kielbasa, sliced"], "ings": ["potato", "kielbasa", "onion", "green bell pepper", "vegetable oil", "oregano", "basil", "salt", "black pepper", "water", "american cheese"], "before": {"energy_kcal": 936.0, "fat_g": 50.5, "sat_fat_g": 19.3, "sugar_g": 7.3, "sodium_mg": 1998.0}, "after": {"energy_kcal": 731.0, "fat_g": 23.3, "sat_fat_g": 9.5, "sugar_g": 7.3, "sodium_mg": 1088.0}, "aroma": 98.5, "compounds": 272}, {"id": 101085, "title": "Gajar Halva (Indian Carrot Pudding)", "cuisine": "Indian", "servings": 6, "reviews": 23, "rating": 4.7, "a": "half and half", "b": "milk", "g": 81.0, "raw": ["2 cups half-and-half"], "ings": ["carrot", "half and half", "brown sugar", "golden raisin", "butter", "cardamom", "salt", "pistachio"], "before": {"energy_kcal": 339.0, "fat_g": 19.5, "sat_fat_g": 10.9, "sugar_g": 33.4, "sodium_mg": 259.0}, "after": {"energy_kcal": 282.0, "fat_g": 12.8, "sat_fat_g": 6.7, "sugar_g": 34.2, "sodium_mg": 244.0}, "aroma": 99.0, "compounds": 206}, {"id": 90822, "title": "Greek Lemon Potatoes", "cuisine": "Greek", "servings": 6, "reviews": 89, "rating": 4.9, "a": "chicken broth", "b": "low sodium chicken broth", "g": 69.0, "raw": ["1 (14 1/2 ounce) can chicken broth or 2 cups lamb stock"], "ings": ["yukon gold potato", "lemon juice", "olive oil", "garlic", "dried oregano", "salt", "black pepper", "chicken broth"], "before": {"energy_kcal": 291.0, "fat_g": 12.4, "sat_fat_g": 1.7, "sugar_g": 2.7, "sodium_mg": 465.0}, "after": {"energy_kcal": 298.0, "fat_g": 12.7, "sat_fat_g": 1.8, "sugar_g": 2.5, "sodium_mg": 231.0}, "aroma": 100.0, "compounds": 150}, {"id": 204109, "title": "Homemade Flour Tortillas", "cuisine": "Mexican", "servings": 6, "reviews": 73, "rating": 4.8, "a": "vegetable shortening", "b": "vegetable oil", "g": 9.0, "raw": ["1/4 cup vegetable shortening or 1/4 cup vegetable oil"], "ings": ["all purpose flour", "salt", "vegetable shortening", "baking powder", "water"], "before": {"energy_kcal": 228.0, "fat_g": 8.9, "sat_fat_g": 2.2, "sugar_g": 0.1, "sodium_mg": 280.0}, "after": {"energy_kcal": 228.0, "fat_g": 8.9, "sat_fat_g": 1.4, "sugar_g": 0.1, "sodium_mg": 279.0}, "aroma": 100.0, "compounds": 5}, {"id": 140936, "title": "Persian Eggs Poached in Tomato Sauce", "cuisine": "Middle Eastern", "servings": 2, "reviews": 41, "rating": 4.9, "a": "egg", "b": "egg white", "g": 100.0, "raw": ["4 eggs"], "ings": ["olive oil", "onion", "garlic", "tomato", "salt", "black pepper", "egg", "chive"], "before": {"energy_kcal": 299.0, "fat_g": 20.2, "sat_fat_g": 4.6, "sugar_g": 9.2, "sodium_mg": 158.0}, "after": {"energy_kcal": 208.0, "fat_g": 10.9, "sat_fat_g": 1.5, "sugar_g": 9.5, "sodium_mg": 182.0}, "aroma": 100.0, "compounds": 218}, {"id": 135116, "title": "Potatoes a l'Alsacienne", "cuisine": "French", "servings": 4, "reviews": 48, "rating": 4.8, "a": "bacon", "b": "ham", "g": 28.0, "raw": ["4 ounces bacon, chopped"], "ings": ["bacon", "potato", "onion", "butter", "olive oil", "tarragon", "chive", "thyme", "parsley"], "before": {"energy_kcal": 420.0, "fat_g": 24.5, "sat_fat_g": 11.2, "sugar_g": 3.2, "sodium_mg": 319.0}, "after": {"energy_kcal": 355.0, "fat_g": 16.5, "sat_fat_g": 7.8, "sugar_g": 3.4, "sodium_mg": 337.0}, "aroma": 91.2, "compounds": 297}, {"id": 24088, "title": "Strawberry Julius", "cuisine": "North American", "servings": 2, "reviews": 144, "rating": 4.9, "a": "sugar", "b": "honey", "g": 25.0, "raw": ["1/4 cup caster sugar (about 50g) or 1/4 cup superfine sugar (about 50g)"], "ings": ["strawberry", "milk", "water", "sugar", "vanilla extract"], "before": {"energy_kcal": 164.0, "fat_g": 2.2, "sat_fat_g": 1.2, "sugar_g": 32.2, "sodium_mg": 30.0}, "after": {"energy_kcal": 143.0, "fat_g": 2.2, "sat_fat_g": 1.2, "sugar_g": 27.8, "sodium_mg": 31.0}, "aroma": 100.0, "compounds": 296}, {"id": 106618, "title": "Baked Stuffed Pasta Shells", "cuisine": "Italian", "servings": 10, "reviews": 119, "rating": 4.8, "a": "ricotta cheese", "b": "cottage cheese", "g": 91.0, "raw": ["2 lbs ricotta cheese"], "ings": ["pasta shell", "mozzarella cheese", "parmesan cheese", "ricotta cheese", "egg", "nutmeg", "black pepper", "garlic powder", "dried parsley", "spaghetti sauce", "basil"], "before": {"energy_kcal": 374.0, "fat_g": 17.0, "sat_fat_g": 9.8, "sugar_g": 2.3, "sodium_mg": 464.0}, "after": {"energy_kcal": 327.0, "fat_g": 11.6, "sat_fat_g": 5.5, "sugar_g": 4.5, "sodium_mg": 650.0}, "aroma": 100.0, "compounds": 261}], "meta": {"foodcom": 231637, "recipes": 48145, "kcal_err": 2.4, "cuisines": 20, "audit_pairs": 100, "audit_cover": 86.3, "audit_ok": 89.7}};
+const OUT = DATA.outcomes;
+const M = DATA.meta;
+const ALL = "All recipes";
+let scen = "best single swap", metric = "sat_fat_g", exIdx = 0;
+
+// ---------- helpers
+const minus = "−";
+function signed(v, d = 1) {
+  if (v === null || v === undefined) return "–";
+  const r = Number(v.toFixed(d));
+  if (r === 0) return (0).toFixed(d);
+  return (r > 0 ? "+" : minus) + Math.abs(r).toFixed(d);
+}
+const fmt = (v, d = 0) => v === null || v === undefined ? "–" : Number(v).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d});
+const pct = (v, d = 1) => signed(v, d) + "%";
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+function svgEl(tag, attrs) { const e = document.createElementNS("http://www.w3.org/2000/svg", tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+const label = k => k === "aroma" ? "Aroma kept" : OUT.find(o => o.k === k).label;
+const S = () => DATA.scen[scen];
+const allRow = () => S().rows.find(r => r.c === ALL);
+const cuisineRows = () => S().rows.filter(r => r.c !== ALL);
+function niceTicks(lo, hi, n) {
+  const raw = (hi - lo) / n, mag = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / mag;
+  const step = (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * mag, out = [];
+  for (let v = Math.ceil(lo / step) * step; v <= hi + 1e-9; v += step) out.push(Number(v.toFixed(10)));
+  return out;
+}
+
+// ---------- tooltip
+const tip = document.getElementById("tip");
+function showTip(target, title, rows, evt) {
+  tip.replaceChildren(el("div", "t", title));
+  for (const [k, v] of rows) { const r = el("div", "r"); r.append(el("span", "k", k), el("span", "v", v)); tip.append(r); }
+  tip.style.opacity = 1;
+  const b = target.getBoundingClientRect();
+  let x = evt && evt.clientX !== undefined ? evt.clientX + 14 : b.right + 8;
+  let y = evt && evt.clientY !== undefined ? evt.clientY + 14 : b.top;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  if (x + w > innerWidth - 8) x = Math.max(8, (evt && evt.clientX !== undefined ? evt.clientX : b.left) - w - 14);
+  if (y + h > innerHeight - 8) y = Math.max(8, innerHeight - h - 8);
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+const hideTip = () => { tip.style.opacity = 0; };
+function hover(node, title, rowsFn) {
+  node.setAttribute("tabindex", "0");
+  node.addEventListener("pointermove", e => showTip(node, title, rowsFn(), e));
+  node.addEventListener("pointerleave", hideTip);
+  node.addEventListener("focus", () => showTip(node, title, rowsFn()));
+  node.addEventListener("blur", hideTip);
+}
+
+// ---------- header + method + caveats (static)
+document.getElementById("lede").replaceChildren(
+  "We applied FlavorSwap's healthier suggestions to ", el("b", null, fmt(M.recipes) + " real Food.com recipes"),
+  " and measured what happens to calories, fat, saturated fat, sugars and sodium per serving — and how much of each recipe's flavor survives.");
+
+const steps = [
+  [fmt(M.foodcom), "Food.com recipes. Ingredient lines such as “1 1/2 cups flour” are converted to grams with USDA household measures."],
+  [fmt(M.recipes), "recipes kept whose rebuilt calories match Food.com's own figure within 20% (median error " + M.kcal_err + "%)."],
+  ["1 swap", "FlavorSwap's top healthier suggestion, at the same weight. Herbs, spices and salt are never swapped."],
+  ["6 outcomes", "Calories, fat, saturated fat, sugars and sodium per serving (USDA), plus the share of aroma compounds kept (Ahn et al.)."],
+];
+const stepsEl = document.getElementById("steps");
+steps.forEach(([fig, txt], i) => { const s = el("div", "step"); s.append(el("div", "n", String(i + 1)), el("div", "fig", fig), el("div", "txt", txt)); stepsEl.append(s); });
+
+const caveats = [
+  "Swaps are compared at equal weight (e.g. 30 g butter → 30 g olive oil); cooks may adjust amounts, and texture or baking chemistry is not modelled.",
+  "Percentages are averages over recipes; a recipe with very little sugar or sodium can show a large percentage change, which widens the intervals of small cuisines.",
+  "Hand audit: the " + M.audit_pairs + " most frequent swaps cover " + M.audit_cover + "% of recipes; " + M.audit_ok + "% of those recipes received a sensible kitchen substitute.",
+  "Aroma kept counts which flavor compounds are still present, not their amounts. Cooking losses are ignored, as in Food.com's own nutrition figures.",
+  "Cuisines are Food.com user tags; " + M.cuisines + " cuisines with at least 75 validated recipes are compared.",
+];
+document.getElementById("caveats").replaceChildren(...caveats.map(t => el("li", null, t)));
+
+// ---------- scenario switch
+const segEl = document.getElementById("scen");
+DATA.scenarios.forEach(s => {
+  const b = el("button", null, s.label); b.type = "button"; b.dataset.key = s.key;
+  b.onclick = () => { scen = s.key; renderScenario(); };
+  segEl.append(b);
+});
+
+// ---------- headline
+function dirNode(v, k) {
+  const d = el("div", "dir");
+  if (k === "aroma") { d.append(el("span", null, "of the recipe's aroma compounds kept")); d.style.color = "var(--ink-2)"; return d; }
+  const r = Number(v.toFixed(1));
+  if (r < 0) { d.classList.add("good"); d.append(el("span", "ic", "▼"), el("span", null, "lower")); }
+  else if (r > 0) { d.classList.add("bad"); d.append(el("span", "ic", "▲"), el("span", null, "higher")); }
+  else { d.style.color = "var(--ink-2)"; d.append(el("span", null, "no change on average")); }
+  return d;
+}
+function renderHeadline() {
+  const a = allRow();
+  const hero = document.getElementById("hero");
+  hero.replaceChildren(el("div", "big", pct(a.m.sat_fat_g)), el("div", "what", "saturated fat per serving"),
+    el("div", "ctx", fmt(a.n) + " recipes · " + fmt(a.w, 1) + "% had a healthier swap available · "
+      + fmt(a.aroma, 1) + "% of aroma compounds kept"));
+  const tiles = document.getElementById("tiles");
+  tiles.replaceChildren();
+  for (const k of ["energy_kcal", "fat_g", "sugar_g", "sodium_mg", "aroma"]) {
+    const t = el("div", "tile");
+    if (k === "aroma") {
+      t.append(el("div", "label", "Aroma kept"), el("div", "value", fmt(a.aroma, 1) + "%"), dirNode(0, "aroma"),
+        el("div", "meta", "95% CI " + fmt(a.aroma_lo, 1) + " to " + fmt(a.aroma_hi, 1) + "%"));
+    } else {
+      const o = OUT.find(x => x.k === k);
+      t.append(el("div", "label", o.label), el("div", "value", pct(a.m[k])), dirNode(a.m[k], k),
+        el("div", "meta", signed(a.abs[k], o.d) + " " + o.unit + " per serving · 95% CI " + signed(a.lo[k]) + " to " + signed(a.hi[k]) + "%"));
+    }
+    tiles.append(t);
+  }
+  // Saturated fat is the hero: one tile slot left -> show the number of recipes with a swap
+  const t = el("div", "tile");
+  t.append(el("div", "label", "Recipes analysed"), el("div", "value", fmt(a.n)),
+    el("div", "dir", cuisineRows().length + " cuisines compared"), el("div", "meta", "validated against Food.com calories"));
+  t.querySelector(".dir").style.color = "var(--ink-2)";
+  tiles.append(t);
+}
+
+// ---------- example recipes
+const exChips = document.getElementById("ex-chips");
+DATA.examples.forEach((x, i) => {
+  const b = el("button", "chip", x.title); b.type = "button";
+  b.onclick = () => { exIdx = i; renderExample(); };
+  exChips.append(b);
+});
+const nice = s => s.charAt(0).toUpperCase() + s.slice(1);
+function renderExample() {
+  const x = DATA.examples[exIdx];
+  [...exChips.children].forEach((b, i) => b.setAttribute("aria-pressed", String(i === exIdx)));
+  const L = document.getElementById("ex-left");
+  const facts = el("div", "facts");
+  facts.append(el("span", null, x.cuisine), el("span", null, x.servings + " servings"));
+  if (x.rating !== null) facts.append(el("span", null, "★ " + x.rating.toFixed(1) + " (" + fmt(x.reviews) + " reviews)"));
+  const box = el("div", "swapbox");
+  const line = el("div", "swapline");
+  line.append(el("span", "from", nice(x.a)), el("span", "arrow", "→"), el("span", null, nice(x.b)));
+  box.append(el("div", "cap", "The swap"), line,
+    el("div", "raw", "Recipe line: “" + x.raw.join("; ") + "” → the same weight of " + x.b + " (" + fmt(x.g) + " g per serving)."));
+  const ings = el("div", "ings");
+  for (const n of x.ings) ings.append(el("span", n === x.a ? "ing swapped" : "ing", n === x.a ? x.b + " (was " + n + ")" : n));
+  const nav = el("div", "nav");
+  const prev = el("button", null, "← Previous"), next = el("button", null, "Next →");
+  prev.type = next.type = "button";
+  prev.onclick = () => { exIdx = (exIdx + DATA.examples.length - 1) % DATA.examples.length; renderExample(); };
+  next.onclick = () => { exIdx = (exIdx + 1) % DATA.examples.length; renderExample(); };
+  nav.append(prev, next);
+  L.replaceChildren(el("h3", null, x.title), facts, box, ings, nav);
+
+  const R = document.getElementById("ex-right");
+  const leg = el("div", "legend");
+  const k1 = el("span", "key"), d1 = el("span", "dot"); d1.style.background = "var(--before)"; k1.append(d1, "Original recipe");
+  const k2 = el("span", "key"), d2 = el("span", "dot"); d2.style.background = "var(--s1)"; k2.append(d2, "With the swap");
+  leg.append(k1, k2);
+  R.replaceChildren(leg);
+  for (const o of OUT) {
+    const b = x.before[o.k], a = x.after[o.k];
+    const row = el("div", "db");
+    const max = Math.max(b, a) * 1.12 || 1;
+    const tr = el("div", "track");
+    const rail = el("div", "rail"), link = el("div", "link");
+    const lo = Math.min(a, b) / max * 100, hi = Math.max(a, b) / max * 100;
+    link.style.left = lo + "%"; link.style.width = (hi - lo) + "%";
+    const pb = el("div", "pt"), pa = el("div", "pt");
+    pb.style.left = (b / max * 100) + "%"; pb.style.background = "var(--before)";
+    pa.style.left = (a / max * 100) + "%"; pa.style.background = "var(--s1)";
+    tr.append(rail, link, pb, pa);
+    const vals = el("div", "vals num");
+    vals.append(fmt(b, o.d) + " → " + fmt(a, o.d) + " " + o.unit);
+    const ch = b > 0 ? (a - b) / b * 100 : 0;
+    const chg = el("span", "chg");
+    const r = Number(ch.toFixed(0));
+    chg.textContent = r === 0 ? "no change" : (r < 0 ? "▼ " : "▲ ") + signed(ch, 0) + "%";
+    chg.className = "chg " + (r < 0 ? "good" : r > 0 ? "bad" : "");
+    if (r === 0) chg.style.color = "var(--ink-2)";
+    vals.append(chg);
+    row.append(el("div", "nm", o.label), tr, vals);
+    hover(row, o.label + " per serving", () => [["Original", fmt(b, o.d) + " " + o.unit], ["With swap", fmt(a, o.d) + " " + o.unit], ["Change", r === 0 ? "0%" : signed(ch, 0) + "%"]]);
+    R.append(row);
+  }
+  const ar = el("div", "aroma-row");
+  const lft = el("span"); lft.append(el("b", null, "Aroma compounds kept"));
+  ar.append(lft, el("span", "num", fmt(x.aroma, 0) + "% of " + x.compounds));
+  R.append(ar);
+}
+
+// ---------- cuisine chart
+const metricEl = document.getElementById("metric");
+for (const k of ["energy_kcal", "fat_g", "sat_fat_g", "sugar_g", "sodium_mg", "aroma"]) {
+  const b = el("button", "chip", label(k)); b.type = "button"; b.dataset.k = k;
+  b.onclick = () => { metric = k; renderCuisines(); };
+  metricEl.append(b);
+}
+const val = (r, k) => k === "aroma" ? {v: r.aroma, lo: r.aroma_lo, hi: r.aroma_hi} : {v: r.m[k], lo: r.lo[k], hi: r.hi[k]};
+function renderCuisines() {
+  [...metricEl.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.k === metric)));
+  const isAroma = metric === "aroma";
+  document.getElementById("cu-sub").textContent = (isAroma
+    ? "Share of each recipe's aroma compounds still present after the swap."
+    : "Mean change in " + label(metric).toLowerCase() + " per serving.") + " Dots are means, lines are 95% confidence intervals; the vertical line is the average over all recipes.";
+  const rows = cuisineRows().slice().sort((p, q) => isAroma ? val(q, metric).v - val(p, metric).v : val(p, metric).v - val(q, metric).v);
+  const a = val(allRow(), metric);
+  const best = rows[0], worst = rows[rows.length - 1], bv = val(best, metric), wv = val(worst, metric);
+  const take = document.getElementById("cu-take");
+  const unit = v => isAroma ? fmt(v, 1) + "%" : pct(v);
+  take.replaceChildren();
+  if (isAroma) {
+    take.append("Most flavor kept: ", el("b", null, best.c + " (" + unit(bv.v) + ")"), ". Least: ", el("b", null, worst.c + " (" + unit(wv.v) + ")"),
+      ". Average " + unit(a.v) + ".");
+  } else {
+    take.append(bv.v < 0 ? "Biggest cut: " : "Smallest increase: ", el("b", null, best.c + " (" + unit(bv.v) + ")"), ". ",
+      wv.v > 0 ? "Largest increase: " : "Smallest cut: ", el("b", null, worst.c + " (" + unit(wv.v) + ")"),
+      (wv.hi - wv.lo > 20 ? ", very uncertain (" + fmt(worst.n) + " recipes)" : "") + ". Average " + unit(a.v) + ".");
+  }
+  const box = document.getElementById("cu-chart");
+  const W = Math.max(box.clientWidth, 300), narrow = W < 560;
+  const padL = narrow ? 118 : 170, padR = narrow ? 58 : 76, top = 30, rowH = narrow ? 30 : 32, bottom = 34;
+  const H = top + rows.length * rowH + bottom;
+  let lo = Math.min(...rows.map(r => val(r, metric).lo)), hi = Math.max(...rows.map(r => val(r, metric).hi));
+  const ref = isAroma ? 100 : 0;
+  lo = Math.min(lo, ref, a.v); hi = Math.max(hi, ref, a.v);
+  const pad = (hi - lo) * 0.04; lo -= pad; hi += pad;
+  const x = v => padL + (v - lo) / (hi - lo) * (W - padL - padR);
+  const svg = svgEl("svg", {width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img",
+    "aria-label": label(metric) + " by cuisine, mean and 95% confidence interval"});
+  for (const t of niceTicks(lo, hi, narrow ? 4 : 6)) {
+    svg.append(svgEl("line", {x1: x(t), x2: x(t), y1: top - 6, y2: H - bottom, style: "stroke:var(--grid);stroke-width:1"}));
+    const tx = svgEl("text", {x: x(t), y: H - bottom + 20, "text-anchor": "middle", style: "fill:var(--muted);font-size:12px"});
+    tx.textContent = isAroma ? fmt(t, 0) + "%" : signed(t, Math.abs(t) < 10 && t % 1 ? 1 : 0) + "%"; svg.append(tx);
+  }
+  svg.append(svgEl("line", {x1: x(ref), x2: x(ref), y1: top - 6, y2: H - bottom, style: "stroke:var(--axis);stroke-width:1.5"}));
+  svg.append(svgEl("line", {x1: x(a.v), x2: x(a.v), y1: top - 6, y2: H - bottom, style: "stroke:var(--ink-2);stroke-width:1.5"}));
+  const at = svgEl("text", {x: x(a.v), y: top - 12, "text-anchor": "middle", style: "fill:var(--ink-2);font-size:12px;font-weight:600"});
+  at.textContent = "All recipes " + unit(a.v); svg.append(at);
+  rows.forEach((r, i) => {
+    const y = top + i * rowH + rowH / 2, v = val(r, metric);
+    const g = svgEl("g", {});
+    const hit = svgEl("rect", {x: 0, y: y - rowH / 2, width: W, height: rowH, rx: 6, class: "hit"});
+    g.append(hit);
+    const t = svgEl("text", {x: padL - 12, y: y + 4.5, "text-anchor": "end", style: "fill:var(--ink);font-size:" + (narrow ? 13 : 14) + "px"});
+    t.textContent = r.c; g.append(t);
+    g.append(svgEl("line", {x1: x(v.lo), x2: x(v.hi), y1: y, y2: y, style: "stroke:var(--s1);stroke-width:2;stroke-linecap:round"}));
+    g.append(svgEl("circle", {cx: x(v.v), cy: y, r: 5.5, style: "fill:var(--s1);stroke:var(--surface);stroke-width:2"}));
+    if (i === 0 || i === rows.length - 1) {
+      const lt = svgEl("text", {x: x(v.hi) + 8, y: y + 4.5, style: "fill:var(--ink);font-size:13px;font-weight:600"});
+      lt.textContent = unit(v.v); g.append(lt);
+    }
+    hover(hit, r.c, () => [[label(metric), unit(v.v)], ["95% CI", (isAroma ? fmt(v.lo, 1) + "%" : pct(v.lo)) + " to " + (isAroma ? fmt(v.hi, 1) + "%" : pct(v.hi))], ["Recipes", fmt(r.n)]]);
+    svg.append(g);
+  });
+  box.replaceChildren(svg);
+}
+
+// ---------- heat table
+function cellColor(v) {
+  const t = Math.min(Math.abs(v) / 30, 1), mix = Math.round(t * 85);
+  return {bg: `color-mix(in oklab, var(${v < 0 ? "--neg" : "--pos"}) ${mix}%, var(--mid))`, ink: mix >= 55 ? "#ffffff" : "var(--ink)"};
+}
+function renderHeat() {
+  const tb = document.getElementById("heat");
+  const head = el("tr");
+  head.append(el("th", null, "Cuisine"), el("th", null, "Recipes"));
+  for (const o of OUT) head.append(el("th", null, o.label));
+  head.append(el("th", null, "Aroma kept"));
+  const thead = el("thead"); thead.append(head);
+  const body = el("tbody");
+  const rows = [allRow(), ...cuisineRows().slice().sort((p, q) => q.n - p.n)];
+  for (const r of rows) {
+    const tr = el("tr", r.c === ALL ? "all" : "");
+    tr.append(el("td", null, r.c), el("td", "num", fmt(r.n)));
+    for (const o of OUT) {
+      const v = r.m[o.k], c = cellColor(v), td = el("td", "cell num", pct(v));
+      td.style.background = c.bg; td.style.color = c.ink;
+      hover(td, r.c + " · " + o.label, () => [["Mean change", pct(v)], ["95% CI", pct(r.lo[o.k]) + " to " + pct(r.hi[o.k])],
+        ["Per serving", signed(r.abs[o.k], o.d) + " " + o.unit], ["Recipes", fmt(r.n)]]);
+      tr.append(td);
+    }
+    tr.append(el("td", "num", fmt(r.aroma, 1) + "%"));
+    body.append(tr);
+  }
+  tb.replaceChildren(thead, body);
+}
+
+// ---------- swaps
+function renderSwaps() {
+  const list = S().swaps, maxN = list[0].n;
+  document.getElementById("sw-sub").textContent = "Number of recipes in which each swap was applied (" +
+    DATA.scenarios.find(s => s.key === scen).label.toLowerCase() + "), with its average effect per serving.";
+  const box = document.getElementById("sw-list");
+  box.replaceChildren();
+  for (const s of list) {
+    const row = el("div", "swaprow");
+    const pair = el("div", "pair");
+    pair.append(s.a, el("span", "ar", "→"), s.b);
+    if (s.flag === "no") { const f = el("span", "flag"); f.append(el("span", "wd"), "questionable swap"); pair.append(f); }
+    const bar = el("div", "hbar"), b = el("div", "b");
+    b.style.width = (s.n / maxN * 78) + "%";
+    bar.append(b, el("span", "v num", fmt(s.n)));
+    const parts = [];
+    if (Math.abs(s.kcal) >= 1) parts.push(signed(s.kcal, 0) + " kcal");
+    if (Math.abs(s.sat) >= 0.1) parts.push(signed(s.sat, 1) + " g sat. fat");
+    if (Math.abs(s.sodium) >= 5) parts.push(signed(s.sodium, 0) + " mg sodium");
+    if (Math.abs(s.sugar) >= 0.5) parts.push(signed(s.sugar, 1) + " g sugars");
+    row.append(pair, bar, el("div", "eff num", parts.length ? parts.join(" · ") : "small changes"));
+    hover(row, s.a + " → " + s.b, () => [["Recipes", fmt(s.n)], ["Calories", signed(s.kcal, 0) + " kcal"], ["Saturated fat", signed(s.sat, 1) + " g"],
+      ["Sodium", signed(s.sodium, 0) + " mg"], ["Sugars", signed(s.sugar, 1) + " g"]]);
+    box.append(row);
+  }
+  const note = el("p", "sub");
+  note.style.margin = "12px 0 0"; note.style.fontSize = "14px";
+  note.textContent = "Marked swaps were judged questionable in our hand audit of the model's " + M.audit_pairs +
+    " most common swaps (" + M.audit_ok + "% of audited recipes got a sensible substitute).";
+  box.append(note);
+}
+
+// ---------- reality check (fixed: model best single swap vs reviewer-reported swap)
+function renderReality() {
+  const A = DATA.scen["best single swap"].rows.find(r => r.c === ALL), B = DATA.scen["reviewer-reported swap"].rows.find(r => r.c === ALL);
+  const items = OUT.map(o => ({name: o.label, a: A.m[o.k], b: B.m[o.k], u: "%"}));
+  items.push({name: "Aroma kept", a: A.aroma - 100, b: B.aroma - 100, u: " pts"});
+  const box = document.getElementById("re-chart");
+  const W = Math.max(box.clientWidth, 300), narrow = W < 520;
+  // narrow screens: category names sit above their bars, so the plot can use the full width
+  const padL = narrow ? 8 : 130, padR = narrow ? 8 : 20, barH = 15, gap = 2, rowH = narrow ? 66 : 52, top = 6, bottom = 30;
+  const H = top + items.length * rowH + bottom;
+  let lo = Math.min(0, ...items.map(i => Math.min(i.a, i.b))), hi = Math.max(0, ...items.map(i => Math.max(i.a, i.b)));
+  const span = hi - lo; lo -= span * (narrow ? 0.24 : 0.17); hi += span * (narrow ? 0.2 : 0.15);   // room for the value labels
+  const x = v => padL + (v - lo) / (hi - lo) * (W - padL - padR);
+  const svg = svgEl("svg", {width: W, height: H, viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": "FlavorSwap vs reviewers' swaps, mean change per serving"});
+  for (const t of niceTicks(lo, hi, narrow ? 4 : 6)) {
+    svg.append(svgEl("line", {x1: x(t), x2: x(t), y1: top, y2: H - bottom, style: "stroke:var(--grid);stroke-width:1"}));
+    const tx = svgEl("text", {x: x(t), y: H - bottom + 20, "text-anchor": "middle", style: "fill:var(--muted);font-size:12px"});
+    tx.textContent = signed(t, 0); svg.append(tx);
+  }
+  svg.append(svgEl("line", {x1: x(0), x2: x(0), y1: top, y2: H - bottom, style: "stroke:var(--axis);stroke-width:1.5"}));
+  items.forEach((it, i) => {
+    const y0 = top + i * rowH + (rowH - 2 * barH - gap) / 2 + (narrow ? 8 : 0);
+    const name = narrow
+      ? svgEl("text", {x: padL, y: y0 - 7, "text-anchor": "start", style: "fill:var(--ink);font-size:13px;font-weight:600"})
+      : svgEl("text", {x: padL - 12, y: y0 + barH + 5, "text-anchor": "end", style: "fill:var(--ink);font-size:14px"});
+    name.textContent = it.name; svg.append(name);
+    [[it.a, "--s1", "FlavorSwap"], [it.b, "--s2", "Reviewers"]].forEach(([v, c, who], j) => {
+      const y = y0 + j * (barH + gap), x0 = x(Math.min(0, v)), w = Math.max(Math.abs(x(v) - x(0)), 1);
+      const neg = v < 0, rr = Math.min(4, w / 2);
+      // bar with a 4px rounded data end, square at the zero baseline
+      const px = x0, d = neg
+        ? `M${px + w},${y} H${px + rr} Q${px},${y} ${px},${y + rr} V${y + barH - rr} Q${px},${y + barH} ${px + rr},${y + barH} H${px + w} Z`
+        : `M${px},${y} H${px + w - rr} Q${px + w},${y} ${px + w},${y + rr} V${y + barH - rr} Q${px + w},${y + barH} ${px + w - rr},${y + barH} H${px} Z`;
+      const bar = svgEl("path", {d, style: `fill:var(${c})`});
+      svg.append(bar);
+      const lt = svgEl("text", {x: neg ? x(v) - 6 : x(v) + 6, y: y + barH - 1.5, "text-anchor": neg ? "end" : "start",
+        style: "fill:var(--ink-2);font-size:12px"});
+      lt.textContent = signed(v) + it.u; svg.append(lt);
+      const hit = svgEl("rect", {x: padL, y: y - 1, width: W - padL - padR, height: barH + 2, class: "hit"});
+      hover(hit, it.name + " · " + who, () => [[it.u === "%" ? "Mean change" : "Change in aroma kept", signed(v) + it.u]]);
+      svg.append(hit);
+    });
+  });
+  box.replaceChildren(svg);
+  const pts = document.getElementById("re-points");
+  const sa = A.m.sat_fat_g, sb = B.m.sat_fat_g, la = 100 - A.aroma, lb = 100 - B.aroma, fa = A.m.fat_g, fb = B.m.fat_g;
+  const li = (...parts) => { const l = el("li"); l.append(...parts); return l; };
+  pts.replaceChildren(
+    li("Reviewers' own swaps cut saturated fat ", el("b", null, Math.abs(sb) > Math.abs(sa) ? "harder" : "less"), " (" + pct(sb) + " vs " + pct(sa) + ")."),
+    li("But they lose ", el("b", null, (lb > la ? "more" : "less") + " flavor"), ": " + fmt(lb, 1) + "% of aroma compounds vs " + fmt(la, 1) + "% for FlavorSwap."),
+    li("Total fat: " + pct(fb) + " vs " + pct(fa) + (fb > 0 ? " — reviewers often replace butter with cooking spray or oil, which is almost pure fat at the same weight." : ".")),
+  );
+  if (la < lb && Math.abs(sa) <= Math.abs(sb))
+    pts.append(li("FlavorSwap's swaps are ", el("b", null, "no more aggressive"), " than what home cooks already do, and keep more of the recipe's flavor."));
+}
+
+// ---------- render
+function renderScenario() {
+  [...segEl.children].forEach(b => b.setAttribute("aria-pressed", String(b.dataset.key === scen)));
+  document.getElementById("scen-note").textContent = DATA.scenarios.find(s => s.key === scen).note;
+  renderHeadline(); renderCuisines(); renderHeat(); renderSwaps();
+}
+const themeBtn = document.getElementById("theme");
+function isDark() { const t = document.documentElement.dataset.theme; return t ? t === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function syncThemeBtn() { themeBtn.textContent = isDark() ? "Light mode" : "Dark mode"; }
+themeBtn.onclick = () => {
+  const t = isDark() ? "light" : "dark";
+  document.documentElement.dataset.theme = t; syncThemeBtn();
+  try { localStorage.setItem("flavorswap-theme", t); } catch (e) { /* storage unavailable: choice lasts this visit */ }
+};
+// theme: ?theme=light|dark in the URL, else the viewer's last choice, else the OS setting
+const qt = new URLSearchParams(location.search).get("theme");
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("flavorswap-theme"); } catch (e) { savedTheme = null; }
+const startTheme = qt === "light" || qt === "dark" ? qt : savedTheme === "light" || savedTheme === "dark" ? savedTheme : null;
+if (startTheme) document.documentElement.dataset.theme = startTheme;
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", syncThemeBtn);
+syncThemeBtn();
+renderScenario(); renderExample(); renderReality();
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { renderCuisines(); renderReality(); }, 120); });
+</script>
+</body>
+</html>

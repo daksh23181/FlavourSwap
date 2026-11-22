@@ -1,0 +1,58 @@
+{
+  "weights": {
+    "emb": 1.0,
+    "flav": 0.1,
+    "nutr": 0.5,
+    "pop": 1.0,
+    "grp": 1.0,
+    "flavor_variant": "idf",
+    "health_lambda": 0.0,
+    "min_reduction": 0.1,
+    "health_pool": 100,
+    "min_group_prob": 0.02
+  },
+  "accuracy_optimal_weights": {
+    "emb": 1.0,
+    "flav": 0.1,
+    "nutr": 0.5,
+    "pop": 1.0,
+    "grp": 1.0,
+    "flavor_variant": "idf",
+    "health_lambda": 0.0,
+    "min_reduction": 0.1,
+    "health_pool": 100,
+    "min_group_prob": 0.02
+  },
+  "selection": "largest flavor weight with validation MRR >= 0.99 x best",
+  "ground_truth": {
+    "min_users": 2,
+    "pairs": 2895,
+    "sources": 755
+  },
+  "split": {
+    "seed": 42,
+    "validation_fraction": 0.3
+  },
+  "validation_MRR": {
+    "accuracy_optimal": 0.2615,
+    "default": 0.2615
+  },
+  "test": {
+    "default": {
+      "Hit@1": 0.1461,
+      "Hit@3": 0.2922,
+      "Hit@5": 0.3904,
+      "Hit@10": 0.5043,
+      "Hit@20": 0.6176,
+      "MRR": 0.2614
+    },
+    "accuracy_optimal": {
+      "Hit@1": 0.1461,
+      "Hit@3": 0.2922,
+      "Hit@5": 0.3904,
+      "Hit@10": 0.5043,
+      "Hit@20": 0.6176,
+      "MRR": 0.2614
+    }
+  }
+}

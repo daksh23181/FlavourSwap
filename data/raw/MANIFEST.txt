@@ -1,0 +1,12 @@
+17ae9e5034ae0bd8dcb9845af32ddefb88909d0af5bf68d96a7cf399fc1e35cc         37993  flavor_network/comp_info.tsv
+54ac1a13c20534ec91981e9f10d90703f78dd4c95a8eae017aea3a1b91085f24        306219  flavor_network/ingr_comp.tsv
+5ff493a5cc680a7d5b1dde013f5de69e36f481affaabe4b24bc2acc9ede5f518         44460  flavor_network/ingr_info.tsv
+4e278d2f687b1020f5694e51003a7d6174344b51aebbdf4530de88b5c6a78ee4     349436524  foodcom/RAW_interactions.csv
+6a8136d1da9e03396a9f52d72200b3fddb8fe103f11e1496effca30ac4e0539f     294520189  foodcom/RAW_recipes.csv
+1a26bcbcf6983ec108fb9b75ff2390abd32c070162d8d9afd28c94ac400c99dc     800075434  foodcom/recipes_w_search_terms.csv
+de8b0390058db4f102368c9fbdfde144790b480ff4cb0507c0e060ef99805dee        793104  usda_sr_legacy/food.csv
+a8e05c18cf010d44303f2a02765637a21f9ad621f90b4f811ab4a4a436cfedd9           997  usda_sr_legacy/food_category.csv
+6d07e6fc062b09750c4d95112be5a5cdb56a2346efcfd0c96b7a7d705812d4bd      36366059  usda_sr_legacy/food_nutrient.csv
+6332e29da61e13f7bd950b759461af73303c76e8b0e64dc9df4e41d5347cf3d1        918790  usda_sr_legacy/food_portion.csv
+c1396ffebbe6337260fe4de6276aa91847c7f41ff31a4f69080764a5b36ba155          1955  usda_sr_legacy/measure_unit.csv
+466ab9d011094cc1ad8d939b246693988b56817c42d0e40a98820723695c6084         21464  usda_sr_legacy/nutrient.csv

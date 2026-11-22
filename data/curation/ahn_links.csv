@@ -1,0 +1,490 @@
+ingredient,ahn_ingredient,note
+salt,,no volatile flavor compounds
+sugar,,no volatile flavor compounds
+water,,no volatile flavor compounds
+ice,,no volatile flavor compounds
+ice cube,,no volatile flavor compounds
+baking powder,,no volatile flavor compounds
+baking soda,,no volatile flavor compounds
+cream of tartar,,no volatile flavor compounds
+cornstarch,,no volatile flavor compounds
+powdered sugar,,no volatile flavor compounds
+light corn syrup,,no volatile flavor compounds
+corn syrup,,no volatile flavor compounds
+splenda sugar substitute,,no volatile flavor compounds
+splenda granular,,no volatile flavor compounds
+all purpose flour,wheat,flour -> source grain
+bread flour,wheat,flour -> source grain
+cake flour,wheat,flour -> source grain
+self raising flour,wheat,flour -> source grain
+self rising flour,wheat,flour -> source grain
+whole wheat flour,whole_grain_wheat_flour,
+couscous,wheat,durum wheat product
+flour tortilla,wheat,wheat-flour flatbread
+vanilla extract,vanilla,
+almond extract,bitter_almond,almond extract is bitter-almond oil (benzaldehyde)
+brown sugar,cane_molasses,flavor of brown sugar comes from its molasses
+molasses,cane_molasses,
+green onion,scallion,
+chicken breast,chicken,
+chicken thigh,chicken,
+chicken wing,chicken,
+sour cream,cream,
+heavy cream,cream,
+half and half,cream,
+whipped cream,cream,
+evaporated milk,milk,
+sweetened condensed milk,milk,
+garlic powder,garlic,dried form of same ingredient
+garlic salt,garlic,flavor carried by garlic
+onion powder,onion,dried form of same ingredient
+dried onion flakes,onion,dried form of same ingredient
+celery rib,celery,
+celery salt,celery,flavor carried by celery
+cayenne pepper,cayenne,
+red pepper flakes,cayenne,crushed dried red chili
+paprika,capsicum_annuum,paprika is dried ground Capsicum annuum
+chili powder,capsicum,main component is ground chili
+chili,capsicum,
+red chili,capsicum,
+jalapeno,capsicum_annuum,
+green chili,capsicum_annuum,
+diced green chili,capsicum_annuum,
+tabasco sauce,tabasco_pepper,
+roasted red pepper,bell_pepper,
+sweet red pepper,bell_pepper,
+pimiento,bell_pepper,sweet red pepper cultivar
+white pepper,pepper,same berry as black pepper (Piper nigrum)
+black peppercorn,black_pepper,
+allspice,pimento,pimento = allspice (Pimenta dioica)
+bay leaf,laurel,bay leaf = Laurus nobilis; most complete Ahn laurel entry
+lemon zest,lemon_peel,
+orange zest,orange_peel,
+lime zest,lime_peel_oil,aroma of zest is the peel oil
+dijon mustard,mustard,
+mustard seed,mustard,
+cocoa powder,cocoa,
+semisweet chocolate chips,cocoa,
+chocolate chips,cocoa,
+semisweet chocolate,cocoa,
+bittersweet chocolate,cocoa,
+chocolate syrup,cocoa,
+egg white,egg,
+egg yolk,egg,
+hard boiled egg,egg,
+egg substitute,egg,egg substitutes are mostly egg white
+tomato sauce,tomato,
+tomato paste,tomato,
+tomato puree,tomato,
+stewed tomato,tomato,
+sun dried tomato,tomato,
+chicken stock,chicken_broth,
+chicken bouillon cube,chicken_broth,
+beef stock,beef_broth,
+beef bouillon cube,beef_broth,
+canola oil,rapeseed,canola is a rapeseed cultivar
+balsamic vinegar,vinegar,
+red wine vinegar,vinegar,
+white wine vinegar,vinegar,
+cider vinegar,vinegar,
+apple cider vinegar,vinegar,
+rice vinegar,vinegar,
+rice wine vinegar,vinegar,
+breadcrumb,bread,
+dry breadcrumb,bread,
+panko breadcrumb,bread,
+hamburger bun,bread,
+french bread,white_bread,
+spinach,dried_spinach,only spinach entry in Ahn
+baby spinach,dried_spinach,only spinach entry in Ahn
+frozen chopped spinach,dried_spinach,only spinach entry in Ahn
+frozen spinach,dried_spinach,only spinach entry in Ahn
+rolled oats,oat,
+quick cooking oats,oat,
+oats,oat,
+monterey jack cheese,cheese,generic cheese profile
+ricotta cheese,cheese,generic cheese profile
+velveeta cheese,cheese,generic cheese profile
+american cheese,cheese,generic cheese profile
+green bean,snap_bean,
+cannellini bean,kidney_bean,white kidney bean
+refried bean,pinto_bean,
+bean sprout,mung_bean,
+cinnamon stick,cinnamon,
+coconut milk,coconut,
+active dry yeast,yeast,
+pineapple juice,pineapple,
+pineapple chunk,pineapple,
+cornmeal,corn,
+yellow cornmeal,corn,
+corn kernel,corn,
+whole kernel corn,corn,
+tortilla chips,corn_tortilla,
+corn flakes,corn_flake,
+pork chop,pork,
+pork tenderloin,pork,
+broccoli floret,broccoli,
+salmon fillet,salmon,
+slivered almond,almond,
+cumin seed,cumin,
+romaine lettuce,lettuce,
+spaghetti,macaroni,durum-wheat pasta
+pasta,macaroni,durum-wheat pasta
+penne,macaroni,durum-wheat pasta
+elbow macaroni,macaroni,durum-wheat pasta
+linguine,macaroni,durum-wheat pasta
+fettuccine,macaroni,durum-wheat pasta
+egg noodles,egg_noodle,
+long grain rice,rice,
+creamy peanut butter,peanut_butter,
+maraschino cherry,cherry,
+dill weed,dill,
+butternut squash,squash,
+artichoke heart,artichoke,
+crabmeat,crab,
+fennel seed,fennel,
+applesauce,cooked_apple,
+unsweetened applesauce,cooked_apple,
+prepared horseradish,horseradish,
+liquid smoke,smoke,
+mandarin orange,mandarin,
+prosciutto,cured_ham,
+apple cider,cider,
+lemon wedge,lemon,
+lime wedge,lime,
+soymilk,soybean,
+pumpkin puree,pumpkin,
+dark rum,rum,
+cranberry juice,cranberry,
+sherry wine,sherry,Ahn sherry_wine has 1 compound; sherry has the full profile
+mayonnaise,,composite (oil + egg); no Ahn entry
+margarine,,no Ahn entry
+shortening,,no Ahn entry
+cooking spray,,no Ahn entry
+nonstick cooking spray,,no Ahn entry
+worcestershire sauce,,composite sauce; no Ahn entry
+ketchup,,composite sauce; no Ahn entry
+hot sauce,,composite sauce; no Ahn entry
+salsa,,composite; no Ahn entry
+barbecue sauce,,composite sauce; no Ahn entry
+chili sauce,,composite sauce; no Ahn entry
+spaghetti sauce,,composite sauce; no Ahn entry
+hoisin sauce,,composite sauce; no Ahn entry
+oyster sauce,,composite sauce; no Ahn entry
+fish sauce,,no Ahn entry
+pesto sauce,,composite sauce; no Ahn entry
+cream of mushroom soup,,composite; no Ahn entry
+cream of chicken soup,,composite; no Ahn entry
+tomato soup,,composite; no Ahn entry
+onion soup mix,,composite; no Ahn entry
+vegetable broth,,no Ahn entry
+vegetable stock,,no Ahn entry
+curry powder,,spice blend; no Ahn entry
+italian seasoning,,spice blend; no Ahn entry
+seasoning salt,,spice blend; no Ahn entry
+lemon pepper,,spice blend; no Ahn entry
+taco seasoning,,spice blend; no Ahn entry
+taco seasoning mix,,spice blend; no Ahn entry
+garam masala,,spice blend; no Ahn entry
+poultry seasoning,,spice blend; no Ahn entry
+pumpkin pie spice,,spice blend; no Ahn entry
+cajun seasoning,,spice blend; no Ahn entry
+old bay seasoning,,spice blend; no Ahn entry
+seasoning,,unspecified
+chipotle chili in adobo,,composite; no Ahn entry
+pine nut,,no Ahn entry
+caper,,no Ahn entry
+eggplant,,no Ahn entry
+vodka,,no Ahn entry
+water chestnut,,no Ahn entry
+poppy seed,,no Ahn entry
+sunflower seed,,no Ahn entry
+cool whip,,processed topping; no Ahn entry
+vanilla ice cream,,composite; no Ahn entry
+miniature marshmallow,,no Ahn entry
+graham cracker crumb,,composite; no Ahn entry
+yellow cake mix,,composite; no Ahn entry
+pie crust,,composite; no Ahn entry
+white chocolate chips,,no Ahn entry (cocoa butter + milk + sugar)
+pepperoni,,no Ahn entry
+orange marmalade,,composite; no Ahn entry
+chicken piece,chicken,
+snow pea,pea,
+vegetable shortening,,no Ahn entry
+cream of celery soup,,composite; no Ahn entry
+basmati rice,rice,
+kahlua,,liqueur; no Ahn entry
+light sour cream,cream,
+serrano chili,capsicum_annuum,
+sausage,pork_sausage,
+wheat germ,wheat,
+cooked chicken breast,chicken,
+marshmallow,,no Ahn entry
+dark chocolate,cocoa,
+orzo,macaroni,durum-wheat pasta
+whipped topping,,processed topping; no Ahn entry
+pizza sauce,,composite sauce; no Ahn entry
+light mayonnaise,,composite (oil + egg); no Ahn entry
+lasagna noodles,macaroni,durum-wheat pasta
+unsweetened chocolate,cocoa,
+monterey jack pepper cheese,cheese,generic cheese profile
+tahini,roasted_sesame_seed,tahini is ground toasted sesame
+iceberg lettuce,lettuce,
+white chocolate,,no Ahn entry (cocoa butter + milk + sugar)
+coriander seed,coriander,
+italian dressing,,composite; no Ahn entry
+firm tofu,soybean,
+sweet paprika,capsicum_annuum,
+smoked paprika,capsicum_annuum,
+unflavored gelatin,gelatin,
+herb,,unspecified
+milk chocolate chips,cocoa,
+bourbon,bourbon_whiskey,
+red food coloring,,no volatile flavor compounds
+italian seasoned breadcrumb,bread,
+ranch dressing,,composite; no Ahn entry
+tart apple,apple,
+bow tie pasta,macaroni,durum-wheat pasta
+flank steak,beef,
+tortilla,wheat,unqualified tortilla taken as flour tortilla
+teriyaki sauce,,composite sauce; no Ahn entry
+greek yogurt,yogurt,
+miracle whip,,composite; no Ahn entry
+shiitake mushroom,shiitake,
+pita bread,bread,
+lentils,lentil,
+dry onion soup mix,,composite; no Ahn entry
+butterscotch chips,,no Ahn entry
+chorizo sausage,,spiced sausage; no Ahn entry
+marinara sauce,,composite sauce; no Ahn entry
+asiago cheese,cheese,generic cheese profile
+cherry pie filling,cherry,
+noodles,egg_noodle,
+frozen mixed vegetable,,mixture; no Ahn entry
+long grain white rice,rice,
+angel hair pasta,macaroni,durum-wheat pasta
+chocolate,cocoa,
+instant vanilla pudding,,composite; no Ahn entry
+pasta sauce,,composite sauce; no Ahn entry
+asparagus spear,asparagus,
+quinoa,,no Ahn entry
+tilapia fillet,lean_fish,tilapia is a lean white fish
+vanilla bean,vanilla,
+arugula,,no Ahn entry
+bisquick,,composite; no Ahn entry
+graham cracker,,composite; no Ahn entry
+vegetable oil cooking spray,,no Ahn entry
+onion salt,onion,flavor carried by onion
+powdered milk,milk,
+instant coffee,coffee,
+refrigerated crescent dinner roll,,composite; no Ahn entry
+red chili powder,capsicum,
+low fat sour cream,cream,
+non fat sour cream,cream,
+ginger ale,,no Ahn entry
+arborio rice,rice,
+creme fraiche,cream,
+triple sec,,liqueur; no Ahn entry
+creamed corn,corn,
+cream style corn,corn,
+dill pickle,,pickled product; no Ahn entry
+roasting chicken,chicken,
+plain breadcrumb,bread,
+seasoned bread crumb,bread,
+soft breadcrumb,bread,
+dark sesame oil,sesame_oil,
+grenadine,,no Ahn entry
+lemon slice,lemon,
+club soda,,no volatile flavor compounds
+apricot preserve,apricot,
+ritz cracker,,composite; no Ahn entry
+lemon extract,lemon_peel_oil,lemon extract is lemon oil in alcohol
+rice flour,rice,
+brewed coffee,coffee,
+frozen orange juice concentrate,orange_juice,
+bacon bit,bacon,
+creole seasoning,,spice blend; no Ahn entry
+amaretto,,liqueur; no Ahn entry
+round steak,beef,
+fish fillet,lean_fish,generic white fish
+grand marnier,,liqueur; no Ahn entry
+mexican blend cheese,cheese,generic cheese profile
+rice krispies,,branded cereal; no Ahn entry
+hot dog,frankfurter,
+vanilla instant pudding mix,,composite; no Ahn entry
+gorgonzola,blue_cheese,gorgonzola is a blue cheese
+frozen whipped topping,,processed topping; no Ahn entry
+cracker,,composite; no Ahn entry
+cauliflower floret,cauliflower,
+kielbasa,smoked_sausage,
+mirin,sake,proxy: mirin is a sweet rice wine
+pizza dough,wheat,
+white bean,navy_bean,
+great northern bean,navy_bean,white bean
+chuck roast,beef,
+sirloin steak,beef,
+pancetta,cured_pork,
+pasta shell,macaroni,durum-wheat pasta
+ghee,butter,clarified butter
+blanched almond,almond,
+brie cheese,camembert_cheese,proxy: closest bloomy-rind cheese in Ahn
+white cake mix,,composite; no Ahn entry
+flax seed,,no Ahn entry
+low fat mayonnaise,,composite (oil + egg); no Ahn entry
+mascarpone cheese,cream_cheese,
+sweet pickle relish,,pickled product; no Ahn entry
+dried italian seasoning,,spice blend; no Ahn entry
+wonton wrapper,wheat,
+baguette,white_bread,
+pearl barley,barley,
+saffron thread,saffron,
+fennel bulb,fennel,
+oreo cookie,,composite; no Ahn entry
+wide egg noodles,egg_noodle,
+colby monterey jack cheese,cheese,generic cheese profile
+non fat dry milk powder,milk,
+fat free sour cream,cream,
+reduced fat sour cream,cream,
+pork loin chop,pork,
+alfredo sauce,,composite sauce; no Ahn entry
+enchilada sauce,,composite sauce; no Ahn entry
+italian salad dressing,,composite; no Ahn entry
+crystallized ginger,ginger,candied ginger
+puff pastry,,composite; no Ahn entry
+frozen puff pastry,,composite; no Ahn entry
+sherry wine vinegar,vinegar,
+lard,lard,
+bisquick baking mix,,composite; no Ahn entry
+crouton,bread,
+english muffin,bread,
+oat bran,oat,
+pork shoulder,pork,
+rice wine,sake,rice wine = sake
+marinated artichoke heart,artichoke,
+cardamom pod,cardamom,
+steak,beef,
+tomatoes and green chili,tomato,
+deli ham,ham,
+whole wheat pastry flour,whole_grain_wheat_flour,
+sourdough bread,wheaten_bread,
+ground flax seed,,no Ahn entry
+tomatillo,,no Ahn entry
+instant yeast,yeast,
+vanilla yogurt,yogurt,
+guacamole,avocado,avocado-based dip
+green food coloring,,no volatile flavor compounds
+food coloring,,no volatile flavor compounds
+lump crabmeat,crab,
+anchovy fillet,fatty_fish,anchovy is an oily fish
+beef stew meat,beef,
+chicken bouillon granule,chicken_broth,
+chicken bouillon,chicken_broth,
+saltine cracker,,composite; no Ahn entry
+dark soy sauce,soy_sauce,
+golden syrup,,no volatile flavor compounds
+olive oil flavored cooking spray,,no Ahn entry
+wine vinegar,vinegar,
+ranch dressing mix,,spice blend; no Ahn entry
+whole berry cranberry sauce,cranberry,
+rotini,macaroni,durum-wheat pasta
+sweet chili sauce,,composite sauce; no Ahn entry
+instant chocolate pudding mix,,composite; no Ahn entry
+fat free mayonnaise,,composite; no Ahn entry
+chunky salsa,,composite; no Ahn entry
+picante sauce,,composite; no Ahn entry
+sugar substitute,,no volatile flavor compounds
+artificial sweetener,,no volatile flavor compounds
+xanthan gum,,no volatile flavor compounds
+chicken drumstick,chicken,
+chicken leg,chicken,
+tuna in water,tuna,
+apricot jam,apricot,
+raspberry jam,raspberry,
+mixed salad greens,lettuce,
+roll,bread,
+black eyed pea,southern_pea,black-eyed pea = southern pea (cowpea)
+diced tomatoes with juice,tomato,
+rotel tomato,tomato,
+turkey breast,turkey,
+tamari,soy_sauce,
+bok choy,chinese_cabbage,
+coleslaw mix,cabbage,
+pineapple tidbit,pineapple,
+spicy brown mustard,mustard,
+vanilla wafer,,composite; no Ahn entry
+instant rice,rice,
+pimento stuffed olive,olive,
+pumpkin seed,,no Ahn entry
+beef brisket,beef,
+corned beef,beef,
+shell pasta,macaroni,durum-wheat pasta
+rigatoni,macaroni,durum-wheat pasta
+ziti,macaroni,durum-wheat pasta
+tea bag,black_tea,
+mixed vegetable,,mixture; no Ahn entry
+summer squash,squash,
+extra firm tofu,soybean,
+tofu,soybean,
+caramel,,no Ahn entry
+phyllo dough,wheat,
+curry leaf,,no Ahn entry
+bamboo shoot,,no Ahn entry
+chinese five spice powder,,spice blend; no Ahn entry
+five spice powder,,spice blend; no Ahn entry
+hot italian sausage,pork_sausage,
+mini chocolate chip,cocoa,
+dried red chili,capsicum,
+hot pepper,capsicum,
+pork and bean,navy_bean,pork and beans are navy beans
+baked bean,navy_bean,baked beans are navy beans
+chili paste,capsicum,
+french fried onion,onion,
+sun dried tomato packed in oil,tomato,
+herbes de provence,,spice blend; no Ahn entry
+crescent roll,,composite; no Ahn entry
+light rum,rum,
+peppermint extract,peppermint_oil,peppermint extract is peppermint oil in alcohol
+crisco,,no Ahn entry
+pickled jalapeno pepper,capsicum_annuum,
+agave nectar,,no Ahn entry
+sugar snap pea,pea,
+devils food cake mix,,composite; no Ahn entry
+chocolate cake mix,,composite; no Ahn entry
+graham cracker pie crust,,composite; no Ahn entry
+unbaked pie shell,,composite; no Ahn entry
+pie shell,,composite; no Ahn entry
+chili bean,,composite; no Ahn entry
+flax seed meal,,no Ahn entry
+honey mustard,,composite; no Ahn entry
+beef roast,roasted_beef,
+light coconut milk,coconut,
+unsweetened coconut milk,coconut,
+coconut cream,coconut,
+nutritional yeast,yeast,
+whole wheat tortilla,whole_grain_wheat_flour,
+chili garlic sauce,,composite sauce; no Ahn entry
+cod fish fillet,cod,
+adobo sauce,,composite sauce; no Ahn entry
+carbonated lemon lime beverage,,no Ahn entry
+napa cabbage,chinese_cabbage,
+cooking apple,apple,
+marshmallow creme,,no Ahn entry
+potato chips,potato_chip,
+potato starch,,no volatile flavor compounds
+salami,,cured sausage; no Ahn entry
+crunchy peanut butter,peanut_butter,
+kiwi,kiwi,
+strong coffee,coffee,
+pork loin roast,pork,
+refrigerated biscuit,,composite; no Ahn entry
+stock,,unspecified
+bread machine yeast,yeast,
+mixed spice,,spice blend; no Ahn entry
+whole grain mustard,mustard,
+champagne,champagne_wine,
+coconut extract,coconut,
+orange bell pepper,bell_pepper,
+poblano chili,capsicum_annuum,
+ramen noodles,wheat,wheat noodles
+rose water,rose,rose water carries rose aroma
+cherry gelatin,cherry,fixed after audit: flavored gelatin

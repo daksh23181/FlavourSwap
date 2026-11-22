@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Raw downloads (~2 GB) - recreate with: python src/download_data.py
+# Only the flavor-network table the app needs at runtime and the checksum manifest are kept.
+data/raw/*
+!data/raw/MANIFEST.txt
+!data/raw/flavor_network/
+data/raw/flavor_network/*
+!data/raw/flavor_network/ingr_comp.tsv
+
+# Large intermediate files, rebuilt by the pipeline (see README, "How to run")
+data/processed/recipes.parquet
+data/processed/recipe_*.parquet
+
+# Files containing Food.com review text or user ids (rebuilt by src/mine_substitutions.py);
+# the app uses data/processed/substitution_counts.csv instead
+data/processed/substitution_mentions.csv
+data/processed/substitution_pairs.csv
+reports/substitution_mining_audit.csv

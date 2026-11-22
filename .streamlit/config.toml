@@ -1,0 +1,26 @@
+[browser]
+gatherUsageStats = false
+
+[client]
+# hide developer items (Deploy, rerun, clear cache) - keeps the menu's light/dark switch for presenting
+toolbarMode = "viewer"
+
+[theme]
+baseRadius = "large"
+showWidgetBorder = true
+headingFontWeights = 700
+metricValueFontSize = "1.5rem"
+
+[theme.light]
+primaryColor = "#0f7b55"
+backgroundColor = "#fbfaf7"
+secondaryBackgroundColor = "#f2f0ea"
+textColor = "#1d1c19"
+borderColor = "#e3dfd5"
+
+[theme.dark]
+primaryColor = "#2fa877"
+backgroundColor = "#111311"
+secondaryBackgroundColor = "#1b1e1b"
+textColor = "#ecebe6"
+borderColor = "#2b2f2b"

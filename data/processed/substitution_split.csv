@@ -1,0 +1,756 @@
+source,split
+1% fat cottage cheese,validation
+1% milk,test
+18% table cream,validation
+2% fat cottage cheese,test
+2% milk,test
+acorn squash,test
+active dry yeast,validation
+agave nectar,validation
+all purpose flour,test
+allspice,test
+allspice berry,test
+almond,test
+almond extract,test
+almond paste,test
+amaretto,validation
+american cheese,test
+angel food cake,test
+angel hair pasta,test
+anise seed,test
+apple,test
+apple cider,validation
+apple cider vinegar,test
+apple juice,test
+apple pie spice,test
+applesauce,test
+apricot,validation
+arborio rice,test
+arrowroot,test
+artificial sweetener,validation
+arugula,validation
+asparagus,validation
+avocado,test
+baby arugula,test
+baby bok choy,test
+baby spinach,test
+bacon,validation
+bacon bit,validation
+bacon dripping,test
+bacon fat,validation
+bacon grease,test
+baked bean,validation
+baking powder,test
+baking soda,test
+balsamic vinegar,test
+bamboo shoot,validation
+banana,validation
+barley,validation
+basil,test
+bay leaf,validation
+beef,test
+beef bouillon cube,test
+beef broth,validation
+beef chuck roast,test
+beef sirloin,validation
+beef stew meat,test
+beef stock,validation
+beer,test
+bell pepper,test
+black bean,test
+black olive,validation
+black pepper,validation
+black walnut,validation
+blackberry,test
+blanched almond,test
+blue cheese,validation
+blue cheese dressing,test
+blue curacao,validation
+blueberry,test
+boiling potato,test
+bok choy,test
+bosc pear,test
+boston lettuce,validation
+bourbon,test
+bow tie pasta,test
+brandy,test
+brazil nut,test
+bread,test
+bread flour,validation
+breadcrumb,test
+broccoli,test
+brown gravy mix,test
+brown rice,test
+brown sugar,test
+brussels sprout,validation
+bulgur,test
+bulk pork sausage,test
+butter,validation
+butter flavor crisco,test
+butter flavor shortening,test
+buttermilk,test
+butternut squash,test
+button mushroom,validation
+cabbage,validation
+cajun seasoning,test
+cake flour,test
+canadian bacon,test
+canned black bean,validation
+canned tomato,test
+cannellini bean,validation
+canola oil,test
+cantaloupe,validation
+caper,validation
+caraway seed,test
+cardamom,test
+carob powder,test
+carrot,test
+cashew,test
+cauliflower,validation
+cayenne pepper,test
+celery,test
+celery salt,test
+celery seed,test
+champagne,test
+champagne vinegar,test
+cheddar cheese,test
+cheese,validation
+cheese ravioli,validation
+cheese tortellini,test
+cheez whiz,test
+cherry,validation
+cherry tomato,validation
+chervil,test
+chicken,test
+chicken bouillon,test
+chicken bouillon cube,validation
+chicken breast,test
+chicken broth,test
+chicken piece,test
+chicken stock,validation
+chicken thigh,test
+chickpea,test
+chili,validation
+chili bean,validation
+chili paste,test
+chili powder,test
+chili sauce,validation
+chinese wine,validation
+chive,test
+chocolate chips,validation
+chocolate syrup,test
+chuck roast,validation
+cider vinegar,test
+cilantro,validation
+cinnamon,test
+cinnamon stick,test
+cinnamon sugar,test
+citric acid,test
+clam juice,validation
+clove,test
+club soda,test
+cocoa powder,test
+coconut,validation
+coconut cream,validation
+coconut milk,test
+coffee,validation
+coffee liqueur,test
+cognac,validation
+consomme,test
+cooked bacon,test
+cooked brown rice,validation
+cooked chicken,test
+cooked ham,test
+cooked macaroni,test
+cooked rice,test
+cooked shrimp,validation
+cooked turkey,test
+cooking spray,test
+cool whip,test
+coriander,validation
+corn,test
+corn chips,test
+corn husk,validation
+corn oil,validation
+corn syrup,validation
+corn tortilla,test
+cornmeal,test
+cornstarch,validation
+cottage cheese,test
+couscous,test
+cracker,validation
+craisin,validation
+cranberry,test
+cream,test
+cream cheese,test
+cream of celery soup,test
+cream of chicken soup,validation
+cream of coconut,test
+cream of mushroom soup,test
+cream of tartar,test
+creamed corn,test
+creamy peanut butter,test
+creme fraiche,test
+crescent roll,test
+crisco,validation
+crisco shortening,test
+crunchy peanut butter,test
+crushed pineapple,test
+crushed tomato,test
+cucumber,test
+cumin,validation
+cumin seed,test
+currant,test
+curry,validation
+curry leaf,test
+curry paste,validation
+curry powder,test
+dairy free margarine,test
+dark chocolate,test
+dark corn syrup,test
+dark raisin,test
+dark red kidney bean,test
+dark rum,test
+date,test
+diced green chili,test
+diced pimento,test
+diced tomato,test
+digestive biscuit,test
+dijon mustard,validation
+dill,validation
+dill pickle,validation
+dill seed,test
+dill weed,test
+dream whip,validation
+dried apricot,test
+dried basil,validation
+dried cherry,test
+dried chive,test
+dried cranberry,test
+dried currant,test
+dried dill,test
+dried fruit,validation
+dried lentils,validation
+dried marjoram,validation
+dried mint,test
+dried onion,test
+dried onion flakes,test
+dried oregano,test
+dried parsley,validation
+dried rosemary,test
+dried sage,test
+dried savory,test
+dried split pea,validation
+dried sweetened cranberry,test
+dried tarragon,validation
+dried thyme,validation
+dry breadcrumb,validation
+dry milk,test
+dry mustard,test
+dry onion soup mix,validation
+dry red wine,test
+dry roasted peanut,validation
+dry sherry,test
+dry vermouth,test
+dry white wine,validation
+duck,test
+egg,test
+egg noodles,test
+egg substitute,test
+egg white,test
+egg yolk,test
+eggplant,validation
+elbow macaroni,test
+enchilada sauce,test
+english muffin,test
+english walnut,test
+escarole,test
+evaporated milk,test
+extra firm tofu,test
+fat free half and half,test
+fat free mayonnaise,test
+fat free sour cream,test
+feta cheese,validation
+fettuccine,test
+fine egg noodles,test
+firm tofu,test
+fish sauce,test
+flank steak,validation
+flax seed,test
+flour tortilla,validation
+french style green bean,test
+frozen baby pea,test
+frozen blueberry,validation
+frozen broccoli,test
+frozen chopped broccoli,test
+frozen chopped spinach,test
+frozen corn,test
+frozen green bean,test
+frozen pea,test
+frozen peas and carrot,test
+frozen raspberry,validation
+frozen spinach,test
+frozen strawberry,test
+galangal,test
+garlic,test
+garlic powder,test
+garlic salt,test
+genoa salami,test
+ghee,validation
+gin,validation
+ginger,test
+ginger ale,test
+goat cheese,test
+golden raisin,validation
+golden syrup,test
+gorgonzola,validation
+grain mustard,validation
+grand marnier,test
+granny smith apple,validation
+grape jelly,test
+grape tomato,test
+grapeseed oil,validation
+greek yogurt,test
+green bean,validation
+green bell pepper,test
+green cabbage,test
+green chili,test
+green olive,test
+green onion,test
+green tomato,test
+grenadine,test
+grits,test
+ground almond,validation
+ground beef,test
+ground chicken,test
+ground ginger,test
+ground lamb,test
+ground lean pork,validation
+ground pork,test
+ground sage,validation
+ground sirloin,test
+ground turkey,test
+ground veal,test
+ground walnut,test
+gruyere cheese,test
+half and half,validation
+ham,test
+ham bone,validation
+ham hock,test
+hard salami,test
+hazelnut,test
+head cauliflower,test
+heavy cream,test
+hickory liquid smoke,test
+hoisin sauce,validation
+honey,validation
+honey mustard,test
+hot chili paste,test
+hot dog,test
+hot sauce,test
+iceberg lettuce,test
+instant coffee,validation
+instant minced garlic,validation
+instant minced onion,test
+instant rice,test
+italian sausage,test
+italian seasoning,test
+jalapeno,validation
+jicama,test
+kahlua,test
+kalamata olive,test
+kale,validation
+karo syrup,test
+ketchup,test
+kidney bean,test
+kielbasa,test
+kiwi,test
+kohlrabi,test
+lamb,test
+lard,test
+lasagna noodles,test
+lean ground beef,test
+lean ground chicken,validation
+lean ground lamb,test
+lean ground turkey,validation
+lean pork,test
+leek,test
+lemon,test
+lemon extract,validation
+lemon juice,test
+lemon pepper,test
+lemon zest,test
+lemonade,validation
+lentils,test
+lettuce,test
+light beer,test
+light butter,test
+light corn syrup,test
+light cream,validation
+light margarine,test
+light mayonnaise,test
+light molasses,validation
+light rum,test
+light sour cream,test
+lima bean,validation
+lime,validation
+lime juice,test
+lime leaf,test
+linguine,test
+liquid smoke,validation
+long grain brown rice,validation
+long grain rice,validation
+long grain white rice,test
+low fat buttermilk,test
+low fat cottage cheese,test
+low fat cream cheese,test
+low fat mayonnaise,test
+low fat milk,validation
+low fat ricotta cheese,test
+low fat sour cream,validation
+low fat swiss cheese,validation
+low fat vanilla yogurt,test
+low fat yogurt,test
+low sodium chicken broth,test
+low sodium soy sauce,test
+low sodium vegetable broth,test
+macadamia nut,test
+mace,test
+mandarin orange,validation
+mango,test
+mango chutney,test
+maple extract,test
+maple syrup,test
+maraschino cherry juice,validation
+margarine,test
+marinara sauce,validation
+marjoram,test
+marmite,test
+marsala wine,validation
+mayonnaise,test
+meat,validation
+mild italian sausage,validation
+milk,test
+milk chocolate,test
+milk chocolate chips,test
+miniature marshmallow,validation
+mint,validation
+minute rice,test
+miracle whip,test
+mixed nut,validation
+molasses,test
+monterey jack cheese,test
+mozzarella cheese,validation
+mushroom,test
+mussel,validation
+mustard,validation
+mustard seed,test
+napa cabbage,validation
+natural applesauce,validation
+natural bran,test
+non fat beef broth,test
+non fat cottage cheese,test
+non fat plain yogurt,test
+non fat sour cream,test
+non fat yogurt,test
+nut,validation
+nutmeg,validation
+oat bran,test
+okra,test
+oleo,test
+olive oil,test
+onion,test
+onion flakes,validation
+onion powder,validation
+onion salt,validation
+onion soup mix,test
+orange,test
+orange blossom water,test
+orange extract,validation
+orange juice,validation
+orange liqueur,test
+orange zest,test
+orecchiette,validation
+oregano,validation
+orzo,test
+ouzo,test
+oyster sauce,test
+palm sugar,validation
+pancetta,validation
+panir,test
+papaya,validation
+paprika,validation
+parmesan cheese,test
+parsley,test
+parsnip,test
+part skim mozzarella cheese,test
+part skim ricotta cheese,test
+pasta,validation
+pasta sauce,test
+pea,validation
+pea pod,test
+peach,test
+peach brandy,test
+peanut,test
+peanut butter,validation
+peanut butter chips,test
+peanut oil,test
+pear,validation
+pecan,test
+penne,validation
+pepperoni,test
+pepsi,test
+picante sauce,test
+pie crust,test
+pimento,test
+pimiento,test
+pine nut,validation
+pineapple,test
+pineapple juice,test
+pinto bean,test
+pistachio,validation
+pitted date,test
+pizza sauce,test
+plain doritos,test
+plain fat free yogurt,test
+plain low fat yogurt,test
+plain non fat yogurt,test
+plain yogurt,test
+plum tomato,test
+pomegranate juice,test
+pork,test
+pork chop,test
+pork sausage,test
+pork shoulder,validation
+potato,test
+potato chips,validation
+potato flour,test
+potato starch,test
+powdered milk,validation
+powdered sugar,test
+prawn,test
+prosciutto,test
+prune,validation
+pumpkin,validation
+pumpkin pie spice,test
+pumpkin seed,test
+quick cooking oats,test
+quick cooking tapioca,test
+quinoa,validation
+rabbit,test
+raisin,test
+raspberry,test
+raspberry jam,test
+raw cashew,test
+raw honey,test
+raw sugar,test
+red bean,validation
+red bell pepper,validation
+red chili,test
+red chili powder,test
+red chili sauce,test
+red currant jelly,validation
+red kidney bean,test
+red onion,test
+red pepper flakes,test
+red potato,test
+red wine,test
+red wine vinegar,test
+reduced calorie margarine,test
+reduced fat margarine,test
+reduced fat peanut butter,validation
+reduced fat sharp cheddar cheese,test
+reduced fat sour cream,validation
+reduced sodium chicken broth,test
+refried bean,test
+refrigerated biscuit,test
+refrigerated pie crust,validation
+rice vinegar,test
+rice wine,test
+rice wine vinegar,test
+ricotta cheese,test
+rigatoni,test
+roasted peanut,test
+roasted red pepper,validation
+rolled oats,validation
+romaine lettuce,test
+romano cheese,test
+rose water,validation
+rosemary,validation
+rotel,test
+rotel tomato,test
+round steak,test
+rubbed sage,validation
+rum,test
+rum extract,test
+russet potato,test
+safflower oil,test
+saffron,test
+sage,test
+sake,validation
+salad dressing,test
+salami,test
+salmon,test
+salmon steak,test
+salsa,validation
+salt,validation
+salt pork,validation
+salted cashew,test
+salted mixed nut,test
+salted peanut,test
+saltine,test
+saltine cracker,validation
+sauerkraut,test
+sausage,test
+scallop,validation
+sea scallop,test
+seasoned crouton,test
+seasoning salt,test
+seitan,validation
+semisweet chocolate chips,test
+serrano chili,test
+sesame oil,test
+sesame seed,test
+shallot,test
+sherry wine,test
+sherry wine vinegar,validation
+shortening,test
+shrimp,test
+single cream,test
+sirloin steak,test
+skim milk,test
+skirt steak,validation
+slivered almond,test
+small curd cottage cheese,test
+smoked ham hock,validation
+smoked sausage,validation
+snow pea,test
+soba noodles,test
+solid pack pumpkin,test
+solid shortening,test
+sour cream,test
+sour milk,test
+soy flour,test
+soy margarine,test
+soy sauce,test
+soymilk,test
+spaghetti,validation
+spaghetti sauce,test
+spam,test
+spanish peanut,test
+spinach,test
+splenda sugar substitute,test
+sprite,test
+squash,validation
+steak,test
+stevia,test
+stewed tomato,validation
+straw mushroom,test
+strawberry,test
+sugar,test
+sugar snap pea,validation
+sugar substitute,test
+sun dried tomato,test
+sunflower oil,validation
+sunflower seed,validation
+sweet onion,test
+sweet paprika,test
+sweet pickle,validation
+sweet pickle juice,test
+sweet pickle relish,validation
+sweet potato,validation
+sweetened condensed milk,test
+swiss chard,test
+swiss cheese,test
+tabasco sauce,test
+taco sauce,validation
+taco seasoning,test
+tahini,test
+tamari,validation
+tangerine,test
+tarragon,test
+tart apple,test
+tequila,test
+thyme,test
+tia maria,test
+toasted almond,test
+toasted hazelnut,test
+toasted sesame seed,test
+toasted sliced almond,test
+tofu,test
+tomato,validation
+tomato juice,validation
+tomato paste,test
+tomato puree,test
+tomato sauce,test
+tomato soup,test
+top sirloin steak,validation
+triple sec,test
+tuna,test
+turbinado sugar,test
+turkey,test
+turkey bacon,test
+turkey broth,test
+turmeric,test
+turnip,validation
+unbleached cane sugar,test
+unflavored gelatin,validation
+unsalted butter,test
+unsalted margarine,test
+unsweetened applesauce,test
+unsweetened chocolate,validation
+unsweetened coconut milk,test
+vanilla bean,validation
+vanilla extract,test
+vanilla ice cream,validation
+vanilla sugar,test
+vanilla yogurt,validation
+vegan mayonnaise,test
+vegemite,test
+vegetable broth,test
+vegetable oil,test
+vegetable shortening,validation
+vegetable stock,test
+vegetarian baked bean,validation
+vermicelli,test
+vidalia onion,test
+vinegar,validation
+vodka,test
+walnut,test
+walnut oil,validation
+water,test
+water chestnut,test
+watercress,validation
+wax bean,test
+wheat bran,test
+wheat flour,validation
+wheat germ,test
+whipped cream,test
+white bread,test
+white chocolate,test
+white chocolate chips,test
+white onion,test
+white pepper,test
+white rice,validation
+white vinegar,validation
+white wine,test
+white wine vinegar,validation
+whole almond,validation
+whole chicken,test
+whole kernel corn,validation
+whole milk,test
+whole milk ricotta cheese,validation
+whole tomato,validation
+whole wheat pastry flour,test
+wide egg noodles,validation
+wine vinegar,validation
+worcestershire sauce,test
+xanthan gum,validation
+yam,test
+yellow bell pepper,test
+yellow cake mix,test
+yellow mustard,validation
+yellow squash,validation
+yogurt,validation
+ziti,test
+zucchini,validation

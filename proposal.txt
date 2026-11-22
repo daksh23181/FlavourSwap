@@ -1,0 +1,34 @@
+No problem, you don’t need them. There are free public datasets that do the same job:
+
+Recipes: Food.com Recipes dataset on Kaggle (230k+ recipes with ingredient lists, free download)
+Flavor molecules: FooDB (free CSV download from foodb.ca) or the Ahn et al. 2011 flavor network data (free supplementary files)
+Nutrition: USDA FoodData Central (free download)
+
+Here are the updated form details:
+
+Group Number: 27
+
+Roll Numbers: 2023181, 2023142
+
+Project Title:
+FlavorSwap: Flavor- and Nutrition-Aware Ingredient Substitution Recommender
+
+Description:
+A data-driven system that suggests ingredient substitutes using recipe co-occurrence (ingredient embeddings), shared flavor compounds, and nutrition data. It recommends both similar and healthier swaps and is deployed as a web app. Data sources: Food.com Recipes (Kaggle), FooDB / Ahn et al. flavor network data, and USDA FoodData Central.
+
+Deliverable 1:
+Curated dataset linking cleaned recipe ingredients to flavor compounds and nutrient values.
+
+Deliverable 2:
+Ingredient embedding model (Word2Vec) with an interactive t-SNE/UMAP map of ingredient similarity.
+
+Deliverable 3:
+Hybrid substitution model (embeddings + flavor overlap + nutrition) that suggests both similar and healthier substitutes, evaluated on known substitution pairs using Hit@k.
+
+Deliverable 4:
+Streamlit web app where users enter an ingredient and get ranked substitutes with explanations.
+
+Deliverable 5:
+Recipe-level impact analysis: apply healthier substitutions to a sample of recipes and analyse the changes in calories, fat, sugar, and sodium, along with flavor similarity retained, compared across cuisines.
+
+

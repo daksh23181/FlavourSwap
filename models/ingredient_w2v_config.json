@@ -1,0 +1,50 @@
+{
+  "selected": "cbow_d100_s0.001",
+  "window": 50,
+  "epochs": 30,
+  "negative": 10,
+  "seed": 42,
+  "shrink_windows": false,
+  "min_count": 1,
+  "corpus_recipes": 231089,
+  "corpus_tokens": 2064223,
+  "vocab_size": 3584,
+  "grid": [
+    {
+      "config": "cbow_d100_s0.001",
+      "sg": 0,
+      "vector_size": 100,
+      "sample": 0.001,
+      "coherence@10": 0.6953,
+      "chance": 0.1034,
+      "train_seconds": 193.5
+    },
+    {
+      "config": "cbow_d100_s0.0001",
+      "sg": 0,
+      "vector_size": 100,
+      "sample": 0.0001,
+      "coherence@10": 0.6477,
+      "chance": 0.1034,
+      "train_seconds": 103.1
+    },
+    {
+      "config": "skipgram_d100_s0.001",
+      "sg": 1,
+      "vector_size": 100,
+      "sample": 0.001,
+      "coherence@10": 0.6628,
+      "chance": 0.1034,
+      "train_seconds": 884.1
+    },
+    {
+      "config": "skipgram_d100_s0.0001",
+      "sg": 1,
+      "vector_size": 100,
+      "sample": 0.0001,
+      "coherence@10": 0.6337,
+      "chance": 0.1034,
+      "train_seconds": 246.8
+    }
+  ]
+}

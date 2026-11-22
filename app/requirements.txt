@@ -1,0 +1,7 @@
+# Dependencies of the web app only (Streamlit Community Cloud reads this file because it sits next to
+# app/streamlit_app.py). The full data pipeline needs ../requirements.txt. Requires Python >= 3.12.
+streamlit==1.66.1
+pandas==3.1.0
+numpy==2.5.4
+scipy==1.18.1
+gensim==4.4.0

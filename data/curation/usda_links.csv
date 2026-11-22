@@ -1,0 +1,840 @@
+ingredient,usda_description,note
+salt,"Salt, table",
+black pepper,"Spices, pepper, black",
+garlic,"Garlic, raw",
+butter,"Butter, salted",
+sugar,"Sugars, granulated",
+onion,"Onions, raw",
+egg,"Egg, whole, raw, fresh",
+all purpose flour,"Wheat flour, white, all-purpose, enriched, bleached",
+water,"Beverages, water, tap, drinking",
+olive oil,"Oil, olive, salad or cooking",
+milk,"Milk, whole, 3.25% milkfat, with added vitamin D",unqualified milk taken as whole milk
+vegetable oil,"Oil, soybean, salad or cooking",US 'vegetable oil' is soybean oil
+vanilla extract,Vanilla extract,
+brown sugar,"Sugars, brown",
+lemon juice,"Lemon juice, raw",
+cinnamon,"Spices, cinnamon, ground",
+parsley,"Parsley, fresh",
+baking powder,"Leavening agents, baking powder, double-acting, sodium aluminum sulfate",
+green onion,"Onions, spring or scallions (includes tops and bulb), raw",
+parmesan cheese,"Cheese, parmesan, grated",
+baking soda,"Leavening agents, baking soda",
+tomato,"Tomatoes, red, ripe, raw, year round average",
+carrot,"Carrots, raw",
+chicken breast,"Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+cheddar cheese,"Cheese, cheddar (Includes",
+sour cream,"Cream, sour, cultured",
+garlic powder,"Spices, garlic powder",
+cumin,"Spices, cumin seed",
+cilantro,"Coriander (cilantro) leaves, raw",
+honey,Honey,
+ginger,"Ginger root, raw",
+cream cheese,"Cheese, cream",
+powdered sugar,"Sugars, powdered",
+heavy cream,"Cream, fluid, heavy whipping",
+cayenne pepper,"Spices, pepper, red or cayenne",
+celery,"Celery, raw",
+nutmeg,"Spices, nutmeg, ground",
+green bell pepper,"Peppers, sweet, green, raw",
+soy sauce,Soy sauce made from soy and wheat (shoyu),
+unsalted butter,"Butter, without salt",
+mushroom,"Mushrooms, white, raw",
+mayonnaise,"Salad dressing, mayonnaise, regular",
+basil,"Basil, fresh",
+red bell pepper,"Peppers, sweet, red, raw",
+cornstarch,Cornstarch,
+paprika,"Spices, paprika",
+potato,"Potatoes, flesh and skin, raw",
+chicken broth,"Soup, chicken broth, ready-to-serve",
+worcestershire sauce,"Sauce, worcestershire",
+lime juice,"Lime juice, raw",
+ground beef,"Beef, ground, 80% lean meat / 20% fat, raw",
+chili powder,"Spices, chili powder",
+bacon,"Pork, cured, bacon, unprepared",
+red onion,"Onions, raw",
+pecan,"Nuts, pecans",
+walnut,"Nuts, walnuts, english",
+thyme,"Thyme, fresh",
+lemon zest,"Lemon peel, raw",
+red pepper flakes,"Spices, pepper, red or cayenne",proxy: crushed dried red chili
+dijon mustard,"Mustard, prepared, yellow",proxy: SR Legacy has no Dijon entry
+bay leaf,"Spices, bay leaf",
+orange juice,"Orange juice, raw",
+oregano,"Spices, oregano, dried",unqualified oregano in US recipes is usually dried; SR Legacy has no fresh oregano
+cocoa powder,"Cocoa, dry powder, unsweetened",
+dried oregano,"Spices, oregano, dried",
+margarine,"Margarine, regular, 80% fat, composite, stick, with salt",
+banana,"Bananas, raw",
+mozzarella cheese,"Cheese, mozzarella, whole milk",
+egg white,"Egg, white, raw, fresh",
+zucchini,"Squash, summer, zucchini, includes skin, raw",
+ketchup,Catsup,
+jalapeno,"Peppers, jalapeno, raw",
+raisin,"Raisins, dark, seedless",
+tomato sauce,"Tomato products, canned, sauce",
+chicken stock,"Soup, stock, chicken, home-prepared",
+tomato paste,"Tomato products, canned, paste, without salt added",
+canola oil,"Oil, canola",
+clove,"Spices, cloves, ground",
+shallot,"Shallots, raw",
+lemon,"Lemons, raw, without peel",
+egg yolk,"Egg, yolk, raw, fresh",
+dried thyme,"Spices, thyme, dried",
+dry mustard,"Spices, mustard seed, ground",
+apple,"Apples, raw, with skin",
+balsamic vinegar,"Vinegar, balsamic",
+diced tomato,"Tomatoes, red, ripe, canned, packed in tomato juice",
+buttermilk,"Milk, buttermilk, fluid, cultured, lowfat",
+shrimp,"Crustaceans, shrimp, raw",
+ground ginger,"Spices, ginger, ground",
+onion powder,"Spices, onion powder",
+rosemary,"Rosemary, fresh",
+dried basil,"Spices, basil, dried",
+orange zest,"Orange peel, raw",
+breadcrumb,"Bread, crumbs, dry, grated, plain",
+coriander,"Spices, coriander seed",
+vinegar,"Vinegar, distilled",
+hot sauce,"Sauce, ready-to-serve, pepper or hot",
+strawberry,"Strawberries, raw",
+mint,"Spearmint, fresh",
+red wine vinegar,"Vinegar, red wine",
+coconut,"Nuts, coconut meat, dried (desiccated), not sweetened",
+chive,"Chives, raw",
+spinach,"Spinach, raw",
+dry white wine,"Alcoholic beverage, wine, table, white",
+rolled oats,"Cereals, oats, regular and quick, not fortified, dry",
+half and half,"Cream, fluid, half and half",
+cucumber,"Cucumber, with peel, raw",
+whole wheat flour,"Wheat flour, whole-grain (Includes",
+turmeric,"Spices, turmeric, ground",
+sesame oil,"Oil, sesame, salad or cooking",
+skim milk,"Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
+white pepper,"Spices, pepper, white",
+curry powder,"Spices, curry powder",
+lean ground beef,"Beef, ground, 90% lean meat / 10% fat, raw",
+white wine,"Alcoholic beverage, wine, table, white",
+almond,"Nuts, almonds",
+avocado,"Avocados, raw, all commercial varieties",
+allspice,"Spices, allspice, ground",
+feta cheese,"Cheese, feta",
+semisweet chocolate chips,"Candies, semisweet chocolate",
+shortening,"Shortening, vegetable, household, composite",
+cheese,,unspecified cheese type
+salsa,"Sauce, salsa, ready-to-serve",
+plum tomato,"Tomatoes, red, ripe, raw, year round average",
+green chili,"Peppers, hot chili, green, raw",
+garlic salt,,no SR Legacy entry
+celery rib,"Celery, raw",
+cream of mushroom soup,"Soup, cream of mushroom, canned, condensed",
+cider vinegar,"Vinegar, cider",
+lettuce,"Lettuce, iceberg (includes crisphead types), raw",
+maple syrup,"Syrups, maple",
+black bean,"Beans, black, mature seeds, canned, low sodium",only canned black-bean entry is low sodium
+chicken,"Chicken, broilers or fryers, meat and skin, raw",
+black olive,"Olives, ripe, canned (small-extra large)",
+nut,,unspecified nut type
+monterey jack cheese,"Cheese, monterey",
+dried parsley,"Spices, parsley, dried",
+peanut butter,"Peanut butter, smooth style, with salt",
+seasoning salt,,no SR Legacy entry
+dill,"Dill weed, fresh",
+chocolate chips,"Candies, semisweet chocolate",
+bell pepper,"Peppers, sweet, green, raw",
+tabasco sauce,"Sauce, ready-to-serve, pepper, TABASCO",
+white vinegar,"Vinegar, distilled",
+cream,"Cream, fluid, light whipping",ambiguous fat level; mid-fat cream used
+sesame seed,"Seeds, sesame seeds, whole, dried",
+evaporated milk,"Milk, canned, evaporated, with added vitamin D and without added vitamin A",
+green bean,"Beans, snap, green, raw",
+cooking spray,"Oil, PAM cooking spray, original",
+beef broth,"Soup, beef broth or bouillon canned, ready-to-serve",
+sweet potato,"Sweet potato, raw, unprepared",
+russet potato,"Potatoes, russet, flesh and skin, raw",
+almond extract,,no SR Legacy entry
+swiss cheese,"Cheese, swiss",
+italian seasoning,,no SR Legacy entry
+blueberry,"Blueberries, raw",
+cooked chicken,"Chicken, broilers or fryers, meat only, cooked, roasted",
+whole milk,"Milk, whole, 3.25% milkfat, with added vitamin D",
+plain yogurt,"Yogurt, plain, whole milk",
+chickpea,"Chickpeas (garbanzo beans, bengal gram), mature seeds, canned, drained solids",
+bread,"Bread, white, commercially prepared (includes soft bread crumbs)",
+flour tortilla,"Tortillas, ready-to-bake or -fry, flour, refrigerated",
+cream of chicken soup,"Soup, cream of chicken, canned, condensed",
+lime,"Limes, raw",
+cabbage,"Cabbage, raw",
+cinnamon stick,"Spices, cinnamon, ground",
+sweetened condensed milk,"Milk, canned, condensed, sweetened",
+broccoli,"Broccoli, raw",
+sage,"Spices, sage, ground",SR Legacy has no fresh sage
+yellow mustard,"Mustard, prepared, yellow",
+molasses,Molasses,
+corn,"Corn, sweet, yellow, raw",
+leek,"Leeks, (bulb and lower leaf-portion), raw",
+orange,"Oranges, raw, all commercial varieties",
+ham,"Ham, sliced, regular (approximately 11% fat)",
+pine nut,"Nuts, pine nuts, dried",
+caper,"Capers, canned",
+red potato,"Potatoes, red, flesh and skin, raw",
+cherry tomato,"Tomatoes, red, ripe, raw, year round average",
+sweet onion,"Onions, sweet, raw",
+white onion,"Onions, raw",
+chicken thigh,"Chicken, broilers or fryers, dark meat, thigh, meat only, raw",
+peanut oil,"Oil, peanut, salad or cooking",
+ice,"Beverages, water, tap, drinking",
+cooked rice,"Rice, white, long-grain, regular, enriched, cooked",
+coconut milk,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",
+active dry yeast,"Leavening agents, yeast, baker's, active dry",
+frozen pea,"Peas, green, frozen, unprepared",
+red wine,"Alcoholic beverage, wine, table, red",
+barbecue sauce,"Sauce, barbecue",
+ice cube,"Beverages, water, tap, drinking",
+black peppercorn,"Spices, pepper, black",
+pineapple juice,"Pineapple juice, canned or bottled, unsweetened, without added ascorbic acid",
+cornmeal,"Cornmeal, degermed, enriched, yellow",
+rice vinegar,"Vinegar, distilled",proxy: SR Legacy has no rice vinegar
+eggplant,"Eggplant, raw",
+crushed pineapple,"Pineapple, canned, juice pack, solids and liquids",
+baby spinach,"Spinach, raw",
+ricotta cheese,"Cheese, ricotta, whole milk",
+rice,"Rice, white, long-grain, regular, raw, enriched",
+pork chop,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",
+white wine vinegar,"Vinegar, red wine",proxy: SR Legacy has no white wine vinegar
+asparagus,"Asparagus, raw",
+peach,"Peaches, yellow, raw",
+vegetable broth,"Soup, vegetable broth, ready to serve",
+cardamom,"Spices, cardamom",
+apple cider vinegar,"Vinegar, cider",
+beer,"Alcoholic beverage, beer, regular, all",
+quick cooking oats,"Cereals, oats, regular and quick, not fortified, dry",
+whipped cream,"Cream, whipped, cream topping, pressurized",
+broccoli floret,"Broccoli, raw",
+cool whip,"Dessert topping, semi solid, frozen",
+hard boiled egg,"Egg, whole, cooked, hard-boiled",
+dried cranberry,"Cranberries, dried, sweetened",
+mustard,"Mustard, prepared, yellow",
+lime zest,"Lemon peel, raw",proxy: SR Legacy has no lime peel
+vodka,"Alcoholic beverage, distilled, vodka, 80 proof",
+salmon fillet,"Fish, salmon, Atlantic, farmed, raw",
+yeast,"Leavening agents, yeast, baker's, active dry",
+yellow bell pepper,"Peppers, sweet, yellow, raw",
+fish sauce,"Sauce, fish, ready-to-serve",
+slivered almond,"Nuts, almonds",
+vegetable stock,"Soup, vegetable broth, ready to serve",
+bread flour,"Wheat flour, white, bread, enriched",
+mango,"Mangos, raw",
+dried rosemary,"Spices, rosemary, dried",
+chili,"Peppers, hot chili, red, raw",
+celery seed,"Spices, celery seed",
+dry sherry,"Alcoholic beverage, wine, dessert, dry",
+blue cheese,"Cheese, blue",
+applesauce,"Applesauce, canned, sweetened, without salt",
+low sodium chicken broth,"Soup, chicken broth, low sodium, canned",
+frozen chopped spinach,"Spinach, frozen, chopped or leaf, unprepared",
+vanilla ice cream,"Ice creams, vanilla",
+light corn syrup,"Syrups, corn, light",
+cranberry,"Cranberries, raw",
+crushed tomato,"Tomatoes, crushed, canned",
+cumin seed,"Spices, cumin seed",
+pineapple,"Pineapple, raw, all varieties",
+romaine lettuce,"Lettuce, cos or romaine, raw",
+kidney bean,"Beans, kidney, red, mature seeds, canned, solids and liquids",
+white bread,"Bread, white, commercially prepared (includes soft bread crumbs)",
+spaghetti,"Pasta, dry, enriched",
+raspberry,"Raspberries, raw",
+granny smith apple,"Apples, raw, granny smith, with skin",
+cream of tartar,"Leavening agents, cream of tartar",
+pasta,"Pasta, dry, enriched",
+corn tortilla,"Tortillas, ready-to-bake or -fry, corn",
+cauliflower,"Cauliflower, raw",
+pork tenderloin,"Pork, fresh, loin, tenderloin, separable lean only, raw",
+french bread,"Bread, french or vienna (includes sourdough)",
+elbow macaroni,"Pasta, dry, enriched",
+red chili,"Peppers, hot chili, red, raw",
+apple juice,"Apple juice, canned or bottled, unsweetened, without added ascorbic acid",
+tarragon,"Spices, tarragon, dried",SR Legacy has no fresh tarragon
+penne,"Pasta, dry, enriched",
+kalamata olive,,no SR Legacy entry
+roasted red pepper,"Peppers, sweet, red, raw",proxy: raw red bell pepper
+sun dried tomato,"Tomatoes, sun-dried",
+spaghetti sauce,"Sauce, pasta, spaghetti/marinara, ready-to-serve",
+miniature marshmallow,"Candies, marshmallows",
+long grain rice,"Rice, white, long-grain, regular, raw, enriched",
+pumpkin,"Pumpkin, raw",
+splenda sugar substitute,,no SR Legacy entry
+dry breadcrumb,"Bread, crumbs, dry, grated, plain",
+beef stock,"Soup, stock, beef, home-prepared",
+dry red wine,"Alcoholic beverage, wine, table, red",
+ground turkey,"Turkey, Ground, raw",
+water chestnut,"Waterchestnuts, chinese, canned, solids and liquids",
+dried apricot,"Apricots, dried, sulfured, uncooked",
+brandy,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
+chili sauce,"Sauce, tomato chili sauce, bottled, with salt",
+peanut,"Peanuts, all types, raw",
+baby carrot,"Carrots, baby, raw",
+graham cracker crumb,"Cookies, graham crackers, plain or honey (includes cinnamon)",
+lemon pepper,,no SR Legacy entry
+yellow cake mix,,no plain yellow cake mix entry
+creamy peanut butter,"Peanut butter, smooth style, with salt",
+ground pork,"Pork, fresh, ground, raw",
+yogurt,"Yogurt, plain, whole milk",
+frozen corn,"Corn, sweet, yellow, frozen, kernels cut off cob, unprepared",
+button mushroom,"Mushrooms, white, raw",
+semisweet chocolate,"Candies, semisweet chocolate",
+cottage cheese,"Cheese, cottage, creamed, large or small curd",
+velveeta cheese,,no SR Legacy entry
+stewed tomato,"Tomatoes, red, ripe, canned, stewed",
+romano cheese,"Cheese, romano",
+maraschino cherry,"Maraschino cherries, canned, drained",
+sherry wine,"Alcoholic beverage, wine, dessert, dry",
+taco seasoning,"Seasoning mix, dry, taco, original",
+self raising flour,"Wheat flour, white, all-purpose, self-rising, enriched",
+hoisin sauce,"Sauce, hoisin, ready-to-serve",
+golden raisin,"Raisins, golden, seedless",
+low sodium soy sauce,"Soy sauce made from soy and wheat (shoyu), low sodium",
+tortilla chips,"Tortilla chips, yellow, plain, salted",
+dill weed,"Dill weed, fresh",
+caraway seed,"Spices, caraway seed",
+pear,"Pears, raw",
+rum,"Alcoholic beverage, distilled, rum, 80 proof",
+cake flour,"Wheat flour, white, cake, enriched",
+sweet red pepper,"Peppers, sweet, red, raw",
+goat cheese,"Cheese, goat, soft type",
+poppy seed,"Spices, poppy seed",
+egg noodles,"Noodles, egg, dry, enriched",
+tomato soup,"Soup, tomato, canned, condensed",
+butternut squash,"Squash, winter, butternut, raw",
+celery salt,,no SR Legacy entry
+cooked ham,"Ham, sliced, regular (approximately 11% fat)",
+oats,"Cereals, oats, regular and quick, not fortified, dry",
+date,"Dates, deglet noor",
+hamburger bun,"Rolls, hamburger or hotdog, plain",
+artichoke heart,"Artichokes, (globe or french), raw",
+frozen spinach,"Spinach, frozen, chopped or leaf, unprepared",
+garam masala,,no SR Legacy entry
+chicken bouillon cube,"Soup, chicken broth cubes, dry",
+dried dill,"Spices, dill weed, dried",
+yellow cornmeal,"Cornmeal, degermed, enriched, yellow",
+crabmeat,"Crustaceans, crab, blue, canned",
+light soy sauce,Soy sauce made from soy and wheat (shoyu),Chinese 'light' soy sauce is regular soy sauce
+provolone cheese,"Cheese, provolone",
+pineapple chunk,"Pineapple, canned, juice pack, solids and liquids",
+poultry seasoning,"Spices, poultry seasoning",
+whole kernel corn,"Corn, sweet, yellow, canned, whole kernel, drained solids",
+fennel seed,"Spices, fennel seed",
+rice wine vinegar,"Vinegar, distilled",proxy: SR Legacy has no rice vinegar
+whole clove,"Spices, cloves, ground",
+self rising flour,"Wheat flour, white, all-purpose, self-rising, enriched",
+unsweetened applesauce,"Applesauce, canned, unsweetened, without added ascorbic acid",
+pea,"Peas, green, raw",
+prepared horseradish,"Horseradish, prepared",
+american cheese,"Cheese, pasteurized process, American, fortified with vitamin D",
+marjoram,"Spices, marjoram, dried",SR Legacy has no fresh marjoram
+gruyere cheese,"Cheese, gruyere",
+italian sausage,"Sausage, Italian, pork, mild, raw",
+sunflower seed,"Seeds, sunflower seed kernels, dried",
+tomato juice,"Tomato juice, canned, with salt added",
+liquid smoke,,no SR Legacy entry
+tomato puree,"Tomato products, canned, puree, without salt added",
+chipotle chili in adobo,,no SR Legacy entry
+pinto bean,"Beans, pinto, mature seeds, canned, solids and liquids",
+pumpkin pie spice,"Spices, pumpkin pie spice",
+cajun seasoning,,no SR Legacy entry
+mustard seed,"Spices, mustard seed, ground",proxy: ground mustard seed
+beef,,unspecified cut
+egg substitute,"Egg substitute, liquid or frozen, fat free",
+pie crust,"Pie crust, refrigerated, regular, unbaked",
+nonstick cooking spray,"Oil, PAM cooking spray, original",
+corn kernel,"Corn, sweet, yellow, raw",
+bean sprout,"Mung beans, mature seeds, sprouted, raw",
+bittersweet chocolate,"Chocolate, dark, 70-85% cacao solids",
+corn syrup,"Syrups, corn, light",
+pepperoni,"Pepperoni, beef and pork, sliced",
+linguine,"Pasta, dry, enriched",
+mandarin orange,"Tangerines, (mandarin oranges), canned, light syrup pack",
+prosciutto,,no SR Legacy entry
+apple cider,"Apple juice, canned or bottled, unsweetened, without added ascorbic acid",proxy: unfiltered apple juice
+lemon wedge,"Lemons, raw, without peel",
+light cream,"Cream, fluid, light (coffee cream or table cream)",
+sauerkraut,"Sauerkraut, canned, solids and liquids",
+couscous,"Couscous, dry",
+tuna,"Fish, tuna, light, canned in water, drained solids",
+tequila,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
+dried onion flakes,"Onions, dehydrated flakes",
+brown rice,"Rice, brown, long-grain, raw",
+splenda granular,,no SR Legacy entry
+soymilk,"Soymilk, original and vanilla, unfortified",
+white chocolate chips,"Candies, white chocolate",
+pumpkin puree,"Pumpkin, canned, without salt",
+taco seasoning mix,"Seasoning mix, dry, taco, original",
+panko breadcrumb,"Bread, crumbs, dry, grated, plain",proxy: plain dry breadcrumbs
+diced green chili,"Peppers, hot chili, green, canned, pods, excluding seeds, solids and liquids",
+dark rum,"Alcoholic beverage, distilled, rum, 80 proof",
+fettuccine,"Pasta, dry, enriched",
+olive,"Olives, ripe, canned (small-extra large)",
+pesto sauce,"Sauce, pesto, ready-to-serve, refrigerated",
+seasoning,,unspecified
+low fat milk,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
+green olive,"Olives, pickled, canned or bottled, green",
+pimiento,"Pimento, canned",
+onion soup mix,"Soup, onion, dry, mix",
+dry yeast,"Leavening agents, yeast, baker's, active dry",
+chocolate syrup,"Syrups, chocolate, fudge-type",
+chicken wing,"Chicken, broilers or fryers, wing, meat and skin, raw",
+oyster sauce,"Sauce, oyster, ready-to-serve",
+sweetened coconut,"Nuts, coconut meat, dried (desiccated), sweetened, flaked, packaged",
+mashed potato,"Potatoes, mashed, home-prepared, whole milk and butter added",
+old bay seasoning,,no SR Legacy entry
+yellow squash,"Squash, summer, crookneck and straightneck, raw",
+cranberry juice,"Cranberry juice, unsweetened",
+2% milk,"Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+green cabbage,"Cabbage, raw",
+horseradish,"Horseradish, prepared",
+refried bean,"Refried beans, canned, traditional style",
+white rice,"Rice, white, long-grain, regular, raw, enriched",
+beef bouillon cube,"Soup, beef broth, cubed, dry",
+orange marmalade,"Marmalade, orange",
+corn flakes,,branded cereal only
+cannellini bean,"Beans, white, mature seeds, canned",
+lime wedge,"Limes, raw",
+cashew,"Nuts, cashew nuts, raw",
+chicken piece,"Chicken, broilers or fryers, meat and skin, raw",
+snow pea,"Peas, edible-podded, raw",
+vegetable shortening,"Shortening, vegetable, household, composite",
+grape tomato,"Tomatoes, red, ripe, raw, year round average",
+red kidney bean,"Beans, kidney, red, mature seeds, canned, solids and liquids",
+cream of celery soup,"Soup, cream of celery, canned, condensed",
+portabella mushroom,"Mushrooms, portabella, raw",
+basmati rice,"Rice, white, long-grain, regular, raw, enriched",proxy: long-grain white rice
+kahlua,"Alcoholic beverage, liqueur, coffee, 53 proof",
+light sour cream,"Sour cream, light",
+serrano chili,"Peppers, serrano, raw",
+sausage,"Pork sausage, link/patty, unprepared",
+wheat germ,"Wheat germ, crude",
+cooked chicken breast,"Chicken, broilers or fryers, breast, meat only, cooked, roasted",
+diced onion,"Onions, raw",
+parsnip,"Parsnips, raw",
+marshmallow,"Candies, marshmallows",
+dark chocolate,"Chocolate, dark, 60-69% cacao solids",
+whole chicken,"Chicken, broilers or fryers, meat and skin, raw",
+orzo,"Pasta, dry, enriched",
+canned pumpkin,"Pumpkin, canned, without salt",
+whipped topping,"Dessert topping, semi solid, frozen",
+pizza sauce,"Sauce, pizza, canned, ready-to-serve",
+vidalia onion,"Onions, sweet, raw",
+light mayonnaise,"Salad dressing, mayonnaise-type, light",
+lasagna noodles,"Pasta, dry, enriched",
+unsweetened chocolate,"Baking chocolate, unsweetened, squares",
+monterey jack pepper cheese,"Cheese, monterey",
+tahini,"Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)",
+rhubarb,"Rhubarb, raw",
+iceberg lettuce,"Lettuce, iceberg (includes crisphead types), raw",
+lemongrass,"Lemon grass (citronella), raw",
+white chocolate,"Candies, white chocolate",
+coriander seed,"Spices, coriander seed",
+dried marjoram,"Spices, marjoram, dried",
+italian dressing,"Salad dressing, italian dressing, commercial, regular",
+radish,"Radishes, raw",
+firm tofu,"Tofu, raw, firm, prepared with calcium sulfate",
+whole tomato,"Tomatoes, red, ripe, canned, packed in tomato juice",
+cooked bacon,"Pork, cured, bacon, cooked, baked",
+sweet paprika,"Spices, paprika",
+unflavored gelatin,"Gelatins, dry powder, unsweetened",
+herb,,unspecified
+milk chocolate chips,"Candies, milk chocolate",
+new potato,"Potatoes, red, flesh and skin, raw",proxy: red potato
+yukon gold potato,"Potatoes, flesh and skin, raw",
+macaroni,"Pasta, dry, enriched",
+bourbon,"Alcoholic beverage, distilled, whiskey, 86 proof",
+red food coloring,,no SR Legacy entry
+dried sage,"Spices, sage, ground",
+whole wheat bread,"Bread, whole-wheat, commercially prepared",
+italian seasoned breadcrumb,"Bread, crumbs, dry, grated, seasoned",
+ranch dressing,"Salad dressing, ranch dressing, regular",
+reduced sodium chicken broth,"Soup, chicken broth, less/reduced sodium, ready to serve",
+tart apple,"Apples, raw, with skin",
+bow tie pasta,"Pasta, dry, enriched",
+flank steak,"Beef, flank, steak, separable lean and fat, trimmed to 0"" fat, all grades, raw",
+beet,"Beets, raw",
+coffee,"Beverages, coffee, brewed, prepared with tap water",
+tortilla,"Tortillas, ready-to-bake or -fry, flour, refrigerated",unqualified tortilla taken as flour tortilla
+teriyaki sauce,"Sauce, teriyaki, ready-to-serve",
+greek yogurt,"Yogurt, Greek, plain, whole milk",
+miracle whip,"Salad dressing, mayonnaise type, regular, with salt",
+shiitake mushroom,"Mushrooms, shiitake, raw",
+pita bread,"Bread, pita, white, enriched",
+lentils,"Lentils, raw",
+dry onion soup mix,"Soup, onion, dry, mix",
+1% milk,"Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
+butterscotch chips,,no SR Legacy entry
+chorizo sausage,"Sausage, pork, chorizo, link or ground, raw",
+marinara sauce,"Sauce, pasta, spaghetti/marinara, ready-to-serve",
+asiago cheese,,no SR Legacy entry
+cherry pie filling,"Pie fillings, canned, cherry",
+smoked paprika,"Spices, paprika",
+noodles,"Noodles, egg, dry, enriched",
+frozen mixed vegetable,"Vegetables, mixed, frozen, unprepared",
+long grain white rice,"Rice, white, long-grain, regular, raw, enriched",
+angel hair pasta,"Pasta, dry, enriched",
+macadamia nut,"Nuts, macadamia nuts, raw",
+toasted sesame seed,"Seeds, sesame seeds, whole, roasted and toasted",
+fruit,,unspecified
+chocolate,"Candies, semisweet chocolate",unqualified baking chocolate taken as semisweet
+instant vanilla pudding,"Puddings, vanilla, dry mix, instant",
+pasta sauce,"Sauce, pasta, spaghetti/marinara, ready-to-serve",
+asparagus spear,"Asparagus, raw",
+brussels sprout,"Brussels sprouts, raw",
+quinoa,"Quinoa, uncooked",
+salmon,"Fish, salmon, Atlantic, farmed, raw",
+tilapia fillet,"Fish, tilapia, raw",
+vanilla bean,,no SR Legacy entry
+arugula,"Arugula, raw",
+bisquick,,no SR Legacy entry
+graham cracker,"Cookies, graham crackers, plain or honey (includes cinnamon)",
+vegetable oil cooking spray,"Oil, PAM cooking spray, original",
+onion salt,,no SR Legacy entry
+powdered milk,"Milk, dry, nonfat, regular, without added vitamin A and vitamin D",
+part skim mozzarella cheese,"Cheese, mozzarella, part skim milk",
+hazelnut,"Nuts, hazelnuts or filberts",
+instant coffee,"Beverages, coffee, instant, regular, powder",
+corn oil,"Oil, corn, industrial and retail, all purpose salad or cooking",
+refrigerated crescent dinner roll,,no generic SR Legacy entry
+red chili powder,"Spices, pepper, red or cayenne",Indian red chili powder is ground red chili
+cooked brown rice,"Rice, brown, long-grain, cooked",
+low fat sour cream,"Sour cream, reduced fat",
+pork,,unspecified cut
+red cabbage,"Cabbage, red, raw",
+reduced sodium soy sauce,"Soy sauce made from soy and wheat (shoyu), low sodium",
+ginger ale,"Beverages, carbonated, ginger ale",
+vegetable,,unspecified
+arborio rice,"Rice, white, medium-grain, raw, enriched",
+creme fraiche,,no SR Legacy entry
+triple sec,,no SR Legacy entry
+creamed corn,"Corn, sweet, yellow, canned, cream style, regular pack",
+dill pickle,"Pickles, cucumber, dill or kosher dill",
+roasting chicken,"Chicken, roasting, meat only, raw",SR Legacy has no raw meat-and-skin roasting chicken; meat only used
+raw shrimp,"Crustaceans, shrimp, raw",
+plain breadcrumb,"Bread, crumbs, dry, grated, plain",
+blackberry,"Blackberries, raw",
+dark sesame oil,"Oil, sesame, salad or cooking",
+grenadine,,no SR Legacy entry
+lemon slice,"Lemons, raw, without peel",
+italian bread,"Bread, Italian",
+toasted sesame oil,"Oil, sesame, salad or cooking",
+club soda,"Beverages, carbonated, club soda",
+smoked sausage,"Sausage, smoked link sausage, pork",
+apricot preserve,"Jams and preserves, apricot",
+ritz cracker,"Crackers, standard snack-type, regular",
+lemon extract,,no SR Legacy entry
+rice flour,"Rice flour, white, unenriched",
+saffron,"Spices, saffron",
+brewed coffee,"Beverages, coffee, brewed, prepared with tap water",
+frozen strawberry,"Strawberries, frozen, unsweetened",
+ground chicken,"Chicken, ground, raw",
+frozen orange juice concentrate,"Orange juice, frozen concentrate, unsweetened, undiluted",
+non fat sour cream,"Sour cream, fat free",
+kale,"Kale, raw",
+bacon bit,"Pork, cured, bacon, cooked, baked",proxy: cooked bacon
+smoked salmon,"Fish, salmon, chinook, smoked",
+creole seasoning,,no SR Legacy entry
+amaretto,,no SR Legacy entry
+low fat cheddar cheese,"Cheese, low fat, cheddar or colby",
+round steak,"Beef, round, full cut, separable lean and fat, trimmed to 1/8"" fat, choice, raw",
+fish fillet,"Fish, cod, Atlantic, raw",proxy: generic white fish
+fat free cream cheese,"Cheese, cream, fat free",
+grand marnier,,no SR Legacy entry
+canned tomato,"Tomatoes, red, ripe, canned, packed in tomato juice",
+cooked turkey,"Turkey, whole, meat only, cooked, roasted",
+light cream cheese,"Cheese, cream, low fat",
+pistachio,"Nuts, pistachio nuts, raw",
+pork loin,"Pork, fresh, loin, whole, separable lean and fat, raw",
+mexican blend cheese,"Cheese, Mexican blend",
+cream style corn,"Corn, sweet, yellow, canned, cream style, regular pack",
+english cucumber,"Cucumber, with peel, raw",
+rice krispies,,branded cereal only
+turnip,"Turnips, raw",
+hot dog,"Frankfurter, beef, unheated",
+vanilla instant pudding mix,"Puddings, vanilla, dry mix, instant",
+gorgonzola,"Cheese, blue",gorgonzola is a blue cheese
+frozen whipped topping,"Dessert topping, semi solid, frozen",
+mace,"Spices, mace, ground",
+cracker,"Crackers, standard snack-type, regular",
+seasoned bread crumb,"Bread, crumbs, dry, grated, seasoned",
+white mushroom,"Mushrooms, white, raw",
+cauliflower floret,"Cauliflower, raw",
+cherry,"Cherries, sweet, raw",
+kielbasa,"Sausage, Polish, pork and beef, smoked",
+mirin,,no SR Legacy entry
+pizza dough,,no SR Legacy entry
+fat free chicken broth,"Soup, chicken broth, ready-to-serve",
+sunflower oil,"Oil, sunflower, linoleic, (approx. 65%)",
+white bean,"Beans, white, mature seeds, canned",
+chuck roast,"Beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",
+pancetta,,no SR Legacy entry
+pasta shell,"Pasta, dry, enriched",
+ghee,"Butter oil, anhydrous",
+blanched almond,"Nuts, almonds, blanched",
+brie cheese,"Cheese, brie",
+pork sausage,"Pork sausage, link/patty, unprepared",
+white cake mix,,no plain white cake mix entry
+flax seed,"Seeds, flaxseed",
+low fat mayonnaise,"Salad dressing, mayonnaise-type, light",
+mascarpone cheese,,no SR Legacy entry
+sweet pickle relish,"Pickle relish, sweet",
+currant,"Currants, zante, dried",Food.com currants are dried Zante currants
+dried italian seasoning,,no SR Legacy entry
+ground almond,"Nuts, almonds",
+wonton wrapper,Wonton wrappers (includes egg roll wrappers),
+baguette,"Bread, french or vienna (includes sourdough)",
+pearl barley,"Barley, pearled, raw",
+plain low fat yogurt,"Yogurt, plain, low fat",
+saffron thread,"Spices, saffron",
+fennel bulb,"Fennel, bulb, raw",
+sirloin steak,"Beef, top sirloin, steak, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",
+oreo cookie,"Cookies, chocolate sandwich, with creme filling, regular",
+wide egg noodles,"Noodles, egg, dry, enriched",
+colby monterey jack cheese,"Cheese, colby",proxy: colby
+great northern bean,"Beans, great northern, mature seeds, canned",
+non fat dry milk powder,"Milk, dry, nonfat, regular, without added vitamin A and vitamin D",
+soft breadcrumb,"Bread, white, commercially prepared (includes soft bread crumbs)",
+clam,"Mollusks, clam, mixed species, canned, drained solids",
+fat free sour cream,"Sour cream, fat free",
+pork loin chop,"Pork, fresh, loin, center loin (chops), bone-in, separable lean and fat, raw",
+alfredo sauce,,no ready-to-serve alfredo entry
+enchilada sauce,"Sauce, enchilada, red, mild, ready to serve",
+italian salad dressing,"Salad dressing, italian dressing, commercial, regular",
+crystallized ginger,,no SR Legacy entry
+puff pastry,"Puff pastry, frozen, ready-to-bake",
+cremini mushroom,"Mushrooms, brown, italian, or crimini, raw",
+prawn,"Crustaceans, shrimp, raw",
+sherry wine vinegar,"Vinegar, red wine",proxy: SR Legacy has no sherry vinegar
+cooked white rice,"Rice, white, long-grain, regular, enriched, cooked",
+lard,Lard,
+turkey,"Turkey, whole, meat and skin, raw",
+bisquick baking mix,,no SR Legacy entry
+crouton,"Croutons, plain",
+english muffin,"Muffins, English, plain, enriched, with ca prop (includes sourdough)",
+oat bran,"Oat bran, raw",
+cantaloupe,"Melons, cantaloupe, raw",
+pork shoulder,"Pork, fresh, shoulder, whole, separable lean and fat, raw",
+low fat cottage cheese,"Cheese, cottage, lowfat, 2% milkfat",
+rice wine,"Alcoholic beverage, rice (sake)",
+marinated artichoke heart,,no SR Legacy entry
+cardamom pod,"Spices, cardamom",
+steak,,unspecified cut
+tomatoes and green chili,"Tomatoes, red, ripe, canned, with green chilies",
+deli ham,"Ham, sliced, pre-packaged, deli meat (96%fat free, water added)",
+dried cherry,"Cherries, tart, dried, sweetened",
+whole wheat pastry flour,"Wheat flour, whole-grain, soft wheat",
+sourdough bread,"Bread, french or vienna (includes sourdough)",
+ground flax seed,"Seeds, flaxseed",
+tomatillo,"Tomatillos, raw",
+ground lamb,"Lamb, ground, raw",
+instant yeast,"Leavening agents, yeast, baker's, active dry",
+vanilla yogurt,"Yogurt, vanilla, low fat.",
+guacamole,,no SR Legacy entry
+scallop,"Mollusks, scallop, mixed species, raw",
+green food coloring,,no SR Legacy entry
+sea scallop,"Mollusks, scallop, mixed species, raw",
+lump crabmeat,"Crustaceans, crab, blue, canned",
+berry,,unspecified
+anchovy fillet,"Fish, anchovy, european, canned in oil, drained solids",
+beef stew meat,"Beef, chuck for stew, separable lean and fat, choice, raw",
+chicken bouillon granule,"Soup, chicken broth or bouillon, dry",
+saltine cracker,"Crackers, saltines (includes oyster, soda, soup)",
+dark soy sauce,Soy sauce made from soy and wheat (shoyu),proxy: regular soy sauce
+golden syrup,,no SR Legacy entry
+mashed banana,"Bananas, raw",
+fresh mozzarella cheese,"Cheese, mozzarella, whole milk",
+olive oil flavored cooking spray,"Oil, PAM cooking spray, original",
+wild rice,"Wild rice, raw",
+wine vinegar,"Vinegar, red wine",
+ranch dressing mix,,no SR Legacy entry
+frozen raspberry,"Raspberries, frozen, red, unsweetened",
+whole berry cranberry sauce,"Cranberry sauce, canned, sweetened",
+rotini,"Pasta, dry, enriched",
+sweet chili sauce,,no SR Legacy entry
+instant chocolate pudding mix,"Puddings, chocolate, dry mix, instant",
+fat free mayonnaise,"Salad Dressing, mayonnaise-like, fat-free",
+chunky salsa,"Sauce, salsa, ready-to-serve",
+sugar substitute,,no SR Legacy entry
+chicken drumstick,"Chicken, broilers or fryers, drumstick, meat and skin, raw",
+low fat buttermilk,"Milk, buttermilk, fluid, cultured, lowfat",
+tuna in water,"Fish, tuna, light, canned in water, drained solids",
+frozen chopped broccoli,"Broccoli, frozen, chopped, unprepared",
+kiwi,"Kiwifruit, green, raw",
+apricot jam,"Jams and preserves, apricot",
+mixed salad greens,,no SR Legacy entry
+papaya,"Papayas, raw",
+part skim ricotta cheese,"Cheese, ricotta, part skim milk",
+roll,"Rolls, dinner, plain, commercially prepared (includes brown-and-serve)",
+black eyed pea,"Cowpeas, common (blackeyes, crowder, southern), mature seeds, canned, plain",
+diced tomatoes with juice,"Tomatoes, red, ripe, canned, packed in tomato juice",
+plain non fat yogurt,"Yogurt, plain, skim milk",
+turkey breast,"Turkey, whole, breast, meat only, raw",
+tamari,Soy sauce made from soy (tamari),
+bok choy,"Cabbage, chinese (pak-choi), raw",
+coleslaw mix,"Cabbage, raw",proxy: shredded cabbage
+pineapple tidbit,"Pineapple, canned, juice pack, solids and liquids",
+salted peanut,"Peanuts, all types, dry-roasted, with salt",
+xanthan gum,,no SR Legacy entry
+artificial sweetener,,no SR Legacy entry
+spicy brown mustard,"Mustard, prepared, yellow",proxy: prepared mustard
+chicken bouillon,"Soup, chicken broth or bouillon, dry",
+vanilla wafer,"Cookies, vanilla wafers, lower fat",
+plain fat free yogurt,"Yogurt, plain, skim milk",
+instant rice,"Rice, white, long-grain, precooked or instant, enriched, dry",
+pimento stuffed olive,"Olives, pickled, canned or bottled, green",
+pumpkin seed,"Seeds, pumpkin and squash seed kernels, dried",
+beef brisket,"Beef, brisket, flat half, separable lean and fat, trimmed to 1/8"" fat, all grades, raw",
+frozen puff pastry,"Puff pastry, frozen, ready-to-bake",
+shell pasta,"Pasta, dry, enriched",
+coconut oil,"Oil, coconut",
+cognac,"Alcoholic beverage, distilled, all (gin, rum, vodka, whiskey) 80 proof",
+frozen blueberry,"Blueberries, frozen, unsweetened",
+crunchy peanut butter,"Peanut butter, chunk style, with salt",
+food coloring,,no SR Legacy entry
+mixed vegetable,"Vegetables, mixed, frozen, unprepared",
+picante sauce,"Sauce, salsa, ready-to-serve",proxy: salsa
+tea bag,"Beverages, tea, black, brewed, prepared with tap water",
+summer squash,"Squash, summer, all varieties, raw",
+extra firm tofu,"Tofu, extra firm, prepared with nigari",
+reduced fat cream cheese,"Cheese, cream, low fat",
+caramel,"Candies, caramels",
+barley,"Barley, pearled, raw",
+rigatoni,"Pasta, dry, enriched",
+watermelon,"Watermelon, raw",
+phyllo dough,Phyllo dough,
+curry leaf,,no SR Legacy entry
+pitted date,"Dates, deglet noor",
+bamboo shoot,"Bamboo shoots, canned, drained solids",
+chinese five spice powder,,no SR Legacy entry
+hot italian sausage,"Sausage, Italian, pork, mild, raw",proxy: mild Italian sausage
+mini chocolate chip,"Candies, semisweet chocolate",
+dried red chili,"Spices, pepper, red or cayenne",proxy: ground dried red chili
+pork and bean,"Beans, baked, canned, with pork and tomato sauce",
+chili paste,,no SR Legacy entry
+five spice powder,,no SR Legacy entry
+reduced fat sour cream,"Sour cream, reduced fat",
+white potato,"Potatoes, white, flesh and skin, raw",
+french fried onion,,no SR Legacy entry
+okra,"Okra, raw",
+rotel tomato,"Tomatoes, red, ripe, canned, with green chilies",
+mussel,"Mollusks, mussel, blue, raw",
+sun dried tomato packed in oil,"Tomatoes, sun-dried, packed in oil, drained",
+baked bean,"Beans, baked, canned, plain or vegetarian",
+cooked shrimp,"Crustaceans, shrimp, cooked",
+fontina cheese,"Cheese, fontina",
+herbes de provence,,no SR Legacy entry
+sake,"Alcoholic beverage, rice (sake)",
+tofu,"Tofu, raw, regular, prepared with calcium sulfate",
+crescent roll,,no generic SR Legacy entry
+lean ground turkey,"Turkey, ground, 93% lean, 7% fat, raw",
+light rum,"Alcoholic beverage, distilled, rum, 80 proof",
+peppermint extract,,no SR Legacy entry
+crisco,"Shortening, vegetable, household, composite",
+frozen broccoli,"Broccoli, frozen, chopped, unprepared",
+pickled jalapeno pepper,"Peppers, jalapeno, canned, solids and liquids",
+raspberry jam,Jams and preserves,
+agave nectar,"Sweetener, syrup, agave",
+sugar snap pea,"Peas, edible-podded, raw",
+devils food cake mix,,no SR Legacy entry
+low fat cream cheese,"Cheese, cream, low fat",
+star anise,,no SR Legacy entry
+graham cracker pie crust,"Pie Crust, Cookie-type, Graham Cracker, Ready Crust",
+unbaked pie shell,"Pie crust, standard-type, frozen, ready-to-bake, enriched",
+whiskey,"Alcoholic beverage, distilled, whiskey, 86 proof",
+chili bean,,no SR Legacy entry
+flax seed meal,"Seeds, flaxseed",
+honey mustard,,no SR Legacy entry
+prune,"Plums, dried (prunes), uncooked",
+sweet corn,"Corn, sweet, yellow, raw",
+beef roast,,unspecified cut
+chicken leg,"Chicken, broilers or fryers, leg, meat and skin, raw",
+low fat plain yogurt,"Yogurt, plain, low fat",
+dried onion,"Onions, dehydrated flakes",
+ground sage,"Spices, sage, ground",
+pitted black olive,"Olives, ripe, canned (small-extra large)",
+acorn squash,"Squash, winter, acorn, raw",
+light coconut milk,,no SR Legacy entry
+hot pepper,"Peppers, hot chili, red, raw",
+strong coffee,"Beverages, coffee, brewed, prepared with tap water",
+unsweetened coconut milk,"Nuts, coconut milk, canned (liquid expressed from grated meat and water)",
+nutritional yeast,,no SR Legacy entry
+whole wheat tortilla,"Tortillas, ready-to-bake or -fry, whole wheat",
+chili garlic sauce,,no SR Legacy entry
+cod fish fillet,"Fish, cod, Atlantic, raw",
+pie shell,"Pie crust, standard-type, frozen, ready-to-bake, enriched",
+yam,"Yam, raw",
+adobo sauce,,no SR Legacy entry
+carbonated lemon lime beverage,"Beverages, carbonated, lemon-lime soda, no caffeine",
+chocolate cake mix,,no SR Legacy entry
+napa cabbage,"Cabbage, chinese (pe-tsai), raw",
+cooking apple,"Apples, raw, with skin",
+corned beef,"Beef, cured, corned beef, brisket, raw",
+marshmallow creme,,no SR Legacy entry
+potato chips,"Snacks, potato chips, plain, salted",
+potato starch,,no SR Legacy entry
+salami,"Salami, Italian, pork",
+coconut cream,"Nuts, coconut cream, raw (liquid expressed from grated meat)",
+gelatin,"Gelatins, dry powder, unsweetened",
+reduced sodium fat free chicken broth,"Soup, chicken broth, less/reduced sodium, ready to serve",
+ziti,"Pasta, dry, enriched",
+dried tarragon,"Spices, tarragon, dried",
+pork loin roast,"Pork, fresh, loin, whole, separable lean and fat, raw",
+refrigerated biscuit,"Biscuits, plain or buttermilk, refrigerated dough, higher fat",
+stock,,unspecified
+bean,,unspecified
+lamb,,unspecified cut
+bread machine yeast,"Leavening agents, yeast, baker's, active dry",
+dry roasted peanut,"Peanuts, all types, dry-roasted, with salt",
+mixed spice,,spice blend; no SR Legacy entry
+port wine,"Alcoholic beverage, wine, dessert, sweet",
+whole grain mustard,"Mustard, prepared, yellow",proxy: prepared mustard
+champagne,"Alcoholic beverage, wine, table, white",proxy: white table wine
+coconut extract,,no SR Legacy entry
+orange bell pepper,"Peppers, sweet, yellow, raw",proxy: yellow bell pepper
+poblano chili,"Peppers, hot chili, green, raw",proxy: green chili
+smoked ham,"Ham, sliced, regular (approximately 11% fat)",
+ramen noodles,"Soup, ramen noodle, any flavor, dry",
+rose water,,no SR Legacy entry
+condensed mushroom soup,"Soup, cream of mushroom, canned, condensed",fixed after audit
+hot sausage,"Pork sausage, link/patty, unprepared",fixed after audit
+custard,,fixed after audit: no SR Legacy custard entry
+dried red pepper,"Spices, pepper, red or cayenne",fixed after audit
+chicken sausage,"Sausage, chicken, beef, pork, skinless, smoked",fixed after audit; closest entry
+smoked kielbasa,"Sausage, Polish, pork and beef, smoked",fixed after audit
+chicken gravy,"Gravy, chicken, canned or bottled, ready-to-serve",fixed after audit
+frosting,"Frostings, vanilla, creamy, ready-to-eat",fixed after audit
+gravy,"Gravy, beef, canned, ready-to-serve",fixed after audit
+beef gravy,"Gravy, beef, canned, ready-to-serve",fixed after audit
+broiler chicken,"Chicken, broilers or fryers, meat and skin, raw",fixed after audit
+raw potato,"Potatoes, flesh and skin, raw",fixed after audit
+canned milk,"Milk, canned, evaporated, with added vitamin D and without added vitamin A",fixed after audit
+cereal,,fixed after audit: unspecified cereal
+cheese spread,"Cheese spread, pasteurized process, American",fixed after audit
+vermicelli,"Pasta, dry, enriched",fixed after audit: wheat vermicelli
+shortbread cookie,"Cookies, shortbread, commercially prepared, plain",fixed after audit
+meat,,fixed after single-word review: unspecified meat
+biscuit,"Biscuits, plain or buttermilk, refrigerated dough, higher fat",fixed after single-word review
+grape,"Grapes, red or green (European type, such as Thompson seedless), raw",fixed after single-word review
+lemonade,,fixed after single-word review: no plain lemonade entry
+syrup,,fixed after single-word review: unspecified syrup
+squash,,fixed after single-word review: unspecified squash
+fish,,fixed after single-word review: unspecified fish
+spice,,fixed after single-word review: unspecified spice
+fat,,fixed after single-word review: unspecified fat
+bagel,"Bagels, plain, enriched, with calcium propionate (includes onion, poppy, sesame)",fixed after single-word review
+popcorn,"Snacks, popcorn, air-popped",fixed after single-word review
+cookie,,fixed after single-word review: unspecified cookie
+croissant,"Croissants, butter",fixed after single-word review
+cake,,fixed after single-word review: unspecified cake
+duck,"Duck, domesticated, meat and skin, raw",fixed after single-word review
+pastrami,"Beef, cured, pastrami",fixed after single-word review
+pudding,,fixed after single-word review: unspecified pudding
+seed,,fixed after single-word review: unspecified seed
+soup,,fixed after single-word review: unspecified soup
+amaranth,"Amaranth grain, uncooked",fixed after single-word review
+liver,,fixed after single-word review: unspecified liver
+pretzels,"Snacks, pretzels, hard, plain, salted",fixed after single-word review
